@@ -1,12 +1,11 @@
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
   { name: 'Project', href: '#project' },
-  { name: 'Timeline', href: '#timeline' },
   { name: 'Team', href: '#team' },
   { name: 'Contact', href: '#contact' }
 ];
@@ -56,8 +55,12 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <a href="#home" className="text-xl font-bold tracking-tight hover:opacity-80 transition-opacity">
-            RAVEN
+          <a href="#home" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+            <img 
+              src="/lovable-uploads/bd542e06-5ae1-41ba-aebb-a821d98138dc.png" 
+              alt="RAVEN Logo" 
+              className="h-10 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}

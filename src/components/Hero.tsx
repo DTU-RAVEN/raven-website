@@ -1,4 +1,6 @@
 
+import React from 'react';
+
 const Hero = () => {
   const scrollToTeam = () => {
     const teamSection = document.getElementById('team');
@@ -11,10 +13,14 @@ const Hero = () => {
     <section id="home" className="relative flex min-h-screen items-center justify-center bg-raven-black">
       <div className="absolute inset-0 bg-gradient-to-b from-raven-black/80 to-raven-black/90 z-10"></div>
       
-      {/* This is where we could add a background image if desired */}
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-30"></div>
+      <div className="absolute inset-0 bg-[url('/lovable-uploads/d1a0b707-5936-4f6e-b959-cd3493e04cf8.png')] bg-cover bg-center opacity-30"></div>
       
-      <div className="container z-20 px-4 text-center">
+      <div className="container z-20 px-4 text-center flex flex-col items-center">
+        <img 
+          src="/lovable-uploads/d1a0b707-5936-4f6e-b959-cd3493e04cf8.png" 
+          alt="RAVEN Logo" 
+          className="h-32 w-32 mb-6 animate-fade-in"
+        />
         <h1 className="mb-4 animate-fade-in text-6xl font-bold tracking-tighter md:text-7xl lg:text-8xl">
           RAVEN
         </h1>

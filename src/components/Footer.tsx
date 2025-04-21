@@ -7,7 +7,11 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div className="flex flex-col items-center md:items-start">
-            <h3 className="mb-4 text-2xl font-bold">RAVEN</h3>
+            <img 
+              src="/lovable-uploads/2643b5c2-26fd-491e-9b14-102c0d03ab74.png" 
+              alt="RAVEN Logo" 
+              className="h-16 w-auto mb-4"
+            />
             <p className="text-center md:text-left">
               Robotics, Autonomous Vehicle Engineering & Navigation
             </p>

@@ -1,15 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const navLinks = [
-  { name: 'Home', href: '/#home' },
-  { name: 'About', href: '/#about' },
-  { name: 'Project', href: '/#project' },
-  { name: 'Team', href: '/#team' },
-  { name: 'News', href: '/news' },
-  { name: 'Contact', href: '/#contact' }
+  { name: 'Home', href: '#home' },
+  { name: 'About', href: '#about' },
+  { name: 'Project', href: '#project' },
+  { name: 'Team', href: '#team' },
+  { name: 'Contact', href: '#contact' }
 ];
 
 const Navbar = () => {

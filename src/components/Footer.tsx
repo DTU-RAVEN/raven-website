@@ -1,5 +1,5 @@
+
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -40,11 +40,10 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-end">
             <h3 className="mb-4 text-xl font-bold">Quick Links</h3>
             <div className="flex flex-col items-center md:items-end space-y-2">
-              <Link to="/" className="transition-opacity hover:opacity-80">Home</Link>
-              <Link to="/#about" className="transition-opacity hover:opacity-80">About</Link>
-              <Link to="/#project" className="transition-opacity hover:opacity-80">Project</Link>
-              <Link to="/news" className="transition-opacity hover:opacity-80">News</Link>
-              <Link to="/#team" className="transition-opacity hover:opacity-80">Team</Link>
+              <a href="#home" className="transition-opacity hover:opacity-80">Home</a>
+              <a href="#about" className="transition-opacity hover:opacity-80">About</a>
+              <a href="#project" className="transition-opacity hover:opacity-80">Project</a>
+              <a href="#team" className="transition-opacity hover:opacity-80">Team</a>
             </div>
           </div>
         </div>

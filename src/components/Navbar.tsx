@@ -13,11 +13,19 @@ const navLinks = [
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const offset = window.scrollY;
-      if (offset > 50) {
+      const currentScrollPos = window.scrollY;
+      const isScrolledDown = currentScrollPos > prevScrollPos;
+      const isOverHero = currentScrollPos > window.innerHeight;
+
+      setVisible(!isScrolledDown || !isOverHero || currentScrollPos < 10);
+      setPrevScrollPos(currentScrollPos);
+
+      if (currentScrollPos > 50) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -28,12 +36,11 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [prevScrollPos]);
 
   const toggleMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
     
-    // Prevent scrolling when menu is open
     if (!mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -41,7 +48,6 @@ const Navbar = () => {
     }
   };
 
-  // Close mobile menu when clicking a link
   const handleLinkClick = () => {
     setMobileMenuOpen(false);
     document.body.style.overflow = 'auto';
@@ -51,13 +57,13 @@ const Navbar = () => {
     <nav
       className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${
         scrolled || mobileMenuOpen ? 'bg-raven-black bg-opacity-90 backdrop-blur-sm shadow-md' : 'bg-transparent'
-      }`}
+      } transform ${visible ? 'translate-y-0' : '-translate-y-full'}`}
     >
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <a href="#home" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <img 
-              src="/lovable-uploads/bd542e06-5ae1-41ba-aebb-a821d98138dc.png" 
+              src="/lovable-uploads/dc4d4331-6907-4029-9cd7-de5eae8a26ed.png" 
               alt="RAVEN Logo" 
               className="h-10 w-auto"
             />

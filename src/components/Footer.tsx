@@ -1,4 +1,3 @@
-
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
@@ -10,7 +9,7 @@ const Footer = () => {
             <img 
               src="/lovable-uploads/2643b5c2-26fd-491e-9b14-102c0d03ab74.png" 
               alt="RAVEN Logo" 
-              className="h-16 w-auto mb-4"
+              className="h-10 w-auto mb-4"
             />
             <p className="text-center md:text-left">
               Robotics, Autonomous Vehicle Engineering & Navigation

@@ -1,27 +1,19 @@
-
 import SectionDivider from './SectionDivider';
-
-const partnerLogos = [
-  {
-    name: 'DTU Blue Dot',
-    logo: '/placeholder.svg',
-    contribution: 'Support'
-  },
-  {
-    name: 'Tuborgfonden',
-    logo: '/placeholder.svg',
-    contribution: 'Support'
-  },
-  {
-    name: 'UXV',
-    logo: '/placeholder.svg',
-    contribution: 'In-kind support'
-  }
-];
-
+const partnerLogos = [{
+  name: 'DTU Blue Dot',
+  logo: '/placeholder.svg',
+  contribution: 'Support'
+}, {
+  name: 'Tuborgfonden',
+  logo: '/placeholder.svg',
+  contribution: 'Support'
+}, {
+  name: 'UXV',
+  logo: '/placeholder.svg',
+  contribution: 'In-kind support'
+}];
 const Funding = () => {
-  return (
-    <>
+  return <>
       <SectionDivider />
       <section id="funding" className="section bg-raven-white text-raven-black">
         <div className="section-container">
@@ -34,32 +26,21 @@ const Funding = () => {
               </p>
               
               <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-                {partnerLogos.map((partner, index) => (
-                  <div key={index} className="flex flex-col items-center">
+                {partnerLogos.map((partner, index) => <div key={index} className="flex flex-col items-center">
                     <div className="mb-4 h-24 w-24 overflow-hidden grayscale transition-transform hover:scale-105 hover:grayscale-0 duration-300">
-                      <img
-                        src={partner.logo}
-                        alt={`${partner.name} logo`}
-                        className="h-full w-full object-contain"
-                      />
+                      <img src={partner.logo} alt={`${partner.name} logo`} className="h-full w-full object-contain" />
                     </div>
                     <h3 className="mb-2 text-xl font-bold">{partner.name}</h3>
                     <p className="text-sm">{partner.contribution}</p>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
             
-            <p className="text-center text-lg">
-              We are thankful for the generous support from our partners.
-            </p>
+            
           </div>
         </div>
       </section>
       <SectionDivider inverted={true} />
-    </>
-  );
+    </>;
 };
-
 export default Funding;
-

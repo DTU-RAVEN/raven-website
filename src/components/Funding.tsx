@@ -1,14 +1,16 @@
 
+import SectionDivider from './SectionDivider';
+
 const partnerLogos = [
   {
     name: 'DTU Blue Dot',
     logo: '/placeholder.svg',
-    contribution: '150 000 DKK'
+    contribution: 'Support'
   },
   {
     name: 'Tuborgfonden',
     logo: '/placeholder.svg',
-    contribution: '50 000 DKK'
+    contribution: 'Support'
   },
   {
     name: 'UXV',
@@ -16,8 +18,6 @@ const partnerLogos = [
     contribution: 'In-kind support'
   }
 ];
-
-import SectionDivider from './SectionDivider';
 
 const Funding = () => {
   return (
@@ -51,7 +51,7 @@ const Funding = () => {
             </div>
             
             <p className="text-center text-lg">
-              Total funding: 150 000 DKK from DTU, 50 000 DKK from Tuborgfonden, plus in-kind support from UXV.
+              We are thankful for the generous support from our partners.
             </p>
           </div>
         </div>
@@ -62,3 +62,4 @@ const Funding = () => {
 };
 
 export default Funding;
+

@@ -22,10 +22,10 @@ const Footer = () => {
           <div className="flex flex-col items-center">
             <h3 className="mb-4 text-xl font-bold">Contact Us</h3>
             <a 
-              href="mailto:contact@ravendtu.org" 
+              href="mailto:contact@dturaven.com" 
               className="mb-2 transition-opacity hover:opacity-80"
             >
-              contact@ravendtu.org
+              contact@dturaven.com
             </a>
             <div className="mt-4 flex space-x-4">
               <a href="#" className="transition-opacity hover:opacity-80" aria-label="Facebook">

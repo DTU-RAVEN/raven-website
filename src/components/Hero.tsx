@@ -1,3 +1,4 @@
+
 import React from 'react';
 const Hero = () => {
   const scrollToTeam = () => {
@@ -11,14 +12,16 @@ const Hero = () => {
   return <section id="home" className="relative flex min-h-screen items-center justify-center bg-raven-black">
       <div className="absolute inset-0 bg-gradient-to-b from-raven-black/50 to-raven-black/70 z-10"></div>
       
-      {/* Video background using iframe embed */}
+      {/* Background image */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="w-full h-full">
-          
-        </div>
+        <img 
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
+          alt="Background" 
+          className="w-full h-full object-cover"
+        />
       </div>
       
-      <div className="container z-20 px-4 text-center flex flex-col items-center">
+      <div className="container z-20 px-4 text-center flex flex-col items-center mt-20">
         <img src="/lovable-uploads/d1a0b707-5936-4f6e-b959-cd3493e04cf8.png" alt="RAVEN Logo" className="h-32 w-32 mb-6 animate-fade-in" />
         <h1 className="mb-4 animate-fade-in text-6xl font-bold tracking-tighter md:text-7xl lg:text-8xl">
           RAVEN

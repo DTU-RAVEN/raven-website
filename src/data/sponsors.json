@@ -2,17 +2,17 @@
 [
   {
     "name": "DTU Blue Dot",
-    "logo": "public/Sponsors/DTU_Logo_Corporate_White_RGB.png",
+    "logo": "/Sponsors/DTU_Logo_Black_RGB_000.png",
     "contribution": "Support"
   },
   {
     "name": "Tuborgfonden",
-    "logo": "/Sponsors/Tuborgfondet-Logotype-White-RGB.png",
+    "logo": "/Sponsors/Tuborgfondet-Logotype-Black-RGB.png",
     "contribution": "Support"
   },
   {
     "name": "UXV",
-    "logo": "/Sponsors/UXV.webp",
+    "logo": "/Sponsors/uxv-logo_black.webp",
     "contribution": "In-kind support"
   }
 ]

@@ -1,16 +1,16 @@
 
 [
   {
-    "name": "Emma Jensen",
-    "role": "Project Lead",
-    "program": "Robotics Engineering",
+    "name": "Markus Rytter",
+    "role": "President",
+    "program": "Eletrical Engineering",
     "image": "/placeholder.svg",
     "isBoard": true
   },
   {
-    "name": "Mathias Nielsen",
-    "role": "Technical Lead",
-    "program": "Computer Science",
+    "name": "Carl Borg",
+    "role": "Treasurer and Vice President",
+    "program": "AI and Data Science",
     "image": "/placeholder.svg",
     "isBoard": true
   },

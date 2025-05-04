@@ -14,7 +14,7 @@ declare global {
 
 // This allows importing JSON files
 declare module "*.json" {
-  const content: Record<string, any>;
+  const content: any;
   export default content;
 }
 

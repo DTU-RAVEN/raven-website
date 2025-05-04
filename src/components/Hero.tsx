@@ -13,7 +13,20 @@ const Hero = () => {
     <section id="home" className="relative flex min-h-screen items-center justify-center bg-raven-black">
       <div className="absolute inset-0 bg-gradient-to-b from-raven-black/80 to-raven-black/90 z-10"></div>
       
-      <div className="absolute inset-0 bg-[url('/lovable-uploads/d1a0b707-5936-4f6e-b959-cd3493e04cf8.png')] bg-cover bg-center opacity-30"></div>
+      {/* Video background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover opacity-30"
+        >
+          <source src="https://streamable.com/eah18m" type="video/mp4" />
+          {/* Fallback image if video fails to load */}
+          Your browser does not support the video tag.
+        </video>
+      </div>
       
       <div className="container z-20 px-4 text-center flex flex-col items-center">
         <img 

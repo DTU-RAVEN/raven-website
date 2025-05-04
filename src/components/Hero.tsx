@@ -24,7 +24,7 @@ const Hero = () => {
         />
       </div>
       
-      <div className="container z-20 px-4 text-center flex flex-col items-center mt-100">
+      <div className="container z-20 px-4 text-center flex flex-col items-center mt-96">
         <p className="mx-auto mb-8 max-w-2xl text-xl leading-relaxed md:text-2xl">
           Advancing unmanned systems through hands-on student projects.
         </p>

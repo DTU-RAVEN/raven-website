@@ -11,7 +11,7 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative flex min-h-screen items-center justify-center bg-raven-black">
-      <div className="absolute inset-0 bg-gradient-to-b from-raven-black/80 to-raven-black/90 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-raven-black/50 to-raven-black/70 z-10"></div>
       
       {/* Video background using iframe embed */}
       <div className="absolute inset-0 overflow-hidden">
@@ -20,8 +20,16 @@ const Hero = () => {
             src="https://streamable.com/e/eah18m?autoplay=1&muted=1&loop=1" 
             allow="autoplay" 
             allowFullScreen
-            className="w-full h-full object-cover opacity-30"
-            style={{ border: 'none', position: 'absolute', top: 0, left: 0 }}
+            className="w-full h-full object-cover opacity-40"
+            style={{ 
+              border: 'none', 
+              position: 'absolute', 
+              top: 0, 
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
+            }}
           ></iframe>
         </div>
       </div>

@@ -49,7 +49,7 @@ const Team = () => {
               or project management, there's a place for you on our team.
             </p>
             <a 
-              href="#contact" 
+              href="https://forms.office.com/Pages/ResponsePage.aspx?id=I_FR8s7JjkSSdzS7KFkR2ZHhZSUr_WJMhacyA9udrQpUNENGRUVOWTY0WjRSTE1MVkgxTkU2MTZSNi4u" 
               className="btn-secondary inline-block"
             >
               Get Involved

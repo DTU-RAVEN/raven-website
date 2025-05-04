@@ -24,7 +24,7 @@ const About = () => {
             <div className="flex items-center justify-center">
               <div className="relative h-[300px] w-full overflow-hidden rounded-md shadow-lg md:h-[400px]">
                 <img
-                  src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                  src="/Pictures/20250426_181020.jpg"
                   alt="Robotics team working on project"
                   className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                 />

@@ -12,7 +12,7 @@ declare global {
   }
 }
 
-// This allows importing JSON files
+// Define JSON module type properly
 declare module "*.json" {
   const content: any;
   export default content;

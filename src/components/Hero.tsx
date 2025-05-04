@@ -13,19 +13,17 @@ const Hero = () => {
     <section id="home" className="relative flex min-h-screen items-center justify-center bg-raven-black">
       <div className="absolute inset-0 bg-gradient-to-b from-raven-black/80 to-raven-black/90 z-10"></div>
       
-      {/* Video background */}
+      {/* Video background using iframe embed */}
       <div className="absolute inset-0 overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover opacity-30"
-        >
-          <source src="https://streamable.com/eah18m" type="video/mp4" />
-          {/* Fallback image if video fails to load */}
-          Your browser does not support the video tag.
-        </video>
+        <div className="w-full h-full">
+          <iframe 
+            src="https://streamable.com/e/eah18m?autoplay=1&muted=1&loop=1" 
+            allow="autoplay" 
+            allowFullScreen
+            className="w-full h-full object-cover opacity-30"
+            style={{ border: 'none', position: 'absolute', top: 0, left: 0 }}
+          ></iframe>
+        </div>
       </div>
       
       <div className="container z-20 px-4 text-center flex flex-col items-center">

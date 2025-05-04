@@ -1,63 +1,6 @@
 
-// Sample team members (replace with actual data)
-const teamMembers = [
-  {
-    name: 'Emma Jensen',
-    role: 'Project Lead',
-    program: 'Robotics Engineering',
-    image: '/placeholder.svg',
-    isBoard: true
-  },
-  {
-    name: 'Mathias Nielsen',
-    role: 'Technical Lead',
-    program: 'Computer Science',
-    image: '/placeholder.svg',
-    isBoard: true
-  },
-  {
-    name: 'Sofia Petersen',
-    role: 'Electronics Lead',
-    program: 'Electrical Engineering',
-    image: '/placeholder.svg',
-    isBoard: true
-  },
-  {
-    name: 'Lukas Andersen',
-    role: 'Mechanical Engineer',
-    program: 'Mechanical Engineering',
-    image: '/placeholder.svg',
-    isBoard: false
-  },
-  {
-    name: 'Astrid Schmidt',
-    role: 'Software Developer',
-    program: 'Software Technology',
-    image: '/placeholder.svg',
-    isBoard: false
-  },
-  {
-    name: 'Mikkel Hansen',
-    role: 'Flight Systems',
-    program: 'Aerospace Engineering',
-    image: '/placeholder.svg',
-    isBoard: false
-  },
-  {
-    name: 'Freja Christensen',
-    role: 'Computer Vision',
-    program: 'AI & Data',
-    image: '/placeholder.svg',
-    isBoard: false
-  },
-  {
-    name: 'Oliver Larsen',
-    role: 'Mechanical Design',
-    program: 'Product Design',
-    image: '/placeholder.svg',
-    isBoard: false
-  }
-];
+import teamMembers from '../data/team-members.json';
+import SectionDivider from './SectionDivider';
 
 // Sort members with board members first
 const sortedMembers = [...teamMembers].sort((a, b) => {

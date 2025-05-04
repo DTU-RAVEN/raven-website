@@ -12,10 +12,10 @@ declare global {
   }
 }
 
-// Define JSON module without the dot-star pattern
+// This allows importing JSON files
 declare module "*.json" {
-  const value: any;
-  export default value;
+  const content: Record<string, any>;
+  export default content;
 }
 
 createRoot(document.getElementById("root")!).render(<App />);

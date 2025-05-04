@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -28,13 +28,10 @@ const Footer = () => {
               contact@dturaven.com
             </a>
             <div className="mt-4 flex space-x-4">
-              <a href="#" className="transition-opacity hover:opacity-80" aria-label="Facebook">
-                <Facebook size={24} />
-              </a>
-              <a href="#" className="transition-opacity hover:opacity-80" aria-label="Instagram">
+              <a href="https://www.instagram.com/ravenxdtu/" className="transition-opacity hover:opacity-80" aria-label="Instagram">
                 <Instagram size={24} />
               </a>
-              <a href="#" className="transition-opacity hover:opacity-80" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/dtu-raven/" className="transition-opacity hover:opacity-80" aria-label="LinkedIn">
                 <Linkedin size={24} />
               </a>
             </div>

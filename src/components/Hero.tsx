@@ -21,11 +21,7 @@ const Hero = () => {
         />
       </div>
       
-      <div className="container z-20 px-4 text-center flex flex-col items-center mt-20">
-        <img src="/lovable-uploads/d1a0b707-5936-4f6e-b959-cd3493e04cf8.png" alt="RAVEN Logo" className="h-32 w-32 mb-6 animate-fade-in" />
-        <h1 className="mb-4 animate-fade-in text-6xl font-bold tracking-tighter md:text-7xl lg:text-8xl">
-          RAVEN
-        </h1>
+      <div className="container z-20 px-4 text-center flex flex-col items-center mt-28">
         <p className="mx-auto mb-8 max-w-2xl text-xl leading-relaxed md:text-2xl">
           Advancing unmanned systems through hands-on student projects.
         </p>

@@ -21,15 +21,17 @@ const NewsArticleList = () => {
     const loadArticles = async () => {
       try {
         setIsLoading(true);
-        // Fetch the index of all news articles
-        const articlesModule = import.meta.glob('/src/data/news/*.md', { eager: true });
+        // Fetch the index of all news articles as raw text
+        const articlesModule = import.meta.glob('/src/data/news/*.md', { 
+          as: 'raw', // Import as raw text instead of a module
+          eager: true 
+        });
         
-        const loadedArticles = Object.entries(articlesModule).map(([path, module]: [string, any]) => {
+        const loadedArticles = Object.entries(articlesModule).map(([path, content]: [string, string]) => {
           // Extract the id from the file path
           const id = path.split('/').pop()?.replace('.md', '') || '';
           
-          // Parse the frontmatter and content
-          const content = module.default;
+          // Parse the frontmatter and content from raw markdown text
           const frontmatter = parseFrontmatter(content);
           
           return {

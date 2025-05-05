@@ -2,15 +2,7 @@
 import { useState, useEffect } from 'react';
 import NewsArticle from './NewsArticle';
 import { Card, CardContent } from '@/components/ui/card';
-
-// This interface describes the structure of our news articles
-interface Article {
-  id: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  content: string;
-}
+import { Article } from '@/types/article';
 
 const NewsArticleList = () => {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -21,33 +13,19 @@ const NewsArticleList = () => {
     const loadArticles = async () => {
       try {
         setIsLoading(true);
-        // Fetch the index of all news articles as raw text
-        const articlesModule = import.meta.glob('/src/data/news/*.md', { 
-          as: 'raw', // Import as raw text instead of a module
-          eager: true 
+        // Use import.meta.glob to get all JSON files in the news directory
+        const articlesModule = import.meta.glob('/src/data/news/*.json', { 
+          eager: true,
+          import: 'default' // Import the default export from each module
         });
         
-        const loadedArticles = Object.entries(articlesModule).map(([path, content]: [string, string]) => {
-          // Extract the id from the file path
-          const id = path.split('/').pop()?.replace('.md', '') || '';
-          
-          // Parse the frontmatter and content from raw markdown text
-          const frontmatterData = parseFrontmatter(content);
-          
-          console.log('Parsed article:', {
+        const loadedArticles = Object.entries(articlesModule).map(([path, article]: [string, any]) => {
+          console.log('Loaded article:', {
             path,
-            id,
-            frontmatter: frontmatterData,
-            title: frontmatterData.title
+            article
           });
           
-          return {
-            id,
-            title: frontmatterData.title || 'Untitled',
-            date: frontmatterData.date || new Date().toISOString().split('T')[0],
-            excerpt: frontmatterData.excerpt || 'No excerpt available',
-            content: removeFrontmatter(content)
-          };
+          return article as Article;
         });
 
         // Sort articles by date (newest first)
@@ -63,53 +41,6 @@ const NewsArticleList = () => {
 
     loadArticles();
   }, []);
-
-  // Improved frontmatter parser that properly handles YAML format
-  const parseFrontmatter = (content: string) => {
-    // Match the content between the first pair of --- markers
-    const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n/;
-    const match = content.match(frontmatterRegex);
-    
-    if (!match) return {};
-    
-    const frontmatter = match[1];
-    const result: Record<string, string> = {};
-    
-    console.log('Parsing frontmatter:', frontmatter);
-    
-    // Split by lines and process each line individually
-    frontmatter.split('\n').forEach(line => {
-      // Trim the line to remove any leading/trailing whitespace
-      const trimmedLine = line.trim();
-      
-      // Skip empty lines
-      if (!trimmedLine) return;
-      
-      // Find the first colon that separates key from value
-      const colonIndex = trimmedLine.indexOf(':');
-      if (colonIndex > 0) {
-        // Extract key and value
-        const key = trimmedLine.slice(0, colonIndex).trim();
-        let value = trimmedLine.slice(colonIndex + 1).trim();
-        
-        // If value is surrounded by quotes, remove them
-        if ((value.startsWith('"') && value.endsWith('"')) || 
-            (value.startsWith("'") && value.endsWith("'"))) {
-          value = value.slice(1, -1);
-        }
-        
-        result[key] = value;
-      }
-    });
-    
-    console.log('Parsed frontmatter result:', result);
-    return result;
-  };
-
-  // Remove frontmatter from content
-  const removeFrontmatter = (content: string) => {
-    return content.replace(/^---\s*\n[\s\S]*?\n---\s*\n/, '');
-  };
 
   if (isLoading) {
     return (
@@ -134,7 +65,7 @@ const NewsArticleList = () => {
           <h3 className="text-2xl mb-4">No news articles yet</h3>
           <p>Check back later for updates and announcements.</p>
           <p className="text-sm mt-4 text-raven-white/60">
-            To add articles, create markdown files in the src/data/news/ directory.
+            To add articles, create JSON files in the src/data/news/ directory.
           </p>
         </CardContent>
       </Card>

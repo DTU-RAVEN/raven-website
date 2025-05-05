@@ -3,18 +3,10 @@ import { useState } from 'react';
 import { Calendar } from 'lucide-react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-
-// Import a markdown renderer
-import { marked } from 'marked';
+import { Article } from '@/types/article';
 
 interface ArticleProps {
-  article: {
-    id: string;
-    title: string;
-    date: string;
-    excerpt: string;
-    content: string;
-  };
+  article: Article;
 }
 
 const NewsArticle = ({ article }: ArticleProps) => {
@@ -34,18 +26,15 @@ const NewsArticle = ({ article }: ArticleProps) => {
     }
   };
 
-  // Convert markdown to HTML
-  const renderMarkdown = (markdown: string) => {
-    try {
-      return { __html: marked.parse(markdown) };
-    } catch (e) {
-      console.error('Error rendering markdown:', e);
-      return { __html: 'Error rendering content.' };
-    }
-  };
-
   return (
     <Card className="bg-raven-black border-raven-gray/30 overflow-hidden hover:border-raven-white/50 transition-colors">
+      <div className="w-full h-64 overflow-hidden">
+        <img 
+          src={article.image} 
+          alt={article.title}
+          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+        />
+      </div>
       <CardHeader className="bg-raven-gray/10 border-b border-raven-gray/20 flex flex-row items-center">
         <div>
           <h2 className="text-2xl font-bold text-raven-white">{article.title}</h2>
@@ -69,10 +58,9 @@ const NewsArticle = ({ article }: ArticleProps) => {
           </>
         ) : (
           <>
-            <div 
-              className="prose prose-invert max-w-none prose-h3:text-xl prose-h4:text-lg prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline prose-pre:bg-raven-gray/20 prose-pre:p-4 prose-pre:rounded-md prose-img:rounded-lg text-raven-white"
-              dangerouslySetInnerHTML={renderMarkdown(article.content)} 
-            />
+            <div className="text-raven-white whitespace-pre-line">
+              {article.content}
+            </div>
             <Button 
               variant="outline" 
               onClick={() => setExpanded(false)}

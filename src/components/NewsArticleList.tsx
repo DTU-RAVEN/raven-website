@@ -64,8 +64,9 @@ const NewsArticleList = () => {
     loadArticles();
   }, []);
 
-  // Basic frontmatter parser
+  // Improved frontmatter parser that properly handles YAML format
   const parseFrontmatter = (content: string) => {
+    // Match the content between the first pair of --- markers
     const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n/;
     const match = content.match(frontmatterRegex);
     
@@ -76,11 +77,27 @@ const NewsArticleList = () => {
     
     console.log('Parsing frontmatter:', frontmatter);
     
+    // Split by lines and process each line individually
     frontmatter.split('\n').forEach(line => {
-      const colonIndex = line.indexOf(':');
+      // Trim the line to remove any leading/trailing whitespace
+      const trimmedLine = line.trim();
+      
+      // Skip empty lines
+      if (!trimmedLine) return;
+      
+      // Find the first colon that separates key from value
+      const colonIndex = trimmedLine.indexOf(':');
       if (colonIndex > 0) {
-        const key = line.slice(0, colonIndex).trim();
-        const value = line.slice(colonIndex + 1).trim();
+        // Extract key and value
+        const key = trimmedLine.slice(0, colonIndex).trim();
+        let value = trimmedLine.slice(colonIndex + 1).trim();
+        
+        // If value is surrounded by quotes, remove them
+        if ((value.startsWith('"') && value.endsWith('"')) || 
+            (value.startsWith("'") && value.endsWith("'"))) {
+          value = value.slice(1, -1);
+        }
+        
         result[key] = value;
       }
     });

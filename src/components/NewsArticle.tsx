@@ -19,8 +19,20 @@ const NewsArticle = () => {
     const loadArticle = async () => {
       try {
         const module = await import(`../data/news/${id}.json`);
+        console.log(`Article data for ${id}:`, module);
+        
+        // Handle both module.default and direct JSON data
         const articleData = module.default || module;
-        setArticle({ ...articleData, id });
+        
+        // Validate that articleData is an object before spreading
+        if (!articleData || typeof articleData !== 'object') {
+          console.error(`Invalid article data for ${id}:`, articleData);
+          setError("Invalid article data format");
+          setLoading(false);
+          return;
+        }
+        
+        setArticle({ ...articleData as object, id });
         setLoading(false);
       } catch (err) {
         console.error(`Error loading article ${id}:`, err);

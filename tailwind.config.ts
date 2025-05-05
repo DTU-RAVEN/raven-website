@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -71,6 +72,7 @@ export default {
 					white: '#FFFFFF',
 					gray: '#222222',
 					'light-gray': '#EEEEEE',
+					red: '#FF3A46', // Adding the raven-red color
 				}
 			},
 			borderRadius: {

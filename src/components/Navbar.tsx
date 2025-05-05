@@ -1,13 +1,15 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const navLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Project', href: '#project' },
-  { name: 'Team', href: '#team' },
-  { name: 'Contact', href: '#contact' }
+  { name: 'Home', href: '/#home' },
+  { name: 'About', href: '/#about' },
+  { name: 'Project', href: '/#project' },
+  { name: 'Team', href: '/#team' },
+  { name: 'News', href: '/news' },
+  { name: 'Contact', href: '/#contact' }
 ];
 
 const Navbar = () => {
@@ -61,22 +63,28 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <a href="#home" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+          <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <img 
               src="/lovable-uploads/dc4d4331-6907-4029-9cd7-de5eae8a26ed.png" 
               alt="RAVEN Logo" 
               className="h-10 w-auto"
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <ul className="flex space-x-8">
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="nav-link">
-                    {link.name}
-                  </a>
+                  {link.href.startsWith('/#') ? (
+                    <a href={link.href} className="nav-link">
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link to={link.href} className="nav-link">
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -103,14 +111,25 @@ const Navbar = () => {
       >
         <div className="bg-raven-white py-2 shadow-lg">
           {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="nav-link-mobile"
-              onClick={handleLinkClick}
-            >
-              {link.name}
-            </a>
+            link.href.startsWith('/#') ? (
+              <a
+                key={link.name}
+                href={link.href}
+                className="nav-link-mobile"
+                onClick={handleLinkClick}
+              >
+                {link.name}
+              </a>
+            ) : (
+              <Link
+                key={link.name}
+                to={link.href}
+                className="nav-link-mobile"
+                onClick={handleLinkClick}
+              >
+                {link.name}
+              </Link>
+            )
           ))}
         </div>
       </div>

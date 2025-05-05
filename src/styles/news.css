@@ -1,0 +1,34 @@
+
+/* News article styling */
+.nav-link {
+  @apply text-raven-white font-medium hover:text-raven-red transition-colors;
+}
+
+.nav-link-mobile {
+  @apply block py-3 px-6 text-raven-black font-medium hover:bg-raven-gray/10 hover:text-raven-red transition-colors;
+}
+
+/* Prose styling for article content */
+.prose {
+  @apply text-raven-white;
+}
+
+.prose p {
+  @apply mb-6 leading-relaxed;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold mt-8 mb-4;
+}
+
+.prose h3 {
+  @apply text-xl font-bold mt-6 mb-3;
+}
+
+.prose ul {
+  @apply list-disc pl-6 mb-6;
+}
+
+.prose li {
+  @apply mb-2;
+}

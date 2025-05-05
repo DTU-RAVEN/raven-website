@@ -21,4 +21,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   assetsInclude: ['**/*.json'],
+  json: {
+    stringify: true,
+  },
 }));

@@ -6,56 +6,51 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { format, parseISO } from 'date-fns';
 import { Calendar } from 'lucide-react';
 
-// Sample news articles (in a real app, these would come from API or JSON files)
 const NewsArticleList = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const importAll = (r: any) => {
-      return r.keys().map((fileName: string) => {
-        const id = fileName.replace(/^\.\/|\.json$/g, '');
-        return import(`../data/news/${id}.json`)
-          .then((module: any) => ({ ...module.default, id }))
-          .catch((error: Error) => {
-            console.error(`Error loading article ${id}:`, error);
+    const loadArticles = async () => {
+      try {
+        const context = import.meta.glob('../data/news/*.json');
+        console.log('News files context:', Object.keys(context));
+        
+        const articlePromises = Object.keys(context).map(async key => {
+          const id = key.replace(/^\.\.\/data\/news\/|\.json$/g, '');
+          try {
+            const module = await context[key]();
+            console.log(`Successfully loaded article: ${id}`, module);
+            return { ...module.default, id };
+          } catch (err) {
+            console.error(`Error loading article ${id}:`, err);
             return null;
-          });
-      });
-    };
-
-    // Get all JSON files from the news directory
-    try {
-      const context = import.meta.glob('../data/news/*.json');
-      const articlePromises = Object.keys(context).map(key => {
-        const id = key.replace(/^\.\.\/data\/news\/|\.json$/g, '');
-        return context[key]().then((module: any) => ({ ...module.default, id }));
-      });
-
-      Promise.all(articlePromises)
-        .then(loadedArticles => {
-          // Sort articles by date (most recent first)
-          const sortedArticles = loadedArticles
-            .filter(Boolean)
-            .sort((a, b) => {
-              const dateA = new Date(a.date).getTime();
-              const dateB = new Date(b.date).getTime();
-              return dateB - dateA;
-            });
-          setArticles(sortedArticles);
-          setLoading(false);
-        })
-        .catch(err => {
-          console.error("Error loading articles:", err);
-          setError("Failed to load news articles");
-          setLoading(false);
+          }
         });
-    } catch (err) {
-      console.error("Error in article import:", err);
-      setError("Failed to load news articles");
-      setLoading(false);
-    }
+
+        const loadedArticles = await Promise.all(articlePromises);
+        
+        // Filter out failed loads and sort by date (most recent first)
+        const sortedArticles = loadedArticles
+          .filter(Boolean)
+          .sort((a, b) => {
+            const dateA = new Date(a.date).getTime();
+            const dateB = new Date(b.date).getTime();
+            return dateB - dateA;
+          });
+          
+        console.log('Sorted articles:', sortedArticles);
+        setArticles(sortedArticles);
+        setLoading(false);
+      } catch (err) {
+        console.error("Error in article import:", err);
+        setError("Failed to load news articles");
+        setLoading(false);
+      }
+    };
+    
+    loadArticles();
   }, []);
 
   if (loading) {

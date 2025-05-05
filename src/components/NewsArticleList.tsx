@@ -85,7 +85,7 @@ const NewsArticleList = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center py-20">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-raven-red"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-white"></div>
       </div>
     );
   }
@@ -93,7 +93,7 @@ const NewsArticleList = () => {
   if (error) {
     return (
       <div className="text-center py-20">
-        <p className="text-xl text-raven-red">{error}</p>
+        <p className="text-xl text-white">{error}</p>
         <p className="mt-4">Please try again later or contact the administrator.</p>
       </div>
     );
@@ -111,7 +111,7 @@ const NewsArticleList = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
       {articles.map((article) => (
         <Link key={article.id} to={`/news/${article.id}`} className="transition-transform hover:scale-[1.02]">
-          <Card className="h-full bg-raven-gray/10 border-raven-gray/40 hover:border-raven-red transition-colors">
+          <Card className="h-full bg-raven-gray/10 border-raven-gray/40 hover:border-white transition-colors">
             <div className="aspect-video w-full overflow-hidden">
               <img 
                 src={article.image} 
@@ -132,7 +132,7 @@ const NewsArticleList = () => {
               </p>
             </CardContent>
             <CardFooter>
-              <p className="text-raven-red font-medium text-sm">Read more</p>
+              <p className="text-white font-medium text-sm">Read more</p>
             </CardFooter>
           </Card>
         </Link>

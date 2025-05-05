@@ -32,13 +32,20 @@ const NewsArticleList = () => {
           const id = path.split('/').pop()?.replace('.md', '') || '';
           
           // Parse the frontmatter and content from raw markdown text
-          const frontmatter = parseFrontmatter(content);
+          const frontmatterData = parseFrontmatter(content);
+          
+          console.log('Parsed article:', {
+            path,
+            id,
+            frontmatter: frontmatterData,
+            title: frontmatterData.title
+          });
           
           return {
             id,
-            title: frontmatter.title || 'Untitled',
-            date: frontmatter.date || new Date().toISOString().split('T')[0],
-            excerpt: frontmatter.excerpt || 'No excerpt available',
+            title: frontmatterData.title || 'Untitled',
+            date: frontmatterData.date || new Date().toISOString().split('T')[0],
+            excerpt: frontmatterData.excerpt || 'No excerpt available',
             content: removeFrontmatter(content)
           };
         });
@@ -67,14 +74,18 @@ const NewsArticleList = () => {
     const frontmatter = match[1];
     const result: Record<string, string> = {};
     
+    console.log('Parsing frontmatter:', frontmatter);
+    
     frontmatter.split('\n').forEach(line => {
-      const [key, ...valueParts] = line.split(':');
-      if (key && valueParts.length) {
-        const value = valueParts.join(':').trim();
-        result[key.trim()] = value;
+      const colonIndex = line.indexOf(':');
+      if (colonIndex > 0) {
+        const key = line.slice(0, colonIndex).trim();
+        const value = line.slice(colonIndex + 1).trim();
+        result[key] = value;
       }
     });
     
+    console.log('Parsed frontmatter result:', result);
     return result;
   };
 

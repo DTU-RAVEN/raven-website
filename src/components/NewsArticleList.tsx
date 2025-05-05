@@ -22,7 +22,14 @@ const NewsArticleList = () => {
           try {
             const module = await context[key]();
             console.log(`Successfully loaded article: ${id}`, module);
-            return { ...module.default, id };
+            // Check if module has a default property before accessing it
+            if (!module || typeof module !== 'object') {
+              console.error(`Invalid module format for article ${id}:`, module);
+              return null;
+            }
+            // Handle both module.default and direct JSON data
+            const articleData = 'default' in module ? module.default : module;
+            return { ...articleData, id };
           } catch (err) {
             console.error(`Error loading article ${id}:`, err);
             return null;

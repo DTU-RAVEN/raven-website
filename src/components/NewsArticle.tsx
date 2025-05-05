@@ -16,16 +16,20 @@ const NewsArticle = () => {
   useEffect(() => {
     if (!id) return;
 
-    import(`../data/news/${id}.json`)
-      .then((module) => {
-        setArticle({ ...module.default, id });
+    const loadArticle = async () => {
+      try {
+        const module = await import(`../data/news/${id}.json`);
+        const articleData = module.default || module;
+        setArticle({ ...articleData, id });
         setLoading(false);
-      })
-      .catch((err) => {
+      } catch (err) {
         console.error(`Error loading article ${id}:`, err);
         setError("Article not found");
         setLoading(false);
-      });
+      }
+    };
+
+    loadArticle();
   }, [id]);
 
   if (loading) {
@@ -48,23 +52,23 @@ const NewsArticle = () => {
         </Button>
       </Link>
       
-      <h1 className="text-3xl md:text-4xl font-bold mb-4">{article.title}</h1>
+      <h1 className="text-3xl md:text-4xl font-bold mb-4">{article?.title}</h1>
       
       <div className="flex items-center text-raven-gray mb-6">
         <Calendar size={18} className="mr-2" />
-        {format(parseISO(article.date), 'MMMM dd, yyyy')}
+        {article && format(parseISO(article.date), 'MMMM dd, yyyy')}
       </div>
       
       <div className="aspect-video w-full overflow-hidden mb-8 rounded-lg">
         <img 
-          src={article.image} 
-          alt={article.title} 
+          src={article?.image} 
+          alt={article?.title} 
           className="w-full h-full object-cover"
         />
       </div>
       
       <div className="prose prose-invert prose-lg max-w-none">
-        {article.content.split('\n\n').map((paragraph, index) => (
+        {article?.content.split('\n\n').map((paragraph, index) => (
           <p key={index} className="mb-4">{paragraph}</p>
         ))}
       </div>

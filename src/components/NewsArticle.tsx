@@ -32,7 +32,22 @@ const NewsArticle = () => {
           return;
         }
         
-        setArticle({ ...articleData as object, id });
+        // Ensure all required Article properties are present
+        if (!('title' in articleData) || 
+            !('date' in articleData) || 
+            !('image' in articleData) || 
+            !('content' in articleData)) {
+          console.error(`Missing required properties in article data for ${id}:`, articleData);
+          setError("Article data is incomplete");
+          setLoading(false);
+          return;
+        }
+        
+        // Now we can safely set the article with the ID
+        setArticle({ 
+          ...articleData as Omit<Article, 'id'>, 
+          id 
+        });
         setLoading(false);
       } catch (err) {
         console.error(`Error loading article ${id}:`, err);

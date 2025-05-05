@@ -38,7 +38,20 @@ const NewsArticleList = () => {
               return null;
             }
             
-            return { ...articleData as object, id };
+            // Ensure all required Article properties are present
+            if (!('title' in articleData) || 
+                !('date' in articleData) || 
+                !('image' in articleData) || 
+                !('content' in articleData)) {
+              console.error(`Missing required properties in article data for ${id}:`, articleData);
+              return null;
+            }
+            
+            // Now we can safely return the article with the ID
+            return { 
+              ...articleData as Omit<Article, 'id'>, 
+              id 
+            } as Article;
           } catch (err) {
             console.error(`Error loading article ${id}:`, err);
             return null;
@@ -49,7 +62,7 @@ const NewsArticleList = () => {
         
         // Filter out failed loads and sort by date (most recent first)
         const sortedArticles = loadedArticles
-          .filter(Boolean)
+          .filter((article): article is Article => article !== null)
           .sort((a, b) => {
             const dateA = new Date(a.date).getTime();
             const dateB = new Date(b.date).getTime();

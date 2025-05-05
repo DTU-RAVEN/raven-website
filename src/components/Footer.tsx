@@ -1,6 +1,4 @@
-
 import { Instagram, Linkedin } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -46,7 +44,6 @@ const Footer = () => {
               <a href="#about" className="transition-opacity hover:opacity-80">About</a>
               <a href="#project" className="transition-opacity hover:opacity-80">Project</a>
               <a href="#team" className="transition-opacity hover:opacity-80">Team</a>
-              <Link to="/news" className="transition-opacity hover:opacity-80">News</Link>
             </div>
           </div>
         </div>

@@ -1,9 +1,0 @@
-
-{
-  "id": "first-project-announcement",
-  "title": "First Project Announcement: Autonomous Drone",
-  "date": "2025-05-05",
-  "excerpt": "We're thrilled to announce our first official project: developing an autonomous drone for campus mapping!",
-  "content": "After careful consideration and voting among our members, we're excited to announce our first official project: an autonomous drone designed for mapping the DTU campus.\n\nThis project will involve:\n\n- Designing and building a custom drone platform\n- Implementing computer vision algorithms for obstacle detection\n- Creating mapping software that generates 3D models of campus buildings\n- Developing autonomous navigation capabilities\n\nTeams are now forming for various aspects of the project. Whether you're interested in hardware, software, or system integration, there's a role for you!\n\nJoin us at our next meeting on May 12th to learn more and sign up for a team.",
-  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
-}

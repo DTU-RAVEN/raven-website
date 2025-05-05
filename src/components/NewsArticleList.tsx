@@ -111,7 +111,7 @@ const NewsArticleList = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
       {articles.map((article) => (
         <Link key={article.id} to={`/news/${article.id}`} className="transition-transform hover:scale-[1.02]">
-          <Card className="h-full bg-raven-gray/10 border-raven-gray/40 hover:border-white transition-colors">
+          <Card className="h-full bg-raven-gray/10 border-raven-gray/40 hover:border-white border-2 transition-colors">
             <div className="aspect-video w-full overflow-hidden">
               <img 
                 src={article.image} 
@@ -120,7 +120,7 @@ const NewsArticleList = () => {
               />
             </div>
             <CardHeader>
-              <CardTitle className="text-xl line-clamp-2">{article.title}</CardTitle>
+              <CardTitle className="text-xl line-clamp-2 text-white">{article.title}</CardTitle>
               <CardDescription className="flex items-center text-raven-gray">
                 <Calendar size={16} className="mr-2" />
                 {format(parseISO(article.date), 'MMMM dd, yyyy')}

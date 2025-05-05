@@ -1,4 +1,3 @@
-
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -12,16 +11,17 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === "development" && componentTagger(),
   ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  assetsInclude: ['**/*.json'],
-  json: {
-    stringify: true,
-  },
+  // Remove custom JSON-as-asset handling so .json imports are treated
+  // by Vite's built-in JSON plugin as proper modules.
+  // assetsInclude: ['**/*.json'],
+  // json: {
+  //   stringify: true,
+  // },
 }));

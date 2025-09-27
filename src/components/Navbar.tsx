@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -55,6 +54,25 @@ const Navbar = () => {
     document.body.style.overflow = 'auto';
   };
 
+  const handleNavigation = (href: string) => {
+    if (href.startsWith('/#')) {
+      // If we're not on the home page, navigate to home page first
+      if (window.location.pathname !== '/') {
+        window.location.href = href;
+      } else {
+        // If we're on the home page, scroll to the section
+        const targetId = href.substring(2);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 64,
+            behavior: 'smooth'
+          });
+        }
+      }
+    }
+  };
+
   return (
     <nav
       className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${
@@ -77,7 +95,14 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <li key={link.name}>
                   {link.href.startsWith('/#') ? (
-                    <a href={link.href.substring(1)} className="nav-link">
+                    <a 
+                      href={link.href} 
+                      className="nav-link"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavigation(link.href);
+                      }}
+                    >
                       {link.name}
                     </a>
                   ) : (
@@ -114,9 +139,13 @@ const Navbar = () => {
             link.href.startsWith('/#') ? (
               <a
                 key={link.name}
-                href={link.href.substring(1)}
+                href={link.href}
                 className="nav-link-mobile"
-                onClick={handleLinkClick}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigation(link.href);
+                  handleLinkClick();
+                }}
               >
                 {link.name}
               </a>

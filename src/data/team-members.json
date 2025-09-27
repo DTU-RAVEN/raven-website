@@ -1,58 +1,92 @@
-
 [
   {
     "name": "Markus Rytter",
     "role": "President",
-    "program": "Eletrical Engineering",
-    "image": "/headshots/rytter.JPG",
+    "program": "BEng. Electrical Engineering",
+    "image": "/headshots-v1/rytter.JPG",
     "isBoard": true
   },
   {
     "name": "Carl Borg",
-    "role": "Treasurer and Vice President",
-    "program": "AI and Data Science",
-    "image": "/placeholder.svg",
+    "role": "Treasurer and Vice-President",
+    "program": "Bsc. AI and Data",
+    "image": "/headshots-v1/borg.JPG",
     "isBoard": true
   },
   {
     "name": "Sander Busch",
     "role": "Electronics Lead",
-    "program": "Electrical Engineering",
-    "image": "/placeholder.svg",
+    "program": "BEng. Electrical Engineering",
+    "image": "/headshots-v1/sander.JPG",
     "isBoard": true
   },
   {
-    "name": "Lukas Andersen",
-    "role": "Mechanical Engineer",
-    "program": "Mechanical Engineering",
-    "image": "/placeholder.svg",
+    "name": "Frederik Ravnborg",
+    "role": "Software Lead",
+    "program": "MSc. Human-Centered AI",
+    "image": "/headshots-v1/ravnborg.JPG",
     "isBoard": false
   },
   {
-    "name": "Astrid Schmidt",
-    "role": "Software Developer",
-    "program": "Software Technology",
-    "image": "/placeholder.svg",
-    "isBoard": false
-  },
-  {
-    "name": "Mikkel Hansen",
-    "role": "Flight Systems",
-    "program": "Aerospace Engineering",
-    "image": "/placeholder.svg",
-    "isBoard": false
-  },
-  {
-    "name": "Freja Christensen",
-    "role": "Computer Vision",
-    "program": "AI & Data",
-    "image": "/placeholder.svg",
-    "isBoard": false
-  },
-  {
-    "name": "Oliver Larsen",
+    "name": "Søren Skovborg",
     "role": "Mechanical Design",
-    "program": "Product Design",
+    "program": "BSc. Earth and Space Physics and Engineering",
+    "image": "/headshots-v1/soren.JPG",
+    "isBoard": true
+  },
+  {
+    "name": "Emil Knarreborg ",
+    "role": "Software",
+    "program": "BSc. General Engineering (Cyber Systems)",
+    "image": "/headshots-v1/knarre.JPG",
+    "isBoard": false
+  },
+  {
+    "name": "Jonas Matthiesen",
+    "role": "Radio Systems Lead",
+    "program": "MSc. Electrical Engineering",
+    "image": "/headshots-v1/jonas.JPG",
+    "isBoard": false
+  },
+  {
+    "name": "Anders Skovborg",
+    "role": "Radio Systems",
+    "program": "BSc. General Engineering (Future Energy)",
+    "image": "/headshots-v1/anders.JPG",
+    "isBoard": true
+  },
+  {
+    "name": "Frederik Himmer",
+    "role": "Mechanical team lead",
+    "program": "BSc. General Engineering (Future Energy)",
+    "image": "/headshots-v1/himmer.JPG",
+    "isBoard": false
+  },
+  {
+    "name": "Adam Fouad",
+    "role": "Software",
+    "program": "BSc. General Engineering (Cyber Systems)",
+    "image": "/headshots-v1/adam.JPG",
+    "isBoard": false
+  },
+  {
+    "name": "Laura Ejsing",
+    "role": "Project Manager",
+    "program": "BSc. Earth and Space Physics and Engineering",
+    "image": "/headshots-v1/laura.JPG",
+    "isBoard": false
+  },
+  {
+    "name": "Anders Vindelev",
+    "role": "Mechanical Design",
+    "program": "MSc. Mechanical Engineering",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Michael Larsen",
+    "role": "Radio Systems",
+    "program": "MSc. Electrical Engineering",
     "image": "/placeholder.svg",
     "isBoard": false
   }

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Article } from '@/types/Article';
@@ -14,13 +13,22 @@ const NewsArticleList = () => {
   useEffect(() => {
     const loadArticles = async () => {
       try {
-        const context = import.meta.glob('../data/news/*.json');
-        console.log('News files context:', Object.keys(context));
+        // Load both .json and non-.json files
+        const jsonContext = import.meta.glob('../data/news/*.json');
+        const nonJsonContext = import.meta.glob('../data/news/*');
         
-        const articlePromises = Object.keys(context).map(async key => {
+        console.log('News files context:', {
+          json: Object.keys(jsonContext),
+          nonJson: Object.keys(nonJsonContext)
+        });
+        
+        // Combine both contexts, removing duplicates
+        const allContext = { ...jsonContext, ...nonJsonContext };
+        
+        const articlePromises = Object.keys(allContext).map(async key => {
           const id = key.replace(/^\.\.\/data\/news\/|\.json$/g, '');
           try {
-            const module = await context[key]();
+            const module = await allContext[key]();
             console.log(`Successfully loaded article: ${id}`, module);
             
             // Check if module has a default property before accessing it

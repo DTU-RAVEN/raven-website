@@ -13,22 +13,17 @@ const NewsArticleList = () => {
   useEffect(() => {
     const loadArticles = async () => {
       try {
-        // Load both .json and non-.json files
+        // Only load valid JSON articles
         const jsonContext = import.meta.glob('../data/news/*.json');
-        const nonJsonContext = import.meta.glob('../data/news/*');
-        
+
         console.log('News files context:', {
-          json: Object.keys(jsonContext),
-          nonJson: Object.keys(nonJsonContext)
+          json: Object.keys(jsonContext)
         });
-        
-        // Combine both contexts, removing duplicates
-        const allContext = { ...jsonContext, ...nonJsonContext };
-        
-        const articlePromises = Object.keys(allContext).map(async key => {
+
+        const articlePromises = Object.keys(jsonContext).map(async key => {
           const id = key.replace(/^\.\.\/data\/news\/|\.json$/g, '');
           try {
-            const module = await allContext[key]();
+            const module = await jsonContext[key]();
             console.log(`Successfully loaded article: ${id}`, module);
             
             // Check if module has a default property before accessing it

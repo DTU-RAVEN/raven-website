@@ -1,73 +1,41 @@
-# Welcome to your Lovable project
+## RAVEN Website
 
-## Project info
+Vite + React + TypeScript site.
 
-**URL**: https://lovable.dev/projects/de87130f-676b-4417-b3a9-a0d10bf594db
-
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/de87130f-676b-4417-b3a9-a0d10bf594db) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Local development
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
 npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Build
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```sh
+npm run build
+```
 
-**Use GitHub Codespaces**
+### Deploy with Dokploy
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+This repo includes a production Docker image for Nginx serving the Vite build.
 
-## What technologies are used for this project?
+1) Create an app in Dokploy (type: Dockerfile)
+- Docker context: repository root
+- Dockerfile path: `Dockerfile`
 
-This project is built with:
+2) Environment variables
+- Optional: `PORT=8080` (container listens on 80 by default; Dokploy will expose via your domain)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+3) Auto-deploy
+- Pushes to your branch build a new image in Dokploy if you enable Auto Deploy in the app General tab
+- Or set up CI to push to a registry and point Dokploy at that image
 
-## How can I deploy this project?
+4) Custom domain
+- Attach a domain in Dokploy and enable HTTPS
 
-Simply open [Lovable](https://lovable.dev/projects/de87130f-676b-4417-b3a9-a0d10bf594db) and click on Share -> Publish.
+#### Manual run (optional)
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```sh
+docker build -t raven-website .
+docker run --rm -p 8080:80 raven-website
+```

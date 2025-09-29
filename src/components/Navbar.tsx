@@ -83,7 +83,7 @@ const Navbar = () => {
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <img 
-              src="/lovable-uploads/dc4d4331-6907-4029-9cd7-de5eae8a26ed.png" 
+              src="/favicon.ico" 
               alt="RAVEN Logo" 
               className="h-10 w-auto"
             />

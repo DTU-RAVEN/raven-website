@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div className="flex flex-col items-center md:items-start">
             <img 
-              src="/lovable-uploads/2643b5c2-26fd-491e-9b14-102c0d03ab74.png" 
+              src="/favicon.ico" 
               alt="RAVEN Logo" 
               className="h-10 w-auto mb-4"
             />

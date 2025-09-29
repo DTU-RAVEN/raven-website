@@ -83,9 +83,10 @@ const Navbar = () => {
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <img 
-              src="/favicon.ico" 
+              src="/logo-raven-white.png" 
               alt="RAVEN Logo" 
               className="h-10 w-auto"
+              onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/favicon.ico'; }}
             />
           </Link>
 

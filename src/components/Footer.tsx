@@ -9,9 +9,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div className="flex flex-col items-center md:items-start">
             <img 
-              src="/favicon.ico" 
+              src="/logo-raven-white.png" 
               alt="RAVEN Logo" 
               className="h-10 w-auto mb-4"
+              onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/favicon.ico'; }}
             />
             <p className="text-center md:text-left">
               Robotics, Autonomous Vehicle Engineering & Navigation

@@ -15,27 +15,25 @@ npm run dev
 npm run build
 ```
 
-### Deploy with Dokploy
+### Deploy with Dokploy (Git + Nixpacks)
 
-This repo includes a production Docker image for Nginx serving the Vite build.
+Follow Dokploy's Vite React example:
 
-1) Create an app in Dokploy (type: Dockerfile)
-- Docker context: repository root
-- Dockerfile path: `Dockerfile`
+1) Create an Application in Dokploy using your Git repo
+- Repository: your Git URL
+- Branch: main (or your branch)
+- Build path: `/` (repo root)
+- Publish directory: `./dist` (Nixpacks)
 
-2) Environment variables
-- Optional: `PORT=8080` (container listens on 80 by default; Dokploy will expose via your domain)
+2) Deploy
+- Click Deploy to build and publish
 
-3) Auto-deploy
-- Pushes to your branch build a new image in Dokploy if you enable Auto Deploy in the app General tab
-- Or set up CI to push to a registry and point Dokploy at that image
+3) Domain
+- Click Generate Domain
+- Set Port `80`
+- Open the generated URL
 
-4) Custom domain
-- Attach a domain in Dokploy and enable HTTPS
+Reference: [Dokploy Vite React guide](https://docs.dokploy.com/docs/core/vite-react)
 
-#### Manual run (optional)
-
-```sh
-docker build -t raven-website .
-docker run --rm -p 8080:80 raven-website
-```
+### Optional: Docker deployment
+If you prefer Docker, keep a `Dockerfile` that builds the Vite project and serves it with Nginx, then deploy the image in Dokploy.

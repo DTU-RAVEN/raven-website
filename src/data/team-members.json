@@ -35,11 +35,11 @@
     "isBoard": true
   },
   {
-    "name": "Emil Knarreborg ",
-    "role": "Software",
+    "name": "Emil Knarreborg",
+    "role": "Project Manager",
     "program": "BSc. General Engineering (Cyber Systems)",
     "image": "/headshots-v1/knarre.JPG",
-    "isBoard": false
+    "isBoard": true
   },
   {
     "name": "Jonas Matthiesen",
@@ -70,13 +70,6 @@
     "isBoard": false
   },
   {
-    "name": "Laura Ejsing",
-    "role": "Project Manager",
-    "program": "BSc. Earth and Space Physics and Engineering",
-    "image": "/headshots-v1/laura.JPG",
-    "isBoard": false
-  },
-  {
     "name": "Anders Vindelev",
     "role": "Mechanical Design",
     "program": "MSc. Mechanical Engineering",
@@ -89,5 +82,82 @@
     "program": "MSc. Electrical Engineering",
     "image": "/placeholder.svg",
     "isBoard": false
-  }
+  },
+  {
+    "name": "Carl Johan Waldorff", 
+    "role": "Electronics", 
+    "program": "BSc. Fysic and Engeneering",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Djordje Kruplijanin", 
+    "role": "Software", 
+    "program": "MSc. Autonome Systems",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Henrik Bongers", 
+    "role": "Software", 
+    "program": "MSc. Autonome Systems",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  }, 
+  {
+    "name": "Jonathan Tybirk", 
+    "role": "Software", 
+    "program": "Bsc. AI and Data",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  }, 
+  {
+    "name": "Krystof Grygar", 
+    "role": "Mechanical",
+    "program": "MSc. Ocean Engineering",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+{
+    "name": "Lea Lindelof", 
+    "role": "Electrical", 
+    "program": "Bsc. Software Technology",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  }, 
+  {
+    "name": "Mikkel Leander", 
+    "role": "Electrical", 
+    "program": "Bsc. Electrical Engineering",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  }, 
+  {
+    "name": "Stasiek Kolodziejczyk", 
+    "role": "Software", 
+    "program": "MSc. Autonomous Systems",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+{
+  "name": "Stefanons Liakas",
+  "role": "Software",
+  "program": "MSc. Autonomous Systems",
+  "image": "/placeholder.svg",
+  "isBoard": false
+}, 
+{
+  "name": "Zsombor Bognár", 
+  "role": "Software",
+  "program": "MSc. Autonomous Systems",
+  "image": "/placeholder.svg",
+  "isBoard": false
+}, 
+{
+  "name": "Ioannis Georgakis ", 
+  "role": "Mechanical",
+  "program": "MSc Wind Energy",
+  "image": "/placeholder.svg",
+  "isBoard": false
+}
 ]

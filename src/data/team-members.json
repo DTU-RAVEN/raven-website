@@ -139,25 +139,25 @@
     "image": "/placeholder.svg",
     "isBoard": false
   },
-{
-  "name": "Stefanons Liakas",
-  "role": "Software",
-  "program": "MSc. Autonomous Systems",
-  "image": "/placeholder.svg",
-  "isBoard": false
-}, 
-{
-  "name": "Zsombor Bognár", 
-  "role": "Software",
-  "program": "MSc. Autonomous Systems",
-  "image": "/placeholder.svg",
-  "isBoard": false
-}, 
-{
-  "name": "Ioannis Georgakis ", 
-  "role": "Mechanical",
-  "program": "MSc Wind Energy",
-  "image": "/placeholder.svg",
-  "isBoard": false
-}
+  {
+    "name": "Stefanons Liakas",
+    "role": "Software",
+    "program": "MSc. Autonomous Systems",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  }, 
+  {
+    "name": "Zsombor Bognár", 
+    "role": "Software",
+    "program": "MSc. Autonomous Systems",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  }, 
+  {
+    "name": "Ioannis Georgakis ", 
+    "role": "Mechanical",
+    "program": "MSc Wind Energy",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  }
 ]

@@ -1,5 +1,5 @@
 
-import { Instagram, Linkedin } from 'lucide-react';
+import { Instagram, Linkedin, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -30,7 +30,13 @@ const Footer = () => {
               <a href="https://www.linkedin.com/company/dtu-raven/" className="transition-opacity hover:opacity-80" aria-label="LinkedIn">
                 <Linkedin size={24} />
               </a>
+              <a href="mailto:contact@dturaven.com" className="transition-opacity hover:opacity-80" aria-label="Email">
+                <Mail size={24} />
+              </a>
             </div>
+            <a href="mailto:contact@dturaven.com" className="mt-3 text-sm text-raven-white/60 hover:text-raven-white transition-colors">
+              contact@dturaven.com
+            </a>
           </div>
           
           <div className="flex flex-col items-center md:items-end">

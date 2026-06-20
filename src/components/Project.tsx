@@ -48,8 +48,8 @@ const Project = () => {
           </div>
 
           <div className="border-t border-raven-white/10 pt-10">
-            <h3 className="mb-3 text-xl font-bold">SUAS 2025 - First Competition Entry</h3>
-            <p className="text-lg leading-relaxed text-raven-white/70">
+            <h3 className="mb-6 text-2xl font-bold">SUAS 2025 - First Competition Entry</h3>
+            <p className="mb-6 text-lg leading-relaxed">
               In June 2025, RAVEN made its first ever competition appearance with drone <span className="italic">Munnin</span> at
               the Student Unmanned Aerial Systems (SUAS) Competition in Maryland, USA. Competing in our debut season,
               the experience laid the foundation for everything that followed at C-UASC 2026.

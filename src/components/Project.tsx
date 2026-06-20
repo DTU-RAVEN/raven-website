@@ -10,7 +10,7 @@ const Project = () => {
             <h3 className="mb-6 text-2xl font-bold">C-UASC 2026 - 1st Place</h3>
             <p className="mb-6 text-lg leading-relaxed">
               DTU RAVEN finished 1st overall at the 2026 California Unmanned Aerial Systems Competition (C-UASC),
-              competing against 25 university teams from across the world. The competition was held at
+              competing against 26 university teams from across the world. The competition was held at
               California State University, Los Angeles, with 9 RAVEN members making the trip.
             </p>
 

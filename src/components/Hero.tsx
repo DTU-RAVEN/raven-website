@@ -77,12 +77,9 @@ const Hero = () => {
       </div>
       
       <div className="container z-20 px-4 text-center flex flex-col items-center mt-60">
-        <p className="mx-auto mb-8 max-w-2xl text-xl leading-relaxed md:text-2xl">
+        <p className="mx-auto max-w-2xl text-xl leading-relaxed md:text-2xl">
           Advancing unmanned systems through hands-on student projects.
         </p>
-        <button onClick={scrollToTeam} className="btn-primary animate-fade-in" aria-label="Join Us - Scroll to Team section">
-          Join Us
-        </button>
       </div>
     </section>
   );

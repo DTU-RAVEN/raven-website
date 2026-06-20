@@ -1,49 +1,49 @@
 [
   {
     "name": "Markus Rytter",
-    "role": "President",
+    "role": "Electrical",
     "program": "BEng. Electrical Engineering",
     "image": "/headshots-v1/rytter.JPG",
     "isBoard": true
   },
   {
     "name": "Carl Borg",
-    "role": "Treasurer and Vice-President",
+    "role": "Treasurer",
     "program": "Bsc. AI and Data",
     "image": "/headshots-v1/borg.JPG",
     "isBoard": true
   },
   {
     "name": "Frederik Ravnborg",
-    "role": "Software Lead",
+    "role": "Software Team",
     "program": "MSc. Human-Centered AI",
     "image": "/headshots-v1/ravnborg.JPG",
     "isBoard": false
   },
   {
     "name": "Søren Skovborg",
-    "role": "Mechanical Design",
+    "role": "Mechanical team lead",
     "program": "BSc. Earth and Space Physics and Engineering",
     "image": "/headshots-v1/soren.JPG",
     "isBoard": true
   },
   {
     "name": "Emil Knarreborg",
-    "role": "Project Manager",
+    "role": "Project Manager and Software Team Leader",
     "program": "BSc. General Engineering (Cyber Systems)",
     "image": "/headshots-v1/knarre.JPG",
     "isBoard": true
   },
   {
     "name": "Anders Skovborg",
-    "role": "Radio Systems",
+    "role": "President",
     "program": "BSc. General Engineering (Future Energy)",
     "image": "/headshots-v1/anders.JPG",
     "isBoard": true
   },
   {
     "name": "Frederik Himmer",
-    "role": "Mechanical team lead",
+    "role": "Mechanical",
     "program": "BSc. General Engineering (Future Energy)",
     "image": "/headshots-v1/himmer.JPG",
     "isBoard": false

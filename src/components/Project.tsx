@@ -7,7 +7,7 @@ const Project = () => {
 
         <div className="mx-auto max-w-4xl">
           <div className="mb-12">
-            <h3 className="mb-6 text-2xl font-bold">C-UASC 2026 — 1st Place</h3>
+            <h3 className="mb-6 text-2xl font-bold">C-UASC 2026 - 1st Place</h3>
             <p className="mb-6 text-lg leading-relaxed">
               DTU RAVEN finished 1st overall at the 2026 California Unmanned Aerial Systems Competition (C-UASC),
               competing against 25 university teams from across the world. The competition was held at
@@ -15,7 +15,7 @@ const Project = () => {
             </p>
 
             <p className="mb-8 text-lg leading-relaxed">
-              We completed all planned missions across the three competition days — and didn't just win by
+              We completed all planned missions across the three competition days - and didn't just win by
               performing well across the board. We also placed best of all teams in waypoint navigation
               accuracy and set the course speed record at <span className="font-bold">140 km/h</span>.
             </p>
@@ -24,11 +24,11 @@ const Project = () => {
             <ul className="mb-8 space-y-2 text-lg">
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span>Precision waypoint navigation — best accuracy of all teams</span>
+                <span>Precision waypoint navigation - best accuracy of all teams</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span>Circuit time trial — set the course speed record at 140 km/h</span>
+                <span>Circuit time trial - set the course speed record at 140 km/h</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
@@ -42,13 +42,13 @@ const Project = () => {
 
             <p className="text-lg leading-relaxed text-raven-white/70">
               The aircraft integrates a Cube Orange autopilot, Jetson Orin Nano flight computer,
-              gimbal-mounted camera, and custom PCBs — all designed and built by our members.
+              gimbal-mounted camera, and custom PCBs - all designed and built by our members.
               Thank you to our sponsors Tuborgfondet and dane-rc.dk, and to DTU Skylab for hosting our workshop.
             </p>
           </div>
 
           <div className="border-t border-raven-white/10 pt-10">
-            <h3 className="mb-3 text-xl font-bold">SUAS 2025 — First Competition Entry</h3>
+            <h3 className="mb-3 text-xl font-bold">SUAS 2025 - First Competition Entry</h3>
             <p className="text-lg leading-relaxed text-raven-white/70">
               In June 2025, RAVEN made its first ever competition appearance with drone <span className="italic">Munnin</span> at
               the Student Unmanned Aerial Systems (SUAS) Competition in Maryland, USA. Competing in our debut season,

@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer id="contact" className="bg-raven-black py-12 text-raven-white">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div className="flex flex-col items-center md:items-start">
             <img 
               src="/logo-raven-white.png" 
@@ -22,14 +22,7 @@ const Footer = () => {
             </p>
           </div>
           
-          <div className="flex flex-col items-center">
-            <h3 className="mb-4 text-xl font-bold">Contact Us</h3>
-            <a 
-              href="mailto:contact@dturaven.com" 
-              className="mb-2 transition-opacity hover:opacity-80"
-            >
-              contact@dturaven.com
-            </a>
+          <div className="flex flex-col items-center md:items-start">
             <div className="mt-4 flex space-x-4">
               <a href="https://www.instagram.com/ravenxdtu/" className="transition-opacity hover:opacity-80" aria-label="Instagram">
                 <Instagram size={24} />

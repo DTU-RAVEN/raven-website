@@ -8,7 +8,7 @@ const navLinks = [
   { name: 'Project', href: '/#project' },
   { name: 'Team', href: '/#team' },
   { name: 'News', href: '/news' },
-  { name: 'Contact', href: '/#contact' }
+  // Contact removed per request
 ];
 
 const Navbar = () => {

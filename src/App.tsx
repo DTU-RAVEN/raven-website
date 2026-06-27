@@ -8,6 +8,9 @@ import { lazy, Suspense } from "react";
 
 // Lazy load pages
 const Index = lazy(() => import("./pages/Index"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const CompetitionsPage = lazy(() => import("./pages/CompetitionsPage"));
+const TeamPage = lazy(() => import("./pages/TeamPage"));
 const News = lazy(() => import("./pages/News"));
 const NewsArticlePage = lazy(() => import("./pages/NewsArticlePage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -28,6 +31,9 @@ const App = () => (
           }>
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/competitions" element={<CompetitionsPage />} />
+              <Route path="/team" element={<TeamPage />} />
               <Route path="/news" element={<News />} />
               <Route path="/news/:id" element={<NewsArticlePage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

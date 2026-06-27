@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '/#about' },
-  { name: 'Competitions', href: '/#competitions' },
-  { name: 'Team', href: '/#team' },
+  { name: 'About', href: '/about' },
+  { name: 'Competitions', href: '/competitions' },
+  { name: 'Team', href: '/team' },
   { name: 'News', href: '/news' },
-  // Contact removed per request
 ];
 
 const Navbar = () => {
@@ -26,51 +25,21 @@ const Navbar = () => {
       setVisible(!isScrolledDown || !isOverHero || currentScrollPos < 10);
       setPrevScrollPos(currentScrollPos);
 
-      if (currentScrollPos > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(currentScrollPos > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollPos]);
 
   const toggleMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
-    
-    if (!mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
+    document.body.style.overflow = !mobileMenuOpen ? 'hidden' : 'auto';
   };
 
   const handleLinkClick = () => {
     setMobileMenuOpen(false);
     document.body.style.overflow = 'auto';
-  };
-
-  const handleNavigation = (href: string) => {
-    if (href.startsWith('/#')) {
-      // If we're not on the home page, navigate to home page first
-      if (window.location.pathname !== '/') {
-        window.location.href = href;
-      } else {
-        // If we're on the home page, scroll to the section
-        const targetId = href.substring(2);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 64,
-            behavior: 'smooth'
-          });
-        }
-      }
-    }
   };
 
   return (
@@ -82,9 +51,9 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-            <img 
-              src="/logo-raven-white.png" 
-              alt="RAVEN Logo" 
+            <img
+              src="/logo-raven-white.png"
+              alt="RAVEN Logo"
               className="h-10 w-auto"
               onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/favicon.ico'; }}
             />
@@ -95,22 +64,9 @@ const Navbar = () => {
             <ul className="flex space-x-8">
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  {link.href.startsWith('/#') ? (
-                    <a 
-                      href={link.href} 
-                      className="nav-link"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleNavigation(link.href);
-                      }}
-                    >
-                      {link.name}
-                    </a>
-                  ) : (
-                    <Link to={link.href} className="nav-link">
-                      {link.name}
-                    </Link>
-                  )}
+                  <Link to={link.href} className="nav-link" onClick={handleLinkClick}>
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -130,36 +86,21 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div 
+      <div
         className={`md:hidden absolute w-full transition-all duration-300 ease-in-out overflow-hidden ${
           mobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
         <div className="bg-raven-white py-2 shadow-lg">
           {navLinks.map((link) => (
-            link.href.startsWith('/#') ? (
-              <a
-                key={link.name}
-                href={link.href}
-                className="nav-link-mobile"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavigation(link.href);
-                  handleLinkClick();
-                }}
-              >
-                {link.name}
-              </a>
-            ) : (
-              <Link
-                key={link.name}
-                to={link.href}
-                className="nav-link-mobile"
-                onClick={handleLinkClick}
-              >
-                {link.name}
-              </Link>
-            )
+            <Link
+              key={link.name}
+              to={link.href}
+              className="nav-link-mobile"
+              onClick={handleLinkClick}
+            >
+              {link.name}
+            </Link>
           ))}
         </div>
       </div>

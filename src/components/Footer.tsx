@@ -43,9 +43,9 @@ const Footer = () => {
             <h3 className="mb-4 text-xl font-bold">Quick Links</h3>
             <div className="flex flex-col items-center md:items-end space-y-2">
               <Link to="/" className="transition-opacity hover:opacity-80">Home</Link>
-              <a href="#about" className="transition-opacity hover:opacity-80">About</a>
-              <a href="#project" className="transition-opacity hover:opacity-80">Project</a>
-              <a href="#team" className="transition-opacity hover:opacity-80">Team</a>
+              <Link to="/about" className="transition-opacity hover:opacity-80">About</Link>
+              <Link to="/competitions" className="transition-opacity hover:opacity-80">Competitions</Link>
+              <Link to="/team" className="transition-opacity hover:opacity-80">Team</Link>
               <Link to="/news" className="transition-opacity hover:opacity-80">News</Link>
             </div>
           </div>

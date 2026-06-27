@@ -8,7 +8,7 @@ import { lazy, Suspense } from "react";
 
 // Lazy load pages
 const Index = lazy(() => import("./pages/Index"));
-const AboutPage = lazy(() => import("./pages/AboutPage"));
+const JoinPage = lazy(() => import("./pages/JoinPage"));
 const CompetitionsPage = lazy(() => import("./pages/CompetitionsPage"));
 const TeamPage = lazy(() => import("./pages/TeamPage"));
 const News = lazy(() => import("./pages/News"));
@@ -31,7 +31,7 @@ const App = () => (
           }>
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/about" element={<AboutPage />} />
+              <Route path="/join" element={<JoinPage />} />
               <Route path="/competitions" element={<CompetitionsPage />} />
               <Route path="/team" element={<TeamPage />} />
               <Route path="/news" element={<News />} />

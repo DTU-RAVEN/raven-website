@@ -31,10 +31,10 @@ const Index = () => {
                 We bridge students and companies, developing sustainable, cutting-edge autonomous technology.
               </p>
               <Link
-                to="/about"
+                to="/join"
                 className="inline-block w-fit px-6 py-3 bg-raven-black text-raven-white font-bold transition-all hover:opacity-80"
               >
-                Learn More
+                Get Involved
               </Link>
             </div>
             <div className="flex items-center justify-center">
@@ -106,12 +106,9 @@ const Index = () => {
             <Link to="/team" className="btn-primary inline-block">
               Meet the Team
             </Link>
-            <a
-              href="https://forms.office.com/Pages/ResponsePage.aspx?id=I_FR8s7JjkSSdzS7KFkR2ZHhZSUr_WJMhacyA9udrQpUNENGRUVOWTY0WjRSTE1MVkgxTkU2MTZSNi4u"
-              className="btn-secondary inline-block"
-            >
+            <Link to="/join" className="btn-secondary inline-block">
               Get Involved
-            </a>
+            </Link>
           </div>
         </div>
       </section>

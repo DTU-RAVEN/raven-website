@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import teamMembers from '../data/team-members.json';
 import SectionDivider from './SectionDivider';
 
@@ -44,16 +45,13 @@ const Team = () => {
           <div className="mt-16 text-center">
             <h3 className="mb-4 text-2xl font-bold">Join Our Team</h3>
             <p className="mb-6 mx-auto max-w-2xl text-lg">
-              We're always looking for passionate students to join RAVEN. 
-              Whether you're interested in robotics, programming, mechanical design, 
+              We're always looking for passionate students to join RAVEN.
+              Whether you're interested in robotics, programming, mechanical design,
               or project management, there's a place for you on our team.
             </p>
-            <a 
-              href="https://forms.office.com/Pages/ResponsePage.aspx?id=I_FR8s7JjkSSdzS7KFkR2ZHhZSUr_WJMhacyA9udrQpUNENGRUVOWTY0WjRSTE1MVkgxTkU2MTZSNi4u" 
-              className="btn-secondary inline-block"
-            >
-              Get Involved
-            </a>
+            <Link to="/join" className="btn-secondary inline-block">
+              Join Us
+            </Link>
           </div>
         </div>
       </div>

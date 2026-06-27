@@ -72,7 +72,9 @@ export default {
 					white: '#FFFFFF',
 					gray: '#222222',
 					'light-gray': '#EEEEEE',
-					red: '#FF3A46', // Adding the raven-red color
+					paper: '#EDEFF2',
+					ink: '#161A20',
+					red: '#B0182B',
 				}
 			},
 			borderRadius: {

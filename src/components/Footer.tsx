@@ -6,11 +6,11 @@ const Footer = () => {
   return (
     <footer id="contact" className="bg-raven-black py-12 text-raven-white">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div className="flex flex-col items-center md:items-start">
-            <img 
-              src="/logo-raven-white.png" 
-              alt="RAVEN Logo" 
+            <img
+              src="/logo-raven-white.png"
+              alt="RAVEN Logo"
               className="h-10 w-auto mb-4"
               onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/favicon.ico'; }}
             />
@@ -21,9 +21,9 @@ const Footer = () => {
               Student organization at DTU
             </p>
           </div>
-          
-          <div className="flex flex-col items-center md:items-start">
-            <div className="mt-4 flex space-x-4">
+
+          <div className="flex flex-col items-center">
+            <div className="flex space-x-4">
               <a href="https://www.instagram.com/ravenxdtu/" className="transition-opacity hover:opacity-80" aria-label="Instagram">
                 <Instagram size={24} />
               </a>
@@ -38,7 +38,7 @@ const Footer = () => {
               contact@dturaven.com
             </a>
           </div>
-          
+
           <div className="flex flex-col items-center md:items-end">
             <h3 className="mb-4 text-xl font-bold">Quick Links</h3>
             <div className="flex flex-col items-center md:items-end space-y-2">

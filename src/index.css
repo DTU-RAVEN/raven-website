@@ -151,3 +151,70 @@
     @apply border border-raven-white px-6 py-3 font-medium text-raven-white transition-all hover:bg-raven-white hover:bg-opacity-10;
   }
 }
+
+/* --- Imported site styles from Join page prototype --- */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+:root{
+  --paper:#EDEFF2; --surface:#FFFFFF;
+  --ink:#161A20; --ink-soft:#565E6B;
+  --line:#D8DCE1;
+  --crimson:#0E7C8B; /* accent color (teal) — was crimson */
+  --crimson-deep:#0A5963;
+  --teal:#0E7C8B; --teal-tint:#E4F1F3;
+  --maxw:1140px;
+  --disp:"Space Grotesk",sans-serif;
+  --body:"Hanken Grotesk",sans-serif;
+  --mono:"Space Mono",monospace;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--body); font-size:17px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+.mono{font-family:var(--mono); text-transform:uppercase; letter-spacing:.12em; font-size:.72rem;}
+
+/* header */
+header.site{position:sticky; top:0; z-index:50; background:rgba(237,239,242,.85); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);} 
+.nav{display:flex; align-items:center; justify-content:space-between; height:64px;} 
+.brand{display:flex; align-items:center; gap:11px; font-family:var(--disp); font-weight:700; font-size:1.12rem; letter-spacing:.02em; text-decoration:none;} 
+.brand .mark{width:26px; height:26px; display:block;} 
+.brand b{color:var(--crimson);} 
+.nav ul{display:flex; gap:28px; list-style:none; margin:0; padding:0;} 
+.nav a{font-family:var(--mono); text-transform:uppercase; letter-spacing:.1em; font-size:.74rem; text-decoration:none; color:var(--ink-soft); padding:6px 0; position:relative;} 
+.nav a:hover{color:var(--ink);} 
+.nav a.active{color:var(--ink);} 
+.nav a.active::after{content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px; background:var(--crimson);} 
+
+/* roles & grid */
+.roles-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px;} 
+.role{background:var(--surface); border:1px solid var(--line); padding:26px 26px 24px; display:flex; flex-direction:column; transition:border-color .15s, transform .15s;} 
+.role:hover{border-color:var(--crimson); transform:translateY(-2px);} 
+.role .disc{color:var(--teal); margin-bottom:14px; display:flex; justify-content:space-between; align-items:center;} 
+.role .disc .code{color:var(--ink-soft);} 
+.role h3{font-family:var(--disp); font-weight:600; font-size:1.36rem; letter-spacing:-.01em; margin:0 0 8px;} 
+.role .mission{color:var(--ink-soft); margin:0 0 18px; font-size:1rem;} 
+.role h4{font-family:var(--mono); text-transform:uppercase; letter-spacing:.1em; font-size:.68rem; color:var(--ink); margin:0 0 8px; font-weight:700;} 
+.role ul{margin:0 0 16px; padding-left:18px;} 
+.role li{margin:0 0 5px; font-size:.95rem;} 
+.role li::marker{color:var(--crimson);} 
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin:2px 0 22px;} 
+.chip{font-family:var(--mono); font-size:.66rem; letter-spacing:.04em; background:var(--teal-tint); color:var(--teal); padding:5px 9px;} 
+.apply{margin-top:auto; align-self:flex-start; text-decoration:none; font-family:var(--mono); text-transform:uppercase; letter-spacing:.08em; font-size:.74rem; font-weight:700; background:var(--crimson); color:#fff; padding:11px 20px; transition:background .15s;} 
+.apply:hover{background:var(--crimson-deep);} 
+.apply::after{content:" →";} 
+
+.role.open{background:transparent; border-style:dashed; justify-content:center; align-items:flex-start;} 
+.role.open h3{margin-bottom:10px;} 
+.role.open .mission{margin-bottom:20px;} 
+
+.cta{background:var(--ink); color:#fff; text-align:center; padding:48px 0;} 
+.cta h2{font-family:var(--disp); font-weight:600; font-size:clamp(1.7rem,3.4vw,2.4rem); margin:0 0 14px; letter-spacing:-.01em;} 
+.cta p{color:#AEB6C0; margin:0 auto 26px; max-width:46ch;} 
+.cta .apply{background:var(--crimson);} 
+.cta .apply:hover{background:#fff; color:var(--ink);} 
+
+@media(max-width:860px){ .roles-grid{grid-template-columns:1fr;} }

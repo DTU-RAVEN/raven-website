@@ -1,11 +1,8 @@
 
 import { useState, useEffect } from 'react';
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams, Navigate, Link } from 'react-router-dom';
 import { Article } from '@/types/Article';
 import { format, parseISO } from 'date-fns';
-import { Calendar, ArrowLeft } from 'lucide-react';
-import { Button } from './ui/button';
-import { Link } from 'react-router-dom';
 
 const NewsArticle = () => {
   const { id } = useParams<{ id: string }>();
@@ -19,39 +16,24 @@ const NewsArticle = () => {
     const loadArticle = async () => {
       try {
         const module = await import(`../data/news/${id}.json`);
-        console.log(`Article data for ${id}:`, module);
-        
-        // Handle both module.default and direct JSON data
         const articleData = module.default || module;
-        
-        // Validate that articleData is an object before spreading
+
         if (!articleData || typeof articleData !== 'object') {
-          console.error(`Invalid article data for ${id}:`, articleData);
-          setError("Invalid article data format");
+          setError('Invalid article data format');
           setLoading(false);
           return;
         }
-        
-        // Ensure all required Article properties are present
-        if (!('title' in articleData) || 
-            !('date' in articleData) || 
-            !('image' in articleData) || 
-            !('content' in articleData)) {
-          console.error(`Missing required properties in article data for ${id}:`, articleData);
-          setError("Article data is incomplete");
+
+        if (!('title' in articleData) || !('date' in articleData) || !('image' in articleData) || !('content' in articleData)) {
+          setError('Article data is incomplete');
           setLoading(false);
           return;
         }
-        
-        // Now we can safely set the article with the ID
-        setArticle({ 
-          ...articleData as Omit<Article, 'id'>, 
-          id 
-        });
+
+        setArticle({ ...articleData as Omit<Article, 'id'>, id });
         setLoading(false);
-      } catch (err) {
-        console.error(`Error loading article ${id}:`, err);
-        setError("Article not found");
+      } catch {
+        setError('Article not found');
         setLoading(false);
       }
     };
@@ -61,8 +43,8 @@ const NewsArticle = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center py-20">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-raven-red"></div>
+      <div className="wrap" style={{ padding: '60px 24px', color: 'var(--ink-soft)' }}>
+        Loading...
       </div>
     );
   }
@@ -72,31 +54,21 @@ const NewsArticle = () => {
   }
 
   return (
-    <article className="max-w-4xl mx-auto px-4">
-      <Link to="/news">
-        <Button variant="outline" size="sm" className="mb-6">
-          <ArrowLeft size={16} className="mr-2" /> Back to News
-        </Button>
-      </Link>
-      
-      <h1 className="text-3xl md:text-4xl font-bold mb-4">{article?.title}</h1>
-      
-      <div className="flex items-center text-raven-gray mb-6">
-        <Calendar size={18} className="mr-2" />
-        {article && format(parseISO(article.date), 'MMMM dd, yyyy')}
+    <article className="wrap" style={{ maxWidth: '760px' }}>
+      <Link to="/news" className="article-back mono">← Back to news</Link>
+
+      <p className="article-date mono">{format(parseISO(article.date), 'MMMM dd, yyyy')}</p>
+      <h1 style={{ fontFamily: 'var(--disp)', fontSize: 'clamp(1.8rem, 4vw, 3rem)', margin: '0 0 28px', lineHeight: 1.05 }}>
+        {article.title}
+      </h1>
+
+      <div className="article-img">
+        <img src={article.image} alt={article.title} />
       </div>
-      
-      <div className="aspect-video w-full overflow-hidden mb-8 rounded-lg">
-        <img 
-          src={article?.image} 
-          alt={article?.title} 
-          className="w-full h-full object-cover"
-        />
-      </div>
-      
-      <div className="prose prose-invert prose-lg max-w-none">
-        {article?.content.split('\n\n').map((paragraph, index) => (
-          <p key={index} className="mb-4">{paragraph}</p>
+
+      <div className="article-body">
+        {article.content.split('\n\n').map((paragraph, index) => (
+          <p key={index}>{paragraph}</p>
         ))}
       </div>
     </article>

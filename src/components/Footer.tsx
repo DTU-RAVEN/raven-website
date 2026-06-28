@@ -15,7 +15,6 @@ const Footer = () => {
                   (e.currentTarget as HTMLImageElement).src = '/favicon.ico';
                 }}
               />
-              <p className="footer-title">DTU RAVEN</p>
             </div>
             <p className="footer-muted">Robotics, Autonomous Vehicle Engineering & Navigation</p>
             <p className="footer-muted mono">Technical University of Denmark - Lyngby</p>

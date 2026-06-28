@@ -8,16 +8,16 @@ import ScrollToTop from '@/components/ScrollToTop';
 
 const NewsArticlePage = () => {
   return (
-    <div className="bg-raven-black text-raven-white">
-      <MetaTags 
-        title="News Article - RAVEN DTU" 
-        description="News from RAVEN - Robotics, Autonomous Vehicle Engineering & Navigation" 
+    <div>
+      <MetaTags
+        title="News Article - RAVEN DTU"
+        description="News from RAVEN - Robotics, Autonomous Vehicle Engineering & Navigation"
       />
       <AccessibilityFeatures />
       <ScrollToTop />
       <Navbar />
-      
-      <main className="min-h-screen pt-24 pb-16">
+
+      <main className="index-section">
         <NewsArticle />
       </main>
       

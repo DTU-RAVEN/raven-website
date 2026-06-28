@@ -1,4 +1,4 @@
-
+﻿
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import MetaTags from '@/components/MetaTags';
@@ -7,7 +7,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 const AboutPage = () => {
   return (
     <div>
-      <MetaTags title="Join us — DTU Raven" description="Open roles at DTU Raven: perception, autonomy, electrical, mechanical, flight test, and open applications." />
+      <MetaTags title="Join us â€” DTU Raven" description="Open roles at DTU Raven: perception, autonomy, electrical, mechanical, flight test, and open applications." />
       <ScrollToTop />
       <Navbar />
 
@@ -24,7 +24,7 @@ const AboutPage = () => {
               <article className="role">
                 <p className="disc mono"><span>Perception</span><span className="code">PER</span></p>
                 <h3>Perception Engineer</h3>
-                <p className="mission">Make the drone see — turn raw cameras and sensors into a world it can reason about.</p>
+                <p className="mission">Make the drone see â€” turn raw cameras and sensors into a world it can reason about.</p>
                 <h4>What you'll do</h4>
                 <ul>
                   <li>Integrate stereo and depth cameras into the onboard stack</li>
@@ -44,7 +44,7 @@ const AboutPage = () => {
               <article className="role">
                 <p className="disc mono"><span>Autonomy</span><span className="code">AUT</span></p>
                 <h3>Autonomy Engineer</h3>
-                <p className="mission">Turn sensor data into decisions — planning, estimation, and control that hold up without GPS.</p>
+                <p className="mission">Turn sensor data into decisions â€” planning, estimation, and control that hold up without GPS.</p>
                 <h4>What you'll do</h4>
                 <ul>
                   <li>Develop path planning, state estimation, and control</li>
@@ -62,9 +62,9 @@ const AboutPage = () => {
               </article>
 
               <article className="role">
-                <p className="disc mono"><span>Electrical · PCB</span><span className="code">ELE</span></p>
-                <h3>Electrical Engineer — PCB</h3>
-                <p className="mission">Design the boards that fly — power and signal that stay alive through vibration, heat, and hard landings.</p>
+                <p className="disc mono"><span>Electrical Â· PCB</span><span className="code">ELE</span></p>
+                <h3>Electrical Engineer â€” PCB</h3>
+                <p className="mission">Design the boards that fly â€” power and signal that stay alive through vibration, heat, and hard landings.</p>
                 <h4>What you'll do</h4>
                 <ul>
                   <li>Design custom PCBs for power distribution and sensor integration</li>
@@ -82,9 +82,9 @@ const AboutPage = () => {
               </article>
 
               <article className="role">
-                <p className="disc mono"><span>Mechanical · Fixed-wing</span><span className="code">MEC</span></p>
-                <h3>Mechanical Engineer — Fixed-wing</h3>
-                <p className="mission">Shape what flies — airframes designed around a hard weight budget and real aerodynamics.</p>
+                <p className="disc mono"><span>Mechanical Â· Fixed-wing</span><span className="code">MEC</span></p>
+                <h3>Mechanical Engineer â€” Fixed-wing</h3>
+                <p className="mission">Shape what flies â€” airframes designed around a hard weight budget and real aerodynamics.</p>
                 <h4>What you'll do</h4>
                 <ul>
                   <li>Design fixed-wing airframes and aerodynamic surfaces</li>
@@ -95,7 +95,7 @@ const AboutPage = () => {
                 <ul>
                   <li>Aircraft or aerodynamic design interest and intuition</li>
                   <li>CAD (SolidWorks or Fusion 360)</li>
-                  <li>Hands-on fabrication — composites or 3D printing</li>
+                  <li>Hands-on fabrication â€” composites or 3D printing</li>
                 </ul>
                 <div className="chips"><span className="chip">Fixed-wing</span><span className="chip">CAD</span><span className="chip">Aerodynamics</span><span className="chip">Composites</span></div>
                 <a className="apply" href="mailto:join@dturaven.dk?subject=Application%20%E2%80%94%20Mechanical%20Engineer%20(Fixed-wing)">Apply</a>
@@ -104,7 +104,7 @@ const AboutPage = () => {
               <article className="role">
                 <p className="disc mono"><span>Flight test</span><span className="code">FTE</span></p>
                 <h3>Flight Test Engineer</h3>
-                <p className="mission">Prove it in the air — plan the tests, own the safety, and read the truth in the flight logs.</p>
+                <p className="mission">Prove it in the air â€” plan the tests, own the safety, and read the truth in the flight logs.</p>
                 <h4>What you'll do</h4>
                 <ul>
                   <li>Plan and run flight tests; own pre-flight and safety procedures</li>
@@ -124,7 +124,7 @@ const AboutPage = () => {
               <article className="role open">
                 <p className="disc mono"><span style={{color: 'var(--crimson)'}}>Open application</span></p>
                 <h3>Don't see your profile?</h3>
-                <p className="mission">Software, business, design, finance — if you want to help build autonomous aircraft, tell us what you'd bring.</p>
+                <p className="mission">Software, business, design, finance â€” if you want to help build autonomous aircraft, tell us what you'd bring.</p>
                 <a className="apply" href="mailto:join@dturaven.dk?subject=Open%20application%20%E2%80%94%20DTU%20Raven">Get in touch</a>
               </article>
             </div>
@@ -147,3 +147,4 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
+

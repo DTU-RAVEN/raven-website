@@ -1,4 +1,4 @@
-import Navbar from '@/components/Navbar';
+﻿import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import MetaTags from '@/components/MetaTags';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -50,6 +50,24 @@ const roles: Role[] = [
     ],
     chips: ['ROS 2', 'Planning / control', 'State estimation', 'ArduPilot / PX4'],
     subject: 'Application - Autonomy Engineer',
+  },
+  {
+    discipline: 'State estimation / SLAM',
+    code: 'STE',
+    title: 'State Estimation Engineer',
+    mission: 'Know where you are when GPS lies - fuse cameras, IMU, and lidar into a state estimate that holds.',
+    tasks: [
+      'Implement and tune SLAM and VIO pipelines for GPS-denied flight',
+      'Fuse IMU, camera, and ranging sensors into a robust state estimate',
+      'Evaluate and adapt open-source frameworks (ORB-SLAM, VINS, MSCKF) to our hardware',
+    ],
+    brings: [
+      'Solid grasp of probabilistic state estimation (EKF, factor graphs)',
+      'Hands-on with at least one SLAM or VIO framework',
+      'C++ and ROS 2',
+    ],
+    chips: ['SLAM', 'VIO', 'Sensor fusion', 'C++ / ROS 2'],
+    subject: 'Application - State Estimation Engineer',
   },
   {
     discipline: 'Electrical / PCB',
@@ -121,65 +139,17 @@ const JoinPage = () => {
 
       <main>
         <section className="join-hero">
-          <div className="wrap hero-grid">
-            <div>
-              <p className="eyebrow mono">
-                DTU Raven <span className="dot">/</span> Now recruiting
-              </p>
-              <h1>
-                Build drones that <em>think</em> for themselves.
-              </h1>
-              <p className="lede">
-                We're a student team building autonomous aircraft end to end - and we're looking for people to
-                build the next one with us.
-              </p>
-              <div className="status">
-                <span className="tag live">
-                  <b aria-hidden="true" />
-                  Recruiting
-                </span>
-                <span className="tag">C-UASC 2026 champions</span>
-                <span className="tag">Next - IARC Mission 10</span>
-                <span className="tag">Based at DTU, Lyngby</span>
-              </div>
-            </div>
-
-            <div className="panel" aria-hidden="true">
-              <span className="corner tl" />
-              <span className="corner tr" />
-              <span className="corner bl" />
-              <span className="corner br" />
-              <div className="panel-head">
-                <span className="mono">Path planner</span>
-                <span className="mono">Safe route / 7 wp</span>
-              </div>
-              <svg viewBox="0 0 380 240" role="img" aria-label="A planned flight path threading between hazards">
-                <g className="mine">
-                  <circle cx="120" cy="70" r="4" />
-                  <circle cx="170" cy="120" r="4" />
-                  <circle cx="95" cy="150" r="4" />
-                  <circle cx="230" cy="80" r="4" />
-                  <circle cx="250" cy="160" r="4" />
-                  <circle cx="300" cy="110" r="4" />
-                  <circle cx="200" cy="195" r="4" />
-                  <circle cx="150" cy="40" r="4" />
-                  <circle cx="290" cy="55" r="4" />
-                  <circle cx="60" cy="100" r="4" />
-                </g>
-                <path
-                  className="route route-draw"
-                  d="M30 210 C 70 200 70 150 105 120 S 150 60 195 70 S 250 130 285 120 S 330 60 355 40"
-                />
-                <g>
-                  <circle className="wp" cx="105" cy="120" r="4.5" />
-                  <circle className="wp" cx="195" cy="70" r="4.5" />
-                  <circle className="wp" cx="285" cy="120" r="4.5" />
-                  <circle className="node" cx="30" cy="210" r="5" />
-                  <circle className="pulse" cx="355" cy="40" r="7" />
-                  <circle className="node" cx="355" cy="40" r="3.5" />
-                </g>
-              </svg>
-            </div>
+          <div className="wrap">
+            <p className="eyebrow mono">
+              DTU Raven <span className="dot">/</span> Now recruiting
+            </p>
+            <h1>
+              Build drones that <em>think</em> for themselves.
+            </h1>
+            <p className="lede">
+              We're a student team building autonomous systems end to end, and we're looking for people to
+              build the next projects with us.
+            </p>
           </div>
         </section>
 
@@ -190,28 +160,28 @@ const JoinPage = () => {
               <p className="big">
                 DTU Raven is a student-run team building autonomous drones end to end -{' '}
                 <strong>airframe, electronics, and the software that lets them fly themselves.</strong> We work in
-                small sub-teams that own real subsystems, build hardware that has to survive contact with the real
+                small sub-teams, build hardware that has to survive contact with the real
                 world, and fly it ourselves at our test site. You take on real responsibility from week one, learn
                 by doing the actual engineering, and have teammates who'll help you get there. We took first place
                 at C-UASC 2026, and we're now building toward IARC Mission 10 - autonomous swarms that map a safe
-                path through a minefield.
+                path through a minefield. It's a difficult competition so we need more motivated engineers on the team.
               </p>
             </div>
             <div className="principles">
               <div>
                 <span className="mono">01 - Own it</span>
                 <h3>Own a subsystem</h3>
-                <p>Every member owns a real part of a real aircraft, not a ticket in a backlog.</p>
+                <p>Every member owns a part of the vehicle, not a ticket in a backlog.</p>
               </div>
               <div>
                 <span className="mono">02 - Fly it</span>
                 <h3>Ship and fly</h3>
-                <p>We design it, build it, then put it in the air. Reliability is the whole game.</p>
+                <p>We design it, build it, then put it in the air. The stakes are high - a small mistake could mean losing months of work</p>
               </div>
               <div>
                 <span className="mono">03 - Learn by doing</span>
                 <h3>No prior experience required</h3>
-                <p>Curiosity and follow-through matter more than a CV. We'll teach the rest.</p>
+                <p>Curiosity and follow-through matter more than a CV. We'll help eachother learn the rest.</p>
               </div>
             </div>
           </div>
@@ -222,10 +192,14 @@ const JoinPage = () => {
             <div className="sec-head">
               <hr className="rule" />
               <p className="eyebrow mono roles-count">
-                Open roles <span className="slash">/</span> 5
+                Open roles <span className="slash">/</span> 6
               </p>
               <h2>Profiles we're looking for</h2>
             </div>
+
+            <p style={{ color: 'var(--ink-soft)', maxWidth: '60ch', marginBottom: '40px', lineHeight: 1.6 }}>
+              We're looking for students with hands-on experience in the areas below, but also for driven, hard-working people who can lead the organisation in the future.
+            </p>
 
             <div className="roles-grid">
               {roles.map((role) => (
@@ -299,3 +273,4 @@ const JoinPage = () => {
 };
 
 export default JoinPage;
+

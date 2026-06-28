@@ -1,5 +1,4 @@
 
-import { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import NewsArticleList from '@/components/NewsArticleList';
@@ -9,22 +8,26 @@ import ScrollToTop from '@/components/ScrollToTop';
 
 const News = () => {
   return (
-    <div className="bg-raven-black text-raven-white">
-      <MetaTags 
-        title="News - RAVEN DTU" 
-        description="Latest updates and news from RAVEN - Robotics, Autonomous Vehicle Engineering & Navigation" 
+    <div>
+      <MetaTags
+        title="News - RAVEN DTU"
+        description="Latest updates and news from RAVEN - Robotics, Autonomous Vehicle Engineering & Navigation"
       />
       <AccessibilityFeatures />
       <ScrollToTop />
       <Navbar />
-      
-      <main className="min-h-screen pt-24 pb-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-10 text-center">Latest News</h1>
+
+      <main className="index-section">
+        <div className="wrap">
+          <div className="sec-head">
+            <hr className="rule" />
+            <p className="eyebrow mono roles-count">News <span className="slash">/</span> Latest</p>
+            <h2>Updates from RAVEN</h2>
+          </div>
           <NewsArticleList />
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );

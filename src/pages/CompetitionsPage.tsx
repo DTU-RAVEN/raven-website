@@ -7,14 +7,14 @@ import ScrollToTop from '@/components/ScrollToTop';
 
 const CompetitionsPage = () => {
   return (
-    <div className="bg-raven-black text-raven-white">
+    <div>
       <MetaTags
         title="Competitions - RAVEN DTU"
         description="RAVEN's competition history and achievements in unmanned aerial systems competitions."
       />
       <ScrollToTop />
       <Navbar />
-      <main className="pt-16">
+      <main>
         <Project />
       </main>
       <Footer />

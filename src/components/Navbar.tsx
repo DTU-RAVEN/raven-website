@@ -46,9 +46,6 @@ const Navbar = () => {
               }}
             />
           </span>
-          <span className="raven-brand-text">
-            DTU <b>RAVEN</b>
-          </span>
         </Link>
 
         <nav aria-label="Primary">

@@ -12,8 +12,8 @@ const About = () => {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
             <div className="flex flex-col justify-center">
               <p className="mb-6 text-lg leading-relaxed">
-                RAVEN is a student organization dedicated to filling industry needs in unmanned systems. 
-                We bridge DTU students and companies, developing sustainable, cutting-edge autonomous technology.
+                RAVEN is a student organization dedicated to building unmanned systems. 
+                We bridge DTU students and industry, developing sustainable, cutting-edge autonomous technology.
               </p>
               <p className="text-lg leading-relaxed">
                 Our vision is to create a collaborative environment where students can gain hands-on experience

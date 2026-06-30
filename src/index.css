@@ -960,9 +960,16 @@ button:focus-visible,
   padding: 70px 0 58px;
 }
 
+.home-hero-grid {
+  align-items: center;
+  display: grid;
+  gap: 56px;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+}
+
 .home-hero h1 {
   font-family: var(--disp);
-  font-size: clamp(2.4rem, 6vw, 5rem);
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
   letter-spacing: -0.01em;
   line-height: 0.95;
   margin: 0 0 22px;
@@ -979,6 +986,57 @@ button:focus-visible,
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 32px;
+}
+
+/* ---- Home hero video ---- */
+.hero-video-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 80px rgba(22, 26, 32, 0.10);
+  padding: 16px;
+  position: relative;
+}
+
+.hero-video-head {
+  align-items: center;
+  color: var(--ink-soft);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.hero-live {
+  align-items: center;
+  color: var(--crimson);
+  display: inline-flex;
+  gap: 7px;
+}
+
+.hero-live-dot {
+  animation: hero-pulse 1.7s ease-in-out infinite;
+  background: var(--crimson);
+  border-radius: 50%;
+  height: 7px;
+  width: 7px;
+}
+
+@keyframes hero-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+.hero-video-panel video {
+  aspect-ratio: 16 / 9;
+  background: var(--ink);
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-live-dot {
+    animation: none;
+  }
 }
 
 /* ---- Generic light section ---- */
@@ -1321,6 +1379,11 @@ button:focus-visible,
 @media (max-width: 860px) {
   .home-hero {
     padding: 48px 0 44px;
+  }
+
+  .home-hero-grid {
+    gap: 36px;
+    grid-template-columns: 1fr;
   }
 
   .team-grid-light {

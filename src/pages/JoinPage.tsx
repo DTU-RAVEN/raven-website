@@ -1,5 +1,8 @@
-﻿import Navbar from '@/components/Navbar';
+﻿import { useLocation } from 'react-router-dom';
+import { MouseEvent, useEffect } from 'react';
+import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ApplyDialog from '@/components/ApplyDialog';
 import MetaTags from '@/components/MetaTags';
 import ScrollToTop from '@/components/ScrollToTop';
 
@@ -31,7 +34,7 @@ const roles: Role[] = [
       'ROS 2, and C++ or Python',
     ],
     chips: ['ROS 2', 'Stereo / depth', 'C++ / Python', 'Calibration'],
-    subject: 'Application - Perception Engineer',
+    subject: 'Perception Engineer',
   },
   {
     discipline: 'Autonomy',
@@ -67,7 +70,7 @@ const roles: Role[] = [
       'C++ and ROS 2',
     ],
     chips: ['SLAM', 'VIO', 'Sensor fusion', 'C++ / ROS 2'],
-    subject: 'Application - State Estimation Engineer',
+    subject: 'State Estimation Engineer',
   },
   {
     discipline: 'Electrical / PCB',
@@ -85,7 +88,7 @@ const roles: Role[] = [
       'Soldering and board bring-up',
     ],
     chips: ['KiCad / Altium', 'Power electronics', 'Bring-up', 'Soldering'],
-    subject: 'Application - Electrical Engineer (PCB)',
+    subject: 'Electrical Engineer - PCB',
   },
   {
     discipline: 'Mechanical / Fixed-wing',
@@ -103,7 +106,7 @@ const roles: Role[] = [
       'Hands-on fabrication - composites or 3D printing',
     ],
     chips: ['Fixed-wing', 'CAD', 'Aerodynamics', 'Composites'],
-    subject: 'Application - Mechanical Engineer (Fixed-wing)',
+    subject: 'Mechanical Engineer - Fixed-wing',
   },
   {
     discipline: 'Flight test',
@@ -121,13 +124,24 @@ const roles: Role[] = [
       'Bonus: piloting or ArduPilot / Mission Planner log experience',
     ],
     chips: ['Flight ops', 'Safety', 'Log analysis', 'Python'],
-    subject: 'Application - Flight Test Engineer',
+    subject: 'Flight Test Engineer',
   },
 ];
 
-const mailto = (subject: string) => `mailto:join@dturaven.dk?subject=${encodeURIComponent(subject)}`;
-
 const JoinPage = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash && location.hash.includes('roles')) {
+      const target = document.getElementById('roles');
+      if (target) {
+        const offset = 24;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    }
+  }, [location.hash]);
+
   return (
     <div className="join-page">
       <MetaTags
@@ -143,13 +157,44 @@ const JoinPage = () => {
             <p className="eyebrow mono">
               DTU Raven <span className="dot">/</span> Now recruiting
             </p>
-            <h1>
-              Build drones that <em>think</em> for themselves.
-            </h1>
-            <p className="lede">
-              We're a student team building autonomous systems end to end, and we're looking for people to
-              build the next projects with us.
-            </p>
+            <div className="join-hero-headline">
+              <div className="join-hero-copy">
+                <h1>
+                  Build drones that <em>sense</em>, <em>think</em> and <em>act</em>.
+                </h1>
+                <p className="lede">
+                  We're a student team building autonomous systems end to end, and we're looking for people to
+                  build the next projects with us.
+                </p>
+                <div className="hero-actions join-hero-actions">
+                  <button
+                    type="button"
+                    className="btn-primary"
+                    onClick={(event: MouseEvent<HTMLButtonElement>) => {
+                      event.preventDefault();
+                      const target = document.getElementById('roles');
+                      if (target) {
+                        const offset = 24;
+                        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                        window.scrollTo({ top, behavior: 'smooth' });
+                      }
+                    }}
+                  >
+                    View open positions
+                  </button>
+                  <ApplyDialog
+                    buttonClassName="btn-secondary"
+                    buttonText="Apply now"
+                    label="Start your application"
+                  />
+                </div>
+              </div>
+              <img
+                className="join-hero-image"
+                src="/join-hero.svg"
+                alt="Illustration for joining DTU Raven"
+              />
+            </div>
           </div>
         </section>
 
@@ -229,9 +274,12 @@ const JoinPage = () => {
                       </span>
                     ))}
                   </div>
-                  <a className="apply" href={mailto(role.subject)}>
-                    Apply
-                  </a>
+                  <ApplyDialog
+                    subject={role.subject}
+                    label={`Apply for ${role.title}`}
+                    buttonClassName="apply"
+                    buttonText="Apply"
+                  />
                 </article>
               ))}
 
@@ -244,9 +292,12 @@ const JoinPage = () => {
                   Software, business, design, finance - if you want to help build autonomous aircraft, tell us what
                   you'd bring.
                 </p>
-                <a className="apply" href={mailto('Open application - DTU Raven')}>
-                  Get in touch
-                </a>
+                <ApplyDialog
+                  subject="Open application"
+                  label="Open application"
+                  buttonClassName="apply"
+                  buttonText="Get in touch"
+                />
               </article>
             </div>
           </div>
@@ -260,9 +311,11 @@ const JoinPage = () => {
               Tell us which role fits you, what you've built before, and why drones. We read every application and
               reply to set up a chat.
             </p>
-            <a className="apply" href={mailto('Application - DTU Raven')}>
-              Email us
-            </a>
+            <ApplyDialog
+              label="Email us"
+              buttonClassName="apply"
+              buttonText="Email us"
+            />
           </div>
         </section>
       </main>

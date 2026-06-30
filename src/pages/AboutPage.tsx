@@ -1,6 +1,7 @@
 ﻿
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ApplyDialog from '@/components/ApplyDialog';
 import MetaTags from '@/components/MetaTags';
 import ScrollToTop from '@/components/ScrollToTop';
 
@@ -38,7 +39,12 @@ const AboutPage = () => {
                   <li>ROS 2, and C++ or Python</li>
                 </ul>
                 <div className="chips"><span className="chip">ROS 2</span><span className="chip">Stereo / depth</span><span className="chip">C++ / Python</span><span className="chip">Calibration</span></div>
-                <a className="apply" href="mailto:join@dturaven.dk?subject=Application%20%E2%80%94%20Perception%20Engineer">Apply</a>
+                <ApplyDialog
+                  subject="Perception Engineer"
+                  label="Apply for Perception Engineer"
+                  buttonClassName="apply"
+                  buttonText="Apply"
+                />
               </article>
 
               <article className="role">
@@ -58,7 +64,12 @@ const AboutPage = () => {
                   <li>Some exposure to a flight stack or robotics middleware</li>
                 </ul>
                 <div className="chips"><span className="chip">ROS 2</span><span className="chip">Planning / control</span><span className="chip">State estimation</span><span className="chip">ArduPilot / PX4</span></div>
-                <a className="apply" href="mailto:join@dturaven.dk?subject=Application%20%E2%80%94%20Autonomy%20Engineer">Apply</a>
+                <ApplyDialog
+                  subject="Autonomy Engineer"
+                  label="Apply for Autonomy Engineer"
+                  buttonClassName="apply"
+                  buttonText="Apply"
+                />
               </article>
 
               <article className="role">
@@ -78,7 +89,12 @@ const AboutPage = () => {
                   <li>Soldering and board bring-up</li>
                 </ul>
                 <div className="chips"><span className="chip">KiCad / Altium</span><span className="chip">Power electronics</span><span className="chip">Bring-up</span><span className="chip">Soldering</span></div>
-                <a className="apply" href="mailto:join@dturaven.dk?subject=Application%20%E2%80%94%20Electrical%20Engineer%20(PCB)">Apply</a>
+                <ApplyDialog
+                  subject="Electrical Engineer - PCB"
+                  label="Apply for Electrical Engineer - PCB"
+                  buttonClassName="apply"
+                  buttonText="Apply"
+                />
               </article>
 
               <article className="role">
@@ -98,7 +114,12 @@ const AboutPage = () => {
                   <li>Hands-on fabrication â€” composites or 3D printing</li>
                 </ul>
                 <div className="chips"><span className="chip">Fixed-wing</span><span className="chip">CAD</span><span className="chip">Aerodynamics</span><span className="chip">Composites</span></div>
-                <a className="apply" href="mailto:join@dturaven.dk?subject=Application%20%E2%80%94%20Mechanical%20Engineer%20(Fixed-wing)">Apply</a>
+                <ApplyDialog
+                  subject="Mechanical Engineer - Fixed-wing"
+                  label="Apply for Mechanical Engineer - Fixed-wing"
+                  buttonClassName="apply"
+                  buttonText="Apply"
+                />
               </article>
 
               <article className="role">
@@ -118,14 +139,24 @@ const AboutPage = () => {
                   <li>Bonus: piloting or ArduPilot / Mission Planner log experience</li>
                 </ul>
                 <div className="chips"><span className="chip">Flight ops</span><span className="chip">Safety</span><span className="chip">Log analysis</span><span className="chip">Python</span></div>
-                <a className="apply" href="mailto:join@dturaven.dk?subject=Application%20%E2%80%94%20Flight%20Test%20Engineer">Apply</a>
+                <ApplyDialog
+                  subject="Flight Test Engineer"
+                  label="Apply for Flight Test Engineer"
+                  buttonClassName="apply"
+                  buttonText="Apply"
+                />
               </article>
 
               <article className="role open">
                 <p className="disc mono"><span style={{color: 'var(--crimson)'}}>Open application</span></p>
                 <h3>Don't see your profile?</h3>
                 <p className="mission">Software, business, design, finance â€” if you want to help build autonomous aircraft, tell us what you'd bring.</p>
-                <a className="apply" href="mailto:join@dturaven.dk?subject=Open%20application%20%E2%80%94%20DTU%20Raven">Get in touch</a>
+                <ApplyDialog
+                  subject="Open application"
+                  label="Open application"
+                  buttonClassName="apply"
+                  buttonText="Get in touch"
+                />
               </article>
             </div>
           </div>
@@ -136,7 +167,11 @@ const AboutPage = () => {
             <span className="mono">How to apply</span>
             <h2>Send a short intro and your CV.</h2>
             <p>Tell us which role fits you, what you've built before, and why drones. We read every application and reply to set up a chat.</p>
-            <a className="apply" href="mailto:join@dturaven.dk?subject=Application%20%E2%80%94%20DTU%20Raven">Email us</a>
+            <ApplyDialog
+              label="Email us"
+              buttonClassName="apply"
+              buttonText="Email us"
+            />
           </div>
         </section>
       </main>

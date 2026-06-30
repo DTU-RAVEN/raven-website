@@ -1,7 +1,23 @@
 
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const ScrollToTop = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
+
+    scrollToTop();
+    const timeoutId = window.setTimeout(scrollToTop, 50);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [location.pathname]);
+
   useEffect(() => {
     const scrollToTop = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });

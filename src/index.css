@@ -348,11 +348,11 @@
 
 .join-hero h1 {
   font-family: var(--disp);
-  font-size: clamp(2.8rem, 7vw, 5.9rem);
+  font-size: clamp(2.4rem, 4.8vw, 5.2rem);
   letter-spacing: 0;
-  line-height: 0.92;
-  margin: 0 0 22px;
-  max-width: 10ch;
+  line-height: 0.98;
+  margin: 0;
+  max-width: none;
 }
 
 .join-hero h1 em {
@@ -360,11 +360,60 @@
   font-style: normal;
 }
 
+.join-hero-headline {
+  align-items: flex-start;
+  display: flex;
+  gap: 32px;
+  justify-content: space-between;
+  margin-bottom: 0;
+  max-width: min(100%, 70rem);
+}
+
+.join-hero-copy {
+  flex: 1 1 min(56%, 540px);
+  min-width: 340px;
+}
+
+.join-hero-headline h1 {
+  margin: 0;
+}
+
+.join-hero-image {
+  display: block;
+  flex: 0 0 min(36vw, 480px);
+  width: min(36vw, 480px);
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1200px) {
+  .join-hero-image {
+    flex: 0 0 min(42vw, 420px);
+    width: min(42vw, 420px);
+  }
+}
+
+@media (max-width: 900px) {
+  .join-hero-headline {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .join-hero-headline h1 {
+    max-width: 100%;
+  }
+
+  .join-hero-image {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+}
+
 .lede {
   color: var(--ink-soft);
   font-size: clamp(1.1rem, 2vw, 1.38rem);
   line-height: 1.45;
-  margin: 0 0 28px;
+  margin: 10px 0 28px;
   max-width: 36rem;
 }
 
@@ -1036,6 +1085,56 @@ button:focus-visible,
 @media (prefers-reduced-motion: reduce) {
   .hero-live-dot {
     animation: none;
+  }
+}
+
+/* ---- Home hero: full-bleed background video ---- */
+.home-hero--video {
+  align-items: center;
+  display: flex;
+  min-height: clamp(540px, 80vh, 760px);
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+
+.hero-bg-video {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+
+.hero-bg-scrim {
+  background:
+    linear-gradient(90deg, rgba(13, 16, 20, 0.86) 0%, rgba(13, 16, 20, 0.55) 44%, rgba(13, 16, 20, 0.12) 100%),
+    linear-gradient(0deg, rgba(13, 16, 20, 0.40) 0%, rgba(13, 16, 20, 0) 42%);
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.home-hero-inner {
+  color: #fff;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.home-hero--video h1 {
+  color: #fff;
+  max-width: 18ch;
+}
+
+.home-hero--video .lede {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+@media (max-width: 860px) {
+  .home-hero--video {
+    min-height: clamp(460px, 70vh, 600px);
   }
 }
 

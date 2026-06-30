@@ -112,9 +112,16 @@
     "isBoard": false
   }, 
   {
-    "name": "Ioannis Georgakis ", 
+    "name": "Ioannis Georgakis ",
     "role": "Mechanical",
     "program": "MSc Wind Energy",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Sabina Strimbanu",
+    "role": "Operations",
+    "program": "BSc. General Engineering (Cyber Systems)",
     "image": "/placeholder.svg",
     "isBoard": false
   }

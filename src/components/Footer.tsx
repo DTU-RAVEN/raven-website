@@ -22,7 +22,7 @@ const Footer = () => {
 
           <div>
             <div className="footer-social">
-              <a href="https://www.instagram.com/ravenxdtu/" aria-label="Instagram">
+              <a href="https://www.instagram.com/dtu_raven/" aria-label="Instagram">
                 <Instagram size={24} />
               </a>
               <a href="https://www.linkedin.com/company/dtu-raven/" aria-label="LinkedIn">

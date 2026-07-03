@@ -1,0 +1,18 @@
+# Runs on the BACKEND server (87.58.158.63), not as part of this frontend build.
+# Gives the assistant API an HTTPS domain so the browser will let this HTTPS
+# Vercel site call it (browsers block HTTPS pages from calling plain HTTP APIs).
+#
+# 1. Point an A-record: api.dturaven.com -> 87.58.158.63
+# 2. Run Caddy in front of the backend, e.g.:
+#      docker run -d --name caddy --network host \
+#        -v ~/caddy/Caddyfile:/etc/caddy/Caddyfile \
+#        -v caddy_data:/data \
+#        caddy:latest
+#    (or add it as a service in the backend's docker-compose.yml)
+# 3. Caddy fetches and renews the TLS cert automatically.
+# 4. Once https://api.dturaven.com/health returns ok, set VITE_API_BASE to
+#    https://api.dturaven.com in Vercel's environment variables and redeploy.
+
+api.dturaven.com {
+    reverse_proxy localhost:8000
+}

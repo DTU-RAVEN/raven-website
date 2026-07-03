@@ -8,6 +8,7 @@ const navLinks = [
   { name: 'Competitions', href: '/competitions' },
   { name: 'Team', href: '/team' },
   { name: 'News', href: '/news' },
+  { name: 'Assistant', href: '/assistant' },
 ];
 
 const Navbar = () => {

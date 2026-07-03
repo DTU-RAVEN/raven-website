@@ -1,0 +1,181 @@
+/* ─── Brand tokens ──────────────────────────────────────────────────────────
+   Mirrors Raven's site tokens (src/index.css). Change these and the whole
+   surface reskins; you shouldn't need to touch the rest. */
+.wrap {
+  --bg: var(--paper, #edeff2);
+  --surface: var(--surface, #ffffff);
+  --surface-2: #f2f3f6;
+  --border: var(--line, #d8dce1);
+  --text: var(--ink, #161a20);
+  --text-dim: var(--ink-soft, #565e6b);
+  --accent: var(--crimson, #b0182b);
+  --accent-deep: var(--crimson-deep, #8a1222);
+  --accent-contrast: #ffffff;
+  --user-bubble: #f2f3f6;
+  --radius: 0px;
+  --font: var(--body, "Hanken Grotesk", sans-serif);
+  --font-disp: var(--disp, "Space Grotesk", sans-serif);
+  --font-mono: var(--mono, "Space Mono", monospace);
+
+  display: flex;
+  height: 100dvh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+}
+
+/* ─── Sidebar ─────────────────────────────────────────────────────────────── */
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 8px;
+}
+.newChat {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, color 0.15s;
+}
+.newChat:hover { border-color: var(--accent); color: var(--accent); }
+.convList { flex: 1; overflow-y: auto; margin-top: 8px; display: flex; flex-direction: column; gap: 2px; }
+.convItem {
+  padding: 9px 11px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  color: var(--text-dim);
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: none;
+  background: none;
+  text-align: left;
+  width: 100%;
+}
+.convItem:hover { background: var(--surface-2); color: var(--text); }
+.convItemActive { background: var(--surface-2); color: var(--text); }
+.sidebarFooter { font-size: 12px; color: var(--text-dim); border-top: 1px solid var(--border); padding-top: 12px; }
+.logout {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0;
+}
+.logout:hover { color: var(--accent); }
+
+/* ─── Chat column ─────────────────────────────────────────────────────────── */
+.main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.messages { flex: 1; overflow-y: auto; padding: 32px 0; }
+.thread { max-width: 720px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 20px; }
+
+.row { display: flex; }
+.rowUser { justify-content: flex-end; }
+.bubble { padding: 12px 16px; border-radius: var(--radius); line-height: 1.55; font-size: 15px; white-space: pre-wrap; word-wrap: break-word; }
+.bubbleUser { background: var(--user-bubble); max-width: 80%; }
+.bubbleAssistant { background: transparent; padding-left: 0; padding-right: 0; max-width: 100%; }
+
+.cursor {
+  display: inline-block;
+  width: 7px;
+  height: 1.05em;
+  background: var(--accent);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink 1s steps(2, start) infinite;
+}
+@keyframes blink { to { opacity: 0; } }
+
+.empty { text-align: center; color: var(--text-dim); margin-top: 18vh; }
+.emptyTitle { font-family: var(--font-disp); font-weight: 700; font-size: 20px; color: var(--text); margin-bottom: 6px; }
+
+/* ─── Composer ────────────────────────────────────────────────────────────── */
+.composer { border-top: 1px solid var(--border); padding: 16px 24px 22px; }
+.composerInner { max-width: 720px; margin: 0 auto; display: flex; gap: 10px; align-items: flex-end; }
+.input {
+  flex: 1;
+  resize: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  font-size: 15px;
+  font-family: var(--font);
+  line-height: 1.4;
+  max-height: 200px;
+}
+.input:focus { outline: none; border-color: var(--accent); }
+.send {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border: none;
+  border-radius: var(--radius);
+  padding: 12px 18px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+.send:hover:not(:disabled) { background: var(--accent-deep); }
+.send:disabled { opacity: 0.45; cursor: not-allowed; }
+.errorBar { max-width: 720px; margin: 0 auto 10px; color: var(--accent); font-size: 13px; }
+
+/* ─── Auth screen ─────────────────────────────────────────────────────────── */
+.auth { margin: auto; width: 100%; max-width: 340px; padding: 24px; }
+.authTitle { font-family: var(--font-disp); font-weight: 700; font-size: 22px; margin-bottom: 4px; }
+.authSub { color: var(--text-dim); font-size: 14px; margin-bottom: 24px; }
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.authInput {
+  background: var(--surface); border: 1px solid var(--border); color: var(--text);
+  border-radius: var(--radius); padding: 11px 13px; font-size: 15px; font-family: var(--font);
+}
+.authInput:focus { outline: none; border-color: var(--accent); }
+.authBtn {
+  width: 100%; background: var(--accent); color: var(--accent-contrast); border: none;
+  border-radius: var(--radius); padding: 12px;
+  font-family: var(--font-mono); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; cursor: pointer; margin-top: 6px;
+  transition: background 0.15s;
+}
+.authBtn:hover:not(:disabled) { background: var(--accent-deep); }
+.authBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+.authToggle { background: none; border: none; color: var(--accent); cursor: pointer; font-size: 13px; margin-top: 16px; padding: 0; }
+.authToggle:hover { color: var(--accent-deep); }
+
+/* ─── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .sidebar { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cursor { animation: none; }
+}

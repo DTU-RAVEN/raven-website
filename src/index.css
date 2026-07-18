@@ -141,7 +141,7 @@
     cursor: pointer;
     color: var(--ink);
     font-family: var(--mono);
-    font-size: 0.74rem;
+    font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     padding: 6px 0;
@@ -237,7 +237,7 @@
   display: flex;
   gap: 24px;
   justify-content: space-between;
-  min-height: 64px;
+  min-height: 80px;
 }
 
 .raven-brand {
@@ -256,14 +256,14 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  min-height: 40px;
+  min-height: 58px;
   padding: 6px 8px;
 }
 
 .raven-brand-logo img {
   display: block;
   filter: invert(1);
-  height: 28px;
+  height: 58px;
   width: auto;
 }
 

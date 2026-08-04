@@ -20,7 +20,7 @@ const Funding = () => {
                     <div className="mb-4 h-24 w-24 overflow-hidden grayscale transition-transform hover:scale-105 hover:grayscale-0 duration-300">
                       <img src={partner.logo} alt={`${partner.name} logo`} className="h-full w-full object-contain" />
                     </div>
-                    <h3 className="mb-2 text-xl font-bold">{partner.name}</h3>
+                    <h3 className="mb-2 text-xl">{partner.name}</h3>
                     <p className="text-sm text-gray-600">{partner.contribution}</p>
                   </div>)}
               </div>

@@ -15,7 +15,7 @@ const Project = () => {
           <div className="comp-content">
             <div className="comp-block">
               <p className="comp-result">1st place · C-UASC 2026</p>
-              <h3 style={{ fontFamily: 'var(--disp)', fontSize: '1.6rem', fontWeight: 600, margin: '0 0 16px' }}>
+              <h3 style={{ fontFamily: 'var(--disp)', fontSize: '1.6rem', fontWeight: 400, margin: '0 0 16px' }}>
                 C-UASC 2026
               </h3>
               <p style={{ color: 'var(--ink-soft)', marginBottom: '16px', lineHeight: 1.6 }}>
@@ -48,7 +48,7 @@ const Project = () => {
 
             <div className="comp-block">
               <p className="comp-result">Debut · SUAS 2025</p>
-              <h3 style={{ fontFamily: 'var(--disp)', fontSize: '1.6rem', fontWeight: 600, margin: '0 0 16px' }}>
+              <h3 style={{ fontFamily: 'var(--disp)', fontSize: '1.6rem', fontWeight: 400, margin: '0 0 16px' }}>
                 SUAS 2025 - First competition entry
               </h3>
               <p style={{ color: 'var(--ink-soft)', lineHeight: 1.6 }}>
@@ -66,7 +66,7 @@ const Project = () => {
             <span className="corner br" />
             <div className="comp-video-head mono">
               <span>C-UASC 2026</span>
-              <span style={{ color: 'var(--crimson)' }}>140 km/h</span>
+              <span style={{ background: 'var(--crimson)', color: 'var(--ink)', padding: '2px 8px' }}>140 km/h</span>
             </div>
             <video
               src="/general_photos_videos/YouCut_20260607_170635049.mp4"

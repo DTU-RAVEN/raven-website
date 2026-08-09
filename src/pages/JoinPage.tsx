@@ -242,7 +242,7 @@ const JoinPage = () => {
               <h2>Profiles we're looking for</h2>
             </div>
 
-            <p style={{ color: 'var(--ink-soft)', maxWidth: '60ch', marginBottom: '40px', lineHeight: 1.6 }}>
+            <p style={{ color: 'var(--text-muted)', maxWidth: '60ch', marginBottom: '40px', lineHeight: 1.6 }}>
               We're looking for students with hands-on experience in the areas below, but also for driven, hard-working people who can lead the organisation in the future.
             </p>
 

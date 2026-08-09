@@ -17,7 +17,7 @@ const AboutPage = () => {
           <div className="wrap">
             <div className="sec-head">
               <hr className="rule" />
-              <p className="eyebrow mono" style={{margin: '18px 0 0'}}>Open roles <span style={{color: 'var(--ink-soft)'}}>/</span> 5</p>
+              <p className="eyebrow mono" style={{margin: '18px 0 0'}}>Open roles <span style={{color: 'var(--text-muted)'}}>/</span> 5</p>
               <h2>Profiles we're looking for</h2>
             </div>
 

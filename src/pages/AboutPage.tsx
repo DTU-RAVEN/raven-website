@@ -17,7 +17,7 @@ const AboutPage = () => {
           <div className="wrap">
             <div className="sec-head">
               <hr className="rule" />
-              <p className="eyebrow mono" style={{color: 'var(--teal)', margin: '18px 0 0'}}>Open roles <span style={{color: 'var(--crimson)'}}>/</span> 5</p>
+              <p className="eyebrow mono" style={{margin: '18px 0 0'}}>Open roles <span style={{color: 'var(--text-muted)'}}>/</span> 5</p>
               <h2>Profiles we're looking for</h2>
             </div>
 
@@ -148,7 +148,7 @@ const AboutPage = () => {
               </article>
 
               <article className="role open">
-                <p className="disc mono"><span style={{color: 'var(--crimson)'}}>Open application</span></p>
+                <p className="disc mono"><span className="open-label">Open application</span></p>
                 <h3>Don't see your profile?</h3>
                 <p className="mission">Software, business, design, finance â€” if you want to help build autonomous aircraft, tell us what you'd bring.</p>
                 <ApplyDialog

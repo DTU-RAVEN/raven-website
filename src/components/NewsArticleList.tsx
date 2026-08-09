@@ -45,7 +45,7 @@ const NewsArticleList = () => {
 
   if (loading) {
     return (
-      <div style={{ padding: '60px 0', textAlign: 'center', color: 'var(--ink-soft)' }}>
+      <div style={{ padding: '60px 0', textAlign: 'center', color: 'var(--text-muted)' }}>
         Loading...
       </div>
     );
@@ -53,7 +53,7 @@ const NewsArticleList = () => {
 
   if (error) {
     return (
-      <div style={{ padding: '60px 0', textAlign: 'center', color: 'var(--ink-soft)' }}>
+      <div style={{ padding: '60px 0', textAlign: 'center', color: 'var(--text-muted)' }}>
         {error}
       </div>
     );
@@ -61,7 +61,7 @@ const NewsArticleList = () => {
 
   if (articles.length === 0) {
     return (
-      <div style={{ padding: '60px 0', textAlign: 'center', color: 'var(--ink-soft)' }}>
+      <div style={{ padding: '60px 0', textAlign: 'center', color: 'var(--text-muted)' }}>
         No news articles available yet.
       </div>
     );

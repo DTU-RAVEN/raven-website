@@ -5,7 +5,7 @@ import sponsors from '../data/sponsors.json';
 const Funding = () => {
   return <>
       <SectionDivider />
-      <section id="funding" className="section bg-raven-white text-raven-black">
+      <section id="funding" className="section bg-raven-black text-raven-white">
         <div className="section-container">
           <h2 className="section-title">Funding & Partners</h2>
           
@@ -20,8 +20,8 @@ const Funding = () => {
                     <div className="mb-4 h-24 w-24 overflow-hidden grayscale transition-transform hover:scale-105 hover:grayscale-0 duration-300">
                       <img src={partner.logo} alt={`${partner.name} logo`} className="h-full w-full object-contain" />
                     </div>
-                    <h3 className="mb-2 text-xl font-bold">{partner.name}</h3>
-                    <p className="text-sm text-gray-600">{partner.contribution}</p>
+                    <h3 className="mb-2 text-xl">{partner.name}</h3>
+                    <p className="text-sm text-raven-white/50">{partner.contribution}</p>
                   </div>)}
               </div>
             </div>

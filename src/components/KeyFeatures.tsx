@@ -41,7 +41,7 @@ const KeyFeatures = () => {
                 }`}
                 onClick={() => setActiveFeature(index)}
               >
-                <h3 className="text-xl font-bold">{feature.title}</h3>
+                <h3 className="text-xl">{feature.title}</h3>
               </button>
             ))}
           </div>
@@ -49,7 +49,7 @@ const KeyFeatures = () => {
           {/* Feature Description */}
           <div className="flex items-center">
             <div className="border border-raven-white/20 bg-raven-white/5 p-8">
-              <h3 className="mb-4 text-2xl font-bold">{features[activeFeature].title}</h3>
+              <h3 className="mb-4 text-2xl">{features[activeFeature].title}</h3>
               <p className="text-lg leading-relaxed">{features[activeFeature].description}</p>
             </div>
           </div>

@@ -45,7 +45,7 @@ const Timeline = () => {
                   
                   {/* Content */}
                   <div className="pl-6">
-                    <p className="mb-1 font-bold">{item.date}</p>
+                    <p className="mb-1">{item.date}</p>
                     <p className="text-sm md:text-base">{item.event}</p>
                   </div>
                 </div>
@@ -71,7 +71,7 @@ const Timeline = () => {
                   <div className={`text-center absolute w-full ${
                     index % 2 === 0 ? '-top-28' : 'top-12'
                   }`}>
-                    <p className="mb-1 font-bold">{item.date}</p>
+                    <p className="mb-1">{item.date}</p>
                     <p>{item.event}</p>
                   </div>
                 </div>

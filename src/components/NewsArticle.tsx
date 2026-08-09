@@ -43,7 +43,7 @@ const NewsArticle = () => {
 
   if (loading) {
     return (
-      <div className="wrap" style={{ padding: '60px 24px', color: 'var(--ink-soft)' }}>
+      <div className="wrap" style={{ padding: '60px 24px', color: 'var(--text-muted)' }}>
         Loading...
       </div>
     );

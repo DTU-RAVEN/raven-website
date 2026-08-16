@@ -4,7 +4,7 @@ import { useState } from 'react';
 const features = [
   {
     title: 'Student-led Design',
-    description: 'Our projects are fully conceptualized, designed, and executed by DTU students, providing hands-on experience with cutting-edge technologies.'
+    description: 'Our projects are conceptualized, designed, and built by DTU students, giving them hands-on experience with new technologies.'
   },
   {
     title: 'Industry Collaboration',

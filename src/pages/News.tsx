@@ -22,7 +22,7 @@ const News = () => {
           <div className="sec-head">
             <hr className="rule" />
             <p className="eyebrow mono roles-count">News <span className="slash">/</span> Latest</p>
-            <h2>Updates from RAVEN</h2>
+            <h1>Updates from RAVEN</h1>
           </div>
           <NewsArticleList />
         </div>

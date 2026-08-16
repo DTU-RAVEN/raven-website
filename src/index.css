@@ -1,19 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --accent: #990000;
-  --background: #0D0D0D;
+  --brand: #990000;
+  --bg: #0D0D0D;
   --surface: #1C1C1C;
   --text-muted: #999999;
   --text: #F2F2F2;
   --maxw: 1140px;
   --disp: "Satoshi", sans-serif;
   --body: "Satoshi", sans-serif;
-  --mono: "Space Mono", monospace;
+  --mono: "Satoshi", sans-serif;
 }
 
 @layer base {
@@ -85,11 +83,15 @@
 
   html {
     @apply scroll-smooth;
+    /* Native controls (scrollbars, inputs, autofill) follow the dark theme. */
+    color-scheme: dark;
+    /* Keep anchor jumps clear of the sticky header. */
+    scroll-padding-top: 96px;
   }
 
   body {
     margin: 0;
-    background: var(--background);
+    background: var(--bg);
     color: var(--text);
     font-family: var(--body);
     font-size: 17px;
@@ -146,7 +148,7 @@
     position: relative;
     cursor: pointer;
     color: var(--text);
-    font-family: var(--mono);
+    font-family: var(--body);
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -160,7 +162,7 @@
     display: block;
     width: 100%;
     color: var(--text);
-    font-family: var(--mono);
+    font-family: var(--body);
     font-size: 0.8rem;
     letter-spacing: 0.08em;
     padding: 12px 24px;
@@ -186,7 +188,7 @@
   .btn-primary,
   .btn-secondary {
     display: inline-block;
-    font-family: var(--mono);
+    font-family: var(--body);
     font-size: 0.74rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -197,7 +199,7 @@
   }
 
   .btn-primary {
-    background: var(--accent);
+    background: var(--brand);
     color: #fff;
   }
 
@@ -211,7 +213,7 @@
   }
 
   .btn-secondary:hover {
-    border-color: var(--accent);
+    border-color: var(--brand);
     color: var(--text);
   }
 }
@@ -273,7 +275,7 @@
 }
 
 .raven-brand b {
-  background: var(--accent);
+  background: var(--brand);
   color: var(--text);
   padding: 0 3px;
 }
@@ -296,7 +298,7 @@
 }
 
 .raven-nav-list a.active::after {
-  background: var(--accent);
+  background: var(--brand);
   bottom: -2px;
   content: "";
   height: 2px;
@@ -323,12 +325,12 @@
 }
 
 .nav-link-mobile:hover {
-  background: var(--background);
+  background: var(--bg);
   color: var(--text);
 }
 
 .join-page {
-  background: var(--background);
+  background: var(--bg);
   color: var(--text);
 }
 
@@ -355,7 +357,7 @@
 }
 
 .eyebrow::before {
-  background: var(--accent);
+  background: var(--brand);
   content: "";
   display: inline-block;
   flex-shrink: 0;
@@ -378,7 +380,7 @@
 }
 
 .join-hero h1 em {
-  color: var(--accent);
+  color: var(--brand);
   font-style: normal;
 }
 
@@ -464,7 +466,7 @@
 }
 
 .tag.live b {
-  background: var(--accent);
+  background: var(--brand);
   border-radius: 999px;
   display: block;
   height: 8px;
@@ -494,41 +496,6 @@
   width: 100%;
 }
 
-.corner {
-  border-color: var(--accent);
-  height: 18px;
-  position: absolute;
-  width: 18px;
-}
-
-.corner.tl {
-  border-left: 2px solid;
-  border-top: 2px solid;
-  left: 10px;
-  top: 10px;
-}
-
-.corner.tr {
-  border-right: 2px solid;
-  border-top: 2px solid;
-  right: 10px;
-  top: 10px;
-}
-
-.corner.bl {
-  border-bottom: 2px solid;
-  border-left: 2px solid;
-  bottom: 10px;
-  left: 10px;
-}
-
-.corner.br {
-  border-bottom: 2px solid;
-  border-right: 2px solid;
-  bottom: 10px;
-  right: 10px;
-}
-
 .mine circle {
   fill: var(--text-muted);
   opacity: 0.4;
@@ -536,7 +503,7 @@
 
 .route {
   fill: none;
-  stroke: var(--accent);
+  stroke: var(--brand);
   stroke-linecap: round;
   stroke-width: 4;
 }
@@ -549,12 +516,12 @@
 
 .wp {
   fill: var(--surface);
-  stroke: var(--accent);
+  stroke: var(--brand);
   stroke-width: 3;
 }
 
 .node {
-  fill: var(--accent);
+  fill: var(--brand);
 }
 
 .pulse {
@@ -603,7 +570,7 @@
 }
 
 .big strong {
-  color: var(--accent);
+  color: var(--brand);
   font-weight: 400;
 }
 
@@ -613,14 +580,8 @@
 }
 
 .principles div {
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--brand);
   padding: 0 0 0 18px;
-}
-
-.principles span {
-  color: var(--text-muted);
-  display: block;
-  margin-bottom: 6px;
 }
 
 .principles h3 {
@@ -654,6 +615,7 @@
   margin: 18px 0 0;
 }
 
+.sec-head h1,
 .sec-head h2 {
   font-family: var(--disp);
   font-size: clamp(2rem, 4.6vw, 3.4rem);
@@ -679,7 +641,7 @@
 }
 
 .role:hover {
-  border-color: var(--accent);
+  border-color: var(--brand);
   transform: translateY(-2px);
 }
 
@@ -711,7 +673,7 @@
 
 .role h4 {
   color: var(--text);
-  font-family: var(--mono);
+  font-family: var(--body);
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -751,9 +713,9 @@
 
 .apply {
   align-self: flex-start;
-  background: var(--accent);
+  background: var(--brand);
   color: #fff;
-  font-family: var(--mono);
+  font-family: var(--body);
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -768,13 +730,12 @@
   filter: brightness(0.85);
 }
 
-.apply::after {
-  content: " ->";
-}
-
 .role.open {
   align-items: flex-start;
   background: transparent;
+  /* Inheriting the surface border colour left this card's outline at 1.1:1,
+     i.e. invisible next to the seven filled ones. */
+  border-color: rgba(242, 242, 242, 0.4);
   border-style: dashed;
   justify-content: center;
 }
@@ -788,7 +749,7 @@
 }
 
 .open-label {
-  background: var(--accent);
+  background: var(--brand);
   color: var(--text);
   padding: 2px 8px;
 }
@@ -814,12 +775,12 @@
 }
 
 .cta .apply {
-  background: var(--accent);
+  background: var(--brand);
 }
 
 .cta .apply:hover {
   background: var(--text);
-  color: var(--background);
+  color: var(--bg);
 }
 
 .cta .mono {
@@ -829,7 +790,7 @@
 }
 
 .site-footer {
-  background: var(--background);
+  background: var(--bg);
   border-top: 1px solid var(--surface);
   color: var(--text);
   padding: 34px 0;
@@ -900,11 +861,15 @@
   text-align: center;
 }
 
+/* Crimson alone sits at ~2.2:1 on the dark background, under the 3:1 that
+   WCAG 1.4.11 asks of a focus indicator. The light inner ring carries the
+   contrast so the brand colour can stay. */
 a:focus-visible,
 button:focus-visible,
 .apply:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--brand);
   outline-offset: 3px;
+  box-shadow: 0 0 0 3px var(--text);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1049,7 +1014,7 @@ button:focus-visible,
 }
 
 .home-hero h1 em {
-  color: var(--accent);
+  color: var(--brand);
   font-style: normal;
 }
 
@@ -1086,7 +1051,7 @@ button:focus-visible,
 
 .hero-live-dot {
   animation: hero-pulse 1.7s ease-in-out infinite;
-  background: var(--accent);
+  background: var(--brand);
   border-radius: 50%;
   height: 7px;
   width: 7px;
@@ -1099,7 +1064,7 @@ button:focus-visible,
 
 .hero-video-panel video {
   aspect-ratio: 16 / 9;
-  background: var(--background);
+  background: var(--bg);
   display: block;
   object-fit: cover;
   width: 100%;
@@ -1113,11 +1078,11 @@ button:focus-visible,
 
 /* ---- Home hero: full-bleed background video ---- */
 .home-hero--video {
-  align-items: center;
+  align-items: flex-end;
   display: flex;
   min-height: clamp(540px, 80vh, 760px);
   overflow: hidden;
-  padding: 0;
+  padding: 0 0 64px;
   position: relative;
 }
 
@@ -1298,7 +1263,7 @@ button:focus-visible,
 }
 
 .board-badge {
-  background: var(--accent);
+  background: var(--brand);
   color: var(--text);
   display: inline-block;
   font-family: var(--mono);
@@ -1337,7 +1302,7 @@ button:focus-visible,
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
-  background: var(--background);
+  background: var(--bg);
 }
 
 @media (max-width: 1020px) {
@@ -1362,7 +1327,7 @@ button:focus-visible,
 }
 
 .comp-result {
-  background: var(--accent);
+  background: var(--brand);
   color: var(--text);
   display: inline-block;
   padding: 3px 9px;
@@ -1408,7 +1373,7 @@ button:focus-visible,
 }
 
 .news-card:hover {
-  border-color: var(--accent);
+  border-color: var(--brand);
   transform: translateY(-2px);
 }
 
@@ -1544,7 +1509,7 @@ button:focus-visible,
 }
 
 .card-accent::before {
-  background: var(--accent);
+  background: var(--brand);
   content: "";
   height: 4px;
   left: 0;
@@ -1576,7 +1541,7 @@ button:focus-visible,
 }
 
 .stat--accent {
-  background: var(--accent);
+  background: var(--brand);
   color: var(--text);
   padding: 20px 22px;
 }
@@ -1597,7 +1562,7 @@ button:focus-visible,
 
 .numbered-item-index {
   align-items: center;
-  background: var(--accent);
+  background: var(--brand);
   color: var(--text);
   display: flex;
   flex-shrink: 0;

@@ -1,5 +1,27 @@
+import { useEffect, useRef } from 'react';
 
 const Project = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+
+    const play = () => {
+      const attempt = video.play();
+      if (attempt && typeof attempt.catch === 'function') {
+        attempt.catch(() => {
+          video.addEventListener('canplay', () => video.play().catch(() => {}), { once: true });
+        });
+      }
+    };
+
+    play();
+  }, []);
+
   return (
     <section id="competitions" className="index-section">
       <div className="wrap">
@@ -8,7 +30,7 @@ const Project = () => {
           <p className="eyebrow mono roles-count">
             Competitions <span className="slash">/</span> History
           </p>
-          <h2>Competition results</h2>
+          <h1>Competition results</h1>
         </div>
 
         <div className="comp-layout">
@@ -24,9 +46,9 @@ const Project = () => {
                 California State University, Los Angeles, with 9 RAVEN members making the trip.
               </p>
               <p style={{ color: 'var(--text-muted)', marginBottom: '24px', lineHeight: 1.6 }}>
-                We completed all planned missions across the three competition days, and didn't just win by
-                performing well across the board. We also placed best of all teams in waypoint navigation
-                accuracy and set the course speed record at <strong style={{ color: 'var(--text)' }}>140 km/h</strong>.
+                We completed all planned missions across the three competition days. We also placed best of all
+                teams in waypoint navigation accuracy and set the course speed record at{' '}
+                <strong style={{ color: 'var(--text)' }}>140 km/h</strong>.
               </p>
 
               <h4 style={{ fontFamily: 'var(--mono)', fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', margin: '0 0 12px' }}>
@@ -60,20 +82,18 @@ const Project = () => {
           </div>
 
           <div className="comp-video-panel">
-            <span className="corner tl" />
-            <span className="corner tr" />
-            <span className="corner bl" />
-            <span className="corner br" />
             <div className="comp-video-head mono">
               <span>C-UASC 2026</span>
-              <span style={{ background: 'var(--accent)', color: 'var(--text)', padding: '2px 8px' }}>140 km/h</span>
+              <span style={{ background: 'var(--brand)', color: 'var(--text)', padding: '2px 8px' }}>140 km/h</span>
             </div>
             <video
+              ref={videoRef}
               src="/general_photos_videos/YouCut_20260607_170635049.mp4"
               autoPlay
               loop
               muted
               playsInline
+              preload="auto"
             />
           </div>
         </div>

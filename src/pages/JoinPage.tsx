@@ -7,138 +7,111 @@ import MetaTags from '@/components/MetaTags';
 import ScrollToTop from '@/components/ScrollToTop';
 
 type Role = {
-  discipline: string;
-  code: string;
   title: string;
-  mission: string;
+  description: string;
   tasks: string[];
-  brings: string[];
-  chips: string[];
+  goodToHave: string[];
   subject: string;
 };
 
 const roles: Role[] = [
   {
-    discipline: 'Perception',
-    code: 'PER',
-    title: 'Perception Engineer',
-    mission: 'Make the drone see - turn raw cameras and sensors into a world it can reason about.',
+    title: 'Software',
+    description: 'The code that runs autonomy, perception, and mission logic on the drone.',
     tasks: [
-      'Integrate stereo and depth cameras into the onboard stack',
-      'Write and wire up sensor drivers; handle calibration and coordinate frames',
-      'Build real-time perception nodes in ROS 2',
+      'Autonomy, perception, and mission logic',
+      'Build and integrate nodes in ROS2',
+      'Take a piece of the stack from idea to flight-tested code',
     ],
-    brings: [
-      'Hands-on with stereo/depth camera integration',
-      'Experience writing or integrating device drivers',
-      'ROS 2, and C++ or Python',
-    ],
-    chips: ['ROS 2', 'Stereo / depth', 'C++ / Python', 'Calibration'],
-    subject: 'Perception Engineer',
+    goodToHave: ['Python or C++', 'Any robotics or ML tinkering', 'Curiosity beats a CV'],
+    subject: 'Software',
   },
   {
-    discipline: 'Autonomy',
-    code: 'AUT',
-    title: 'Autonomy Engineer',
-    mission: 'Turn sensor data into decisions - planning, estimation, and control that hold up without GPS.',
+    title: 'Mechanical',
+    description: 'Building the airframe, mounts, and mechanisms that make the drone fly.',
     tasks: [
-      'Develop path planning, state estimation, and control',
-      'Work on GNSS-denied navigation and sensor fusion',
-      'Integrate with the flight stack (ArduPilot / PX4) over ROS 2',
+      'Frames, mounts, and mechanisms',
+      'The wing, tail, and transition of the VTOL fixed-wing',
+      'Go from CAD drawing to a part you can hold',
     ],
-    brings: [
-      'A control, estimation, or planning background',
-      'ROS 2, and C++ or Python',
-      'Some exposure to a flight stack or robotics middleware',
-    ],
-    chips: ['ROS 2', 'Planning / control', 'State estimation', 'ArduPilot / PX4'],
-    subject: 'Application - Autonomy Engineer',
+    goodToHave: ['CAD', '3D printing or other hands-on building', 'Aero or wind-energy interest'],
+    subject: 'Mechanical (incl. airframe / aero)',
   },
   {
-    discipline: 'State estimation / SLAM',
-    code: 'STE',
-    title: 'State Estimation Engineer',
-    mission: 'Know where you are when GPS lies - fuse cameras, IMU, and lidar into a state estimate that holds.',
+    title: 'Electrical, RF & System Integration',
+    description: 'Power, wiring, custom PCBs, and radios.',
     tasks: [
-      'Implement and tune SLAM and VIO pipelines for GPS-denied flight',
-      'Fuse IMU, camera, and ranging sensors into a robust state estimate',
-      'Evaluate and adapt open-source frameworks (ORB-SLAM, VINS, MSCKF) to our hardware',
+      'Power systems, wiring, and ESC setups',
+      'Custom PCBs and radio links',
+      'Make hardware and software behave as one system',
     ],
-    brings: [
-      'Solid grasp of probabilistic state estimation (EKF, factor graphs)',
-      'Hands-on with at least one SLAM or VIO framework',
-      'C++ and ROS 2',
-    ],
-    chips: ['SLAM', 'VIO', 'Sensor fusion', 'C++ / ROS 2'],
-    subject: 'State Estimation Engineer',
+    goodToHave: ['An EE/Physics background', 'Soldering experience', 'Tinkering with electronics or RF'],
+    subject: 'Electrical, RF & System Integration',
   },
   {
-    discipline: 'Electrical / PCB',
-    code: 'ELE',
-    title: 'Electrical Engineer - PCB',
-    mission: 'Design the boards that fly - power and signal that stay alive through vibration, heat, and hard landings.',
+    title: 'Drone Pilot',
+    description: 'Hands on the sticks for test flights and competition runs.',
     tasks: [
-      'Design custom PCBs for power distribution and sensor integration',
-      'Take boards from schematic to layout to bring-up',
-      'Build in the reliability margin that keeps aircraft flying',
+      'Fly test flights and competition runs',
+      'Work with the engineering teams on what the aircraft needs',
+      'Bring the judgment that only comes from real flight time',
     ],
-    brings: [
-      'Schematic capture and PCB layout (KiCad or Altium)',
-      'Power-electronics basics and an eye for EMI',
-      'Soldering and board bring-up',
-    ],
-    chips: ['KiCad / Altium', 'Power electronics', 'Bring-up', 'Soldering'],
-    subject: 'Electrical Engineer - PCB',
+    goodToHave: ['Real flying hours', 'FPV experience', 'An RC or model background'],
+    subject: 'Drone Pilot',
   },
   {
-    discipline: 'Mechanical / Fixed-wing',
-    code: 'MEC',
-    title: 'Mechanical Engineer - Fixed-wing',
-    mission: 'Shape what flies - airframes designed around a hard weight budget and real aerodynamics.',
+    title: 'Business & Partnership Lead',
+    description: 'Sponsors, industry contacts, and the relationships that fund the team.',
     tasks: [
-      'Design fixed-wing airframes and aerodynamic surfaces',
-      'Model in CAD and fabricate in composites or 3D print',
-      'Own the weight budget from concept to flight',
+      'Find and manage sponsors and industry contacts',
+      'Represent the team to companies and partners',
+      'Likely to also cover treasury duties (to be confirmed at the general assembly)',
     ],
-    brings: [
-      'Aircraft or aerodynamic design interest and intuition',
-      'CAD (SolidWorks or Fusion 360)',
-      'Hands-on fabrication - composites or 3D printing',
-    ],
-    chips: ['Fixed-wing', 'CAD', 'Aerodynamics', 'Composites'],
-    subject: 'Mechanical Engineer - Fixed-wing',
+    goodToHave: ['Comfort talking to companies', 'Basic money admin'],
+    subject: 'Business & Partnership Lead',
   },
   {
-    discipline: 'Flight test',
-    code: 'FTE',
-    title: 'Flight Test Engineer',
-    mission: 'Prove it in the air - plan the tests, own the safety, and read the truth in the flight logs.',
+    title: 'Social Media',
+    description: 'LinkedIn, Instagram, and the website. Keeping the team visible.',
     tasks: [
-      'Plan and run flight tests; own pre-flight and safety procedures',
-      'Analyze flight logs and feed findings back to the engineering teams',
-      'Build the test discipline that wins competitions',
+      'Post on LinkedIn, Instagram, and the website',
+      'Document builds, tests, and competitions as they happen',
+      'Shape how the team looks from the outside',
     ],
-    brings: [
-      'A methodical mindset and calm under pressure',
-      'Data analysis (Python) and an interest in flight operations',
-      'Bonus: piloting or ArduPilot / Mission Planner log experience',
+    goodToHave: ['Clean writing', 'An eye for photo or video', 'Consistency'],
+    subject: 'Social Media',
+  },
+  {
+    title: 'Operations',
+    description: 'Procurement, money, and documentation, so the engineers can keep building.',
+    tasks: [
+      'Procurement and purchasing',
+      'Money flow and documentation',
+      'Chase down the small things so engineers can keep building',
     ],
-    chips: ['Flight ops', 'Safety', 'Log analysis', 'Python'],
-    subject: 'Flight Test Engineer',
+    goodToHave: ['Nothing specific - reliability is the skill'],
+    subject: 'Operations',
   },
 ];
+
+// The header is sticky, so scroll targets have to clear its height or the
+// heading lands underneath it.
+const scrollToRoles = () => {
+  const target = document.getElementById('roles');
+  if (!target) return;
+
+  const header = document.querySelector<HTMLElement>('.raven-site-header');
+  const offset = (header?.offsetHeight ?? 80) + 16;
+  const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+  window.scrollTo({ top, behavior: 'smooth' });
+};
 
 const JoinPage = () => {
   const location = useLocation();
 
   useEffect(() => {
     if (location.hash && location.hash.includes('roles')) {
-      const target = document.getElementById('roles');
-      if (target) {
-        const offset = 24;
-        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
+      scrollToRoles();
     }
   }, [location.hash]);
 
@@ -146,7 +119,7 @@ const JoinPage = () => {
     <div className="join-page">
       <MetaTags
         title="Join us - DTU Raven"
-        description="Open roles at DTU Raven: perception, autonomy, electrical, mechanical, flight test, and open applications."
+        description="Open roles at DTU Raven: software, mechanical, electrical/RF, drone pilot, business, social media, operations, and open applications."
       />
       <ScrollToTop />
       <Navbar />
@@ -154,16 +127,13 @@ const JoinPage = () => {
       <main>
         <section className="join-hero">
           <div className="wrap">
-            <p className="eyebrow mono">
-              DTU Raven <span className="dot">/</span> Now recruiting
-            </p>
             <div className="join-hero-headline">
               <div className="join-hero-copy">
                 <h1>
                   Build drones that <em>sense</em>, <em>think</em> and <em>act</em>.
                 </h1>
                 <p className="lede">
-                  We're a student team building autonomous systems end to end, and we're looking for people to
+                  We are a student team building autonomous systems end to end, and we are looking for people to
                   build the next projects with us.
                 </p>
                 <div className="hero-actions join-hero-actions">
@@ -172,12 +142,7 @@ const JoinPage = () => {
                     className="btn-primary"
                     onClick={(event: MouseEvent<HTMLButtonElement>) => {
                       event.preventDefault();
-                      const target = document.getElementById('roles');
-                      if (target) {
-                        const offset = 24;
-                        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                        window.scrollTo({ top, behavior: 'smooth' });
-                      }
+                      scrollToRoles();
                     }}
                   >
                     View open positions
@@ -203,30 +168,28 @@ const JoinPage = () => {
             <div>
               <p className="eyebrow mono">How we work</p>
               <p className="big">
-                DTU Raven is a student-run team building autonomous drones end to end -{' '}
-                <strong>airframe, electronics, and the software that lets them fly themselves.</strong> We work in
+                DTU Raven is a student-run team building autonomous drones end to end: {' '}
+                <strong>airframe, electronics, and the software that makes them autonomous.</strong> We work in
                 small sub-teams, build hardware that has to survive contact with the real
                 world, and fly it ourselves at our test site. You take on real responsibility from week one, learn
-                by doing the actual engineering, and have teammates who'll help you get there. We took first place
-                at C-UASC 2026, and we're now building toward IARC Mission 10 - autonomous swarms that map a safe
-                path through a minefield. It's a difficult competition so we need more motivated engineers on the team.
+                by doing the actual engineering, and have teammates who will help you get there. We took first
+                place at C-UASC 2026, and we are now building toward the IMechE UAS Challenge with our VTOL
+                fixed-wing, and IARC Mission 10: autonomous swarms that map a safe path through a minefield. Both
+                are difficult competitions, so we need more motivated engineers on the team.
               </p>
             </div>
             <div className="principles">
               <div>
-                <span className="mono">01 - Own it</span>
                 <h3>Own a subsystem</h3>
-                <p>Every member owns a part of the vehicle, not a ticket in a backlog.</p>
+                <p>Every member is responsible for one part of the vehicle, from design to flight.</p>
               </div>
               <div>
-                <span className="mono">02 - Fly it</span>
                 <h3>Ship and fly</h3>
-                <p>We design it, build it, then put it in the air. The stakes are high - a small mistake could mean losing months of work</p>
+                <p>We design it, build it, and then fly it ourselves at our test site.</p>
               </div>
               <div>
-                <span className="mono">03 - Learn by doing</span>
                 <h3>No prior experience required</h3>
-                <p>Curiosity and follow-through matter more than a CV. We'll help eachother learn the rest.</p>
+                <p>Curiosity and follow-through matter more than a CV. We help each other learn the rest.</p>
               </div>
             </div>
           </div>
@@ -237,43 +200,33 @@ const JoinPage = () => {
             <div className="sec-head">
               <hr className="rule" />
               <p className="eyebrow mono roles-count">
-                Open roles <span className="slash">/</span> 6
+                Open roles <span className="slash">/</span> 7
               </p>
-              <h2>Profiles we're looking for</h2>
+              <h2>Profiles we are looking for</h2>
             </div>
 
             <p style={{ color: 'var(--text-muted)', maxWidth: '60ch', marginBottom: '40px', lineHeight: 1.6 }}>
-              We're looking for students with hands-on experience in the areas below, but also for driven, hard-working people who can lead the organisation in the future.
+              Nothing below is a hard requirement. If you are driven and willing to learn, apply even if you do
+              not tick every box under "Good to have."
             </p>
 
             <div className="roles-grid">
               {roles.map((role) => (
-                <article className="role" key={role.code}>
-                  <p className="disc mono">
-                    <span>{role.discipline}</span>
-                    <span className="code">{role.code}</span>
-                  </p>
+                <article className="role" key={role.title}>
                   <h3>{role.title}</h3>
-                  <p className="mission">{role.mission}</p>
-                  <h4>What you'll do</h4>
+                  <p className="mission">{role.description}</p>
+                  <h4>What you will do</h4>
                   <ul>
                     {role.tasks.map((task) => (
                       <li key={task}>{task}</li>
                     ))}
                   </ul>
-                  <h4>You bring</h4>
+                  <h4>Good to have</h4>
                   <ul>
-                    {role.brings.map((item) => (
+                    {role.goodToHave.map((item) => (
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
-                  <div className="chips">
-                    {role.chips.map((chip) => (
-                      <span className="chip" key={chip}>
-                        {chip}
-                      </span>
-                    ))}
-                  </div>
                   <ApplyDialog
                     subject={role.subject}
                     label={`Apply for ${role.title}`}
@@ -284,13 +237,10 @@ const JoinPage = () => {
               ))}
 
               <article className="role open">
-                <p className="disc mono">
-                  <span className="open-label">Open application</span>
-                </p>
-                <h3>Don't see your profile?</h3>
+                <h3>Do not see your profile?</h3>
                 <p className="mission">
                   Software, business, design, finance - if you want to help build autonomous aircraft, tell us what
-                  you'd bring.
+                  you would bring.
                 </p>
                 <ApplyDialog
                   subject="Open application"
@@ -308,8 +258,8 @@ const JoinPage = () => {
             <span className="mono">How to apply</span>
             <h2>Send a short intro and your CV.</h2>
             <p>
-              Tell us which role fits you, what you've built before, and why drones. We read every application and
-              reply to set up a chat.
+              Tell us which role fits you, what you have built before, and why drones. We read every application
+              and reply to set up a chat.
             </p>
             <ApplyDialog
               label="Email us"

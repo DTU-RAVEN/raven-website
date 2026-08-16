@@ -17,7 +17,7 @@ const Team = () => {
           <p className="eyebrow mono roles-count">
             Team <span className="slash">/</span> {sortedMembers.length} members
           </p>
-          <h2>Our team</h2>
+          <h1>Our team</h1>
         </div>
 
         <div className="team-grid-light">
@@ -38,10 +38,10 @@ const Team = () => {
       <section className="cta">
         <div className="wrap">
           <span className="mono">Join us</span>
-          <h2>There's a place for you on this team.</h2>
+          <h2>There is a place for you on this team.</h2>
           <p>
-            We're always looking for passionate students. Whether you're into robotics, programming,
-            mechanical design, or project management. We'd love to hear from you.
+            We are always looking for students to join, whether you are into robotics, programming,
+            mechanical design, or project management. Get in touch.
           </p>
           <Link to="/join" className="apply">See open roles</Link>
         </div>

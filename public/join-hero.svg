@@ -2,7 +2,7 @@
 <title>Autonomous drone perceiving and avoiding an obstacle</title>
 <desc>A side-view drone points a focused perception cone at an obstacle ahead, detects it, and plans a path up and over it to a target.</desc>
 <style>
-  .lbl { font-family:"Space Mono", ui-monospace, monospace; }
+  .lbl { font-family:"Satoshi", sans-serif; }
   @keyframes raven-pulse { 0%,100% { transform: scale(1); opacity:1; } 50% { transform: scale(1.3); opacity:.55; } }
   @keyframes raven-flow { to { stroke-dashoffset:-18; } }
   .pn { transform-box: fill-box; transform-origin: center; }
@@ -22,11 +22,6 @@
 </defs>
 
 <rect x="0" y="0" width="680" height="420" fill="#191515"/>
-
-<path d="M16 34 L16 16 L34 16" fill="none" stroke="#990000" stroke-width="2"/>
-<path d="M646 16 L664 16 L664 34" fill="none" stroke="#990000" stroke-width="2"/>
-<path d="M16 386 L16 404 L34 404" fill="none" stroke="#990000" stroke-width="2"/>
-<path d="M646 404 L664 404 L664 386" fill="none" stroke="#990000" stroke-width="2"/>
 
 <text class="lbl" x="26" y="33" font-size="11" letter-spacing="1.6" fill="#968C8C">FORWARD VISION</text>
 <circle class="pn d" cx="560" cy="29" r="4" fill="#990000"/>

@@ -88,8 +88,8 @@ const Index = () => {
             <p className="eyebrow mono">About RAVEN</p>
             <p className="big">
               RAVEN is a student organisation at DTU dedicated to filling industry needs in unmanned systems.
-              We bridge students and companies,{' '}
-              <strong>developing sustainable, cutting-edge autonomous technology.</strong>
+              We connect students and companies, and{' '}
+              <strong>build autonomous technology that is built to last.</strong>
             </p>
             <Link to="/join" className="apply" style={{ marginTop: '28px', display: 'inline-block' }}>
               Get involved
@@ -109,11 +109,7 @@ const Index = () => {
             {sponsors.map((partner, index) => (
               <div key={index} className="partner-item">
                 <div className="partner-logo">
-                  <img
-                    src={partner.logo}
-                    alt={`${partner.name} logo`}
-                    style={partner.logo.includes('white') ? { filter: 'invert(1)' } : undefined}
-                  />
+                  <img src={partner.logo} alt={`${partner.name} logo`} />
                 </div>
                 <p className="partner-name">{partner.name}</p>
                 <p className="partner-desc">{partner.contribution}</p>
@@ -129,7 +125,8 @@ const Index = () => {
           <span className="mono">Our team</span>
           <h2>Built by students, for the future of flight.</h2>
           <p>
-            RAVEN is made up of DTU students from diverse disciplines, united by a passion for autonomous systems.
+            RAVEN is made up of DTU students from mechanical, electrical, and software backgrounds, all working
+            on the same aircraft.
           </p>
           <div className="cta-actions">
             <Link to="/team" className="apply">Meet the team</Link>

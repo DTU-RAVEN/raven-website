@@ -370,6 +370,53 @@
   color: var(--text-muted);
 }
 
+.info-meeting {
+  align-items: center;
+  background: linear-gradient(90deg, rgba(153, 0, 0, 0.14), rgba(153, 0, 0, 0.04));
+  border: 1px solid rgba(153, 0, 0, 0.45);
+  border-left: 3px solid var(--brand);
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+  padding: 20px 24px;
+  margin: 0 0 44px;
+}
+
+.info-meeting-tag {
+  color: var(--brand);
+  flex-shrink: 0;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.info-meeting-when {
+  align-items: baseline;
+  color: var(--text);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.05rem;
+  gap: 2px 12px;
+  margin: 0;
+}
+
+.info-meeting-where {
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  font-weight: 400;
+}
+
+.info-meeting-note {
+  color: var(--text-muted);
+  flex: 1 0 100%;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
 .join-hero h1 {
   font-family: var(--disp);
   font-size: clamp(2.4rem, 4.8vw, 5.2rem);

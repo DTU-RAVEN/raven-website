@@ -2,9 +2,10 @@
 import { MouseEvent, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import ApplyDialog from '@/components/ApplyDialog';
 import MetaTags from '@/components/MetaTags';
 import ScrollToTop from '@/components/ScrollToTop';
+
+const APPLICATION_FORM_URL = 'https://forms.cloud.microsoft/e/68etcR19hq';
 
 type Role = {
   title: string;
@@ -127,13 +128,23 @@ const JoinPage = () => {
       <main>
         <section className="join-hero">
           <div className="wrap">
+            <div className="info-meeting" role="note">
+              <span className="info-meeting-tag mono">Info meeting</span>
+              <p className="info-meeting-when">
+                <strong>Tuesday 8 September, 17:30</strong>
+                <span className="info-meeting-where">Arena, SkyLab &middot; Centrifugevej 374</span>
+              </p>
+              <p className="info-meeting-note">
+                Curious about the team? Come meet us, hear about the projects, and ask anything.
+              </p>
+            </div>
             <div className="join-hero-headline">
               <div className="join-hero-copy">
                 <h1>
                   Build drones that <em>sense</em>, <em>think</em> and <em>act</em>.
                 </h1>
                 <p className="lede">
-                  We are a student team building autonomous systems end to end, and we are looking for people to
+                  We are a student team building autonomous systems, and we are looking for people to
                   build the next projects with us.
                 </p>
                 <div className="hero-actions join-hero-actions">
@@ -147,11 +158,14 @@ const JoinPage = () => {
                   >
                     View open positions
                   </button>
-                  <ApplyDialog
-                    buttonClassName="btn-secondary"
-                    buttonText="Apply now"
-                    label="Start your application"
-                  />
+                  <a
+                    className="btn-secondary"
+                    href={APPLICATION_FORM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Apply now
+                  </a>
                 </div>
               </div>
               <img
@@ -166,30 +180,30 @@ const JoinPage = () => {
         <section className="work">
           <div className="wrap work-grid">
             <div>
-              <p className="eyebrow mono">How we work</p>
               <p className="big">
-                DTU Raven is a student-run team building autonomous drones end to end: {' '}
-                <strong>airframe, electronics, and the software that makes them autonomous.</strong> We work in
-                small sub-teams, build hardware that has to survive contact with the real
-                world, and fly it ourselves at our test site. You take on real responsibility from week one, learn
-                by doing the actual engineering, and have teammates who will help you get there. We took first
-                place at C-UASC 2026, and we are now building toward the IMechE UAS Challenge with our VTOL
-                fixed-wing, and IARC Mission 10: autonomous swarms that map a safe path through a minefield. Both
-                are difficult competitions, so we need more motivated engineers on the team.
+                DTU Raven is student-run and we strive to build everything end to end: {' '}
+                <strong>airframe, electronics, and the entire software stack.</strong> You join one of our
+                sub-teams and take ownership of a subsystem. Every new member works alongside someone who has
+                already been through a full build cycle, and the expectation in your first month is that you learn
+                the stack, not that you are an expert.
+              </p>
+              <p className="big" style={{ marginTop: '24px' }}>
+                We are now building a VTOL fixed-wing for the IMechE UAS Challenge and an autonomous swarm for IARC
+                Mission 10, where the aircraft have to map a safe path through a minefield.
               </p>
             </div>
             <div className="principles">
               <div>
-                <h3>Own a subsystem</h3>
-                <p>Every member is responsible for one part of the vehicle, from design to flight.</p>
+                <h3>~5 ECTS of time</h3>
+                <p>Expect roughly the workload of a 5-ECTS course.</p>
               </div>
               <div>
-                <h3>Ship and fly</h3>
-                <p>We design it, build it, and then fly it ourselves at our test site.</p>
+                <h3>Monday evenings</h3>
+                <p>We meet Monday evenings, plus a workday most Saturdays.</p>
               </div>
               <div>
-                <h3>No prior experience required</h3>
-                <p>Curiosity and follow-through matter more than a CV. We help each other learn the rest.</p>
+                <h3>Based in Skylab</h3>
+                <p>Our workshop is in Skylab, where the team builds and meets.</p>
               </div>
             </div>
           </div>
@@ -207,7 +221,8 @@ const JoinPage = () => {
 
             <p style={{ color: 'var(--text-muted)', maxWidth: '60ch', marginBottom: '40px', lineHeight: 1.6 }}>
               Nothing below is a hard requirement. If you are driven and willing to learn, apply even if you do
-              not tick every box under "Good to have."
+              not tick every box under "Good to have." We especially welcome students early in their studies -
+              the time and commitment you bring count for as much as experience.
             </p>
 
             <div className="roles-grid">
@@ -227,27 +242,22 @@ const JoinPage = () => {
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
-                  <ApplyDialog
-                    subject={role.subject}
-                    label={`Apply for ${role.title}`}
-                    buttonClassName="apply"
-                    buttonText="Apply"
-                  />
                 </article>
               ))}
 
               <article className="role open">
                 <h3>Do not see your profile?</h3>
                 <p className="mission">
-                  Software, business, design, finance - if you want to help build autonomous aircraft, tell us what
-                  you would bring.
+                  Apply anyway and tell us what you want to work on.
                 </p>
-                <ApplyDialog
-                  subject="Open application"
-                  label="Open application"
-                  buttonClassName="apply"
-                  buttonText="Get in touch"
-                />
+                <a
+                  className="apply"
+                  href={APPLICATION_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Get in touch
+                </a>
               </article>
             </div>
           </div>
@@ -256,16 +266,19 @@ const JoinPage = () => {
         <section className="cta">
           <div className="wrap">
             <span className="mono">How to apply</span>
-            <h2>Send a short intro and your CV.</h2>
+            <h2>Fill out our application form.</h2>
             <p>
               Tell us which role fits you, what you have built before, and why drones. We read every application
               and reply to set up a chat.
             </p>
-            <ApplyDialog
-              label="Email us"
-              buttonClassName="apply"
-              buttonText="Email us"
-            />
+            <a
+              className="apply"
+              href={APPLICATION_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Apply now
+            </a>
           </div>
         </section>
       </main>

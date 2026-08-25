@@ -48,6 +48,8 @@ const Footer = () => {
 
         <div className="footer-bottom mono">
           <p>2026 RAVEN DTU. All rights reserved.</p>
+          <p>CVR: 45324354</p>
+          <p>Rævehøjvej 36, st. 111, 2800 Kongens Lyngby</p>
         </div>
       </div>
     </footer>

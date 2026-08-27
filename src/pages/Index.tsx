@@ -46,6 +46,44 @@ const Index = () => {
       <Navbar />
       <Hero />
 
+      {/* Join / Recruitment */}
+      <section className="work">
+        <div className="wrap">
+          <div className="info-meeting" role="note">
+            <span className="info-meeting-tag mono">Info meeting</span>
+            <p className="info-meeting-when">
+              <strong>Tuesday 8 September, 17:30</strong>
+              <span className="info-meeting-where">Arena, SkyLab &middot; Centrifugevej 374</span>
+            </p>
+            <p className="info-meeting-note">
+              Curious about the team? Come meet us, hear about the projects, and ask anything.
+            </p>
+          </div>
+
+          <div className="sec-head" style={{ marginTop: 0 }}>
+            <hr className="rule" />
+            <p className="eyebrow mono">Join RAVEN</p>
+            <h2>Apply for the 2026–27 season.</h2>
+          </div>
+          <p className="big" style={{ maxWidth: '56ch', marginBottom: '12px' }}>
+            We are recruiting across all disciplines: software, mechanical, electrical, drone pilots,
+            and non-technical roles. Applications close{' '}
+            <strong>10 September at 23:59.</strong>
+          </p>
+          <div className="cta-actions" style={{ marginTop: '28px' }}>
+            <a
+              className="apply"
+              href="https://forms.cloud.microsoft/e/68etcR19hq"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Apply now
+            </a>
+            <Link to="/join" className="btn-secondary cta-secondary">View open roles</Link>
+          </div>
+        </div>
+      </section>
+
       {/* Competitions */}
       <section className="index-section">
         <div className="wrap">

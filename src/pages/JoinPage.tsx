@@ -141,11 +141,12 @@ const JoinPage = () => {
             <div className="join-hero-headline">
               <div className="join-hero-copy">
                 <h1>
-                  Build drones that <em>sense</em>, <em>think</em> and <em>act</em>.
+                  Apply for the 2026–27 season.
                 </h1>
                 <p className="lede">
-                  We are a student team building autonomous systems, and we are looking for people to
-                  build the next projects with us.
+                  We are recruiting across all disciplines: software, mechanical, electrical, drone pilots,
+                  and non-technical roles. Applications close{' '}
+                  <strong>10 September at 23:59.</strong>
                 </p>
                 <div className="hero-actions join-hero-actions">
                   <button

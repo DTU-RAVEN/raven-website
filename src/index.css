@@ -384,13 +384,16 @@
 }
 
 .info-meeting-tag {
-  color: var(--brand);
+  background: var(--brand);
+  color: #fff;
   flex-shrink: 0;
   font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin: 0;
+  padding: 3px 8px;
+  border-radius: 3px;
 }
 
 .info-meeting-when {

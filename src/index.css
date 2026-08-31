@@ -187,10 +187,12 @@
 
   .btn-primary,
   .btn-secondary {
-    display: inline-block;
+    align-items: center;
+    display: inline-flex;
     font-family: var(--body);
     font-size: 0.74rem;
     font-weight: 700;
+    justify-content: center;
     letter-spacing: 0.08em;
     padding: 11px 20px;
     text-decoration: none;
@@ -778,6 +780,20 @@
 
 .apply:hover {
   filter: brightness(0.85);
+}
+
+.apply--hero {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 12px 32px -8px rgba(153, 0, 0, 0.65);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  padding: 21px 44px;
+  transition: background 0.15s, color 0.15s, box-shadow 0.2s, transform 0.2s;
+}
+
+.apply--hero:hover {
+  box-shadow: 0 14px 36px -6px rgba(153, 0, 0, 0.75);
+  transform: translateY(-2px) scale(1.03);
 }
 
 .role.open {

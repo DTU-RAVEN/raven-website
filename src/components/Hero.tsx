@@ -47,6 +47,16 @@ const Hero = () => {
         <p className="lede">
           A DTU student team building autonomous vehicles end to end, competing at the highest level.
         </p>
+        <div className="cta-actions" style={{ justifyContent: 'flex-start' }}>
+          <a
+            className="apply apply--hero"
+            href="https://forms.cloud.microsoft/e/68etcR19hq"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Apply now
+          </a>
+        </div>
       </div>
     </section>
   );

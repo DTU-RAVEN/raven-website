@@ -72,7 +72,7 @@ const Index = () => {
           </p>
           <div className="cta-actions" style={{ marginTop: '28px' }}>
             <a
-              className="apply"
+              className="apply apply--hero"
               href="https://forms.cloud.microsoft/e/68etcR19hq"
               target="_blank"
               rel="noopener noreferrer"

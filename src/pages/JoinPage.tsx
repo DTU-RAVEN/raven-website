@@ -5,8 +5,6 @@ import Footer from '@/components/Footer';
 import MetaTags from '@/components/MetaTags';
 import ScrollToTop from '@/components/ScrollToTop';
 
-const APPLICATION_FORM_URL = 'https://forms.cloud.microsoft/e/68etcR19hq';
-
 type Role = {
   title: string;
   description: string;
@@ -128,25 +126,14 @@ const JoinPage = () => {
       <main>
         <section className="join-hero">
           <div className="wrap">
-            <div className="info-meeting" role="note">
-              <span className="info-meeting-tag mono">Info meeting</span>
-              <p className="info-meeting-when">
-                <strong>Tuesday 8 September, 17:30</strong>
-                <span className="info-meeting-where">Arena, SkyLab &middot; Centrifugevej 374</span>
-              </p>
-              <p className="info-meeting-note">
-                Curious about the team? Come meet us, hear about the projects, and ask anything.
-              </p>
-            </div>
             <div className="join-hero-headline">
               <div className="join-hero-copy">
                 <h1>
-                  Apply for the 2026–27 season.
+                  Join the 2026–27 season.
                 </h1>
                 <p className="lede">
                   We are recruiting across all disciplines: software, mechanical, electrical, drone pilots,
-                  and non-technical roles. Applications close{' '}
-                  <strong>10 September at 23:59.</strong>
+                  and non-technical roles.
                 </p>
                 <div className="hero-actions join-hero-actions">
                   <button
@@ -159,14 +146,6 @@ const JoinPage = () => {
                   >
                     View open positions
                   </button>
-                  <a
-                    className="btn-secondary"
-                    href={APPLICATION_FORM_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Apply now
-                  </a>
                 </div>
               </div>
               <img
@@ -249,37 +228,10 @@ const JoinPage = () => {
               <article className="role open">
                 <h3>Do not see your profile?</h3>
                 <p className="mission">
-                  Apply anyway and tell us what you want to work on.
+                  Reach out anyway and tell us what you want to work on.
                 </p>
-                <a
-                  className="apply"
-                  href={APPLICATION_FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Get in touch
-                </a>
               </article>
             </div>
-          </div>
-        </section>
-
-        <section className="cta">
-          <div className="wrap">
-            <span className="mono">How to apply</span>
-            <h2>Fill out our application form.</h2>
-            <p>
-              Tell us which role fits you, what you have built before, and why drones. We read every application
-              and reply to set up a chat.
-            </p>
-            <a
-              className="apply"
-              href={APPLICATION_FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Apply now
-            </a>
           </div>
         </section>
       </main>

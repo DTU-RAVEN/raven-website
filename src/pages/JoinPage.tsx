@@ -1,7 +1,9 @@
-﻿import Navbar from '@/components/Navbar';
+import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import MetaTags from '@/components/MetaTags';
 import ScrollToTop from '@/components/ScrollToTop';
+
+const contactEmail = 'contact@dturaven.com';
 
 const JoinPage = () => {
   return (
@@ -50,20 +52,23 @@ const JoinPage = () => {
             <div>
               <p className="big">
                 DTU Raven is student-run and we strive to build everything end to end: {' '}
-                <strong>airframe, electronics, and the entire software stack.</strong> You join one of our
-                sub-teams and take ownership of a subsystem. Every new member works alongside someone who has
-                already been through a full build cycle, and the expectation in your first month is that you learn
-                the stack, not that you are an expert.
+                <strong>airframe, electronics, and the entire software stack.</strong> Each member takes
+                ownership of a subsystem and works alongside people who have already been through a full
+                build cycle.
               </p>
               <p className="big" style={{ marginTop: '24px' }}>
                 We are now building a VTOL fixed-wing for the IMechE UAS Challenge and an autonomous swarm for IARC
                 Mission 10, where the aircraft have to map a safe path through a minefield.
               </p>
+              <p className="big" style={{ marginTop: '24px' }}>
+                Curious about what we do or want to say hello? Email us at{' '}
+                <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+              </p>
             </div>
             <div className="principles">
               <div>
                 <h3>~5 ECTS of time</h3>
-                <p>Expect roughly the workload of a 5-ECTS course.</p>
+                <p>The team runs at roughly the workload of a 5-ECTS course.</p>
               </div>
               <div>
                 <h3>Monday evenings</h3>
@@ -84,4 +89,3 @@ const JoinPage = () => {
 };
 
 export default JoinPage;
-

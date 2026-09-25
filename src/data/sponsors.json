@@ -1,14 +1,27 @@
-
 [
   {
     "name": "DTU Blue Dot",
-    "logo": "/Sponsors/DTU_Logo_Corporate_White_RGB.png",
-    "contribution": "Support"
+    "logo": "/Sponsors/standard_DTU_Logo_Corporate_Red_RGB.png",
+    "contribution": "Support",
+    "color": true
   },
   {
-    "name": "Tuborgfonden",
-    "logo": "/Sponsors/Tuborgfondet-Logotype-White-RGB.png",
-    "contribution": "Support"
+    "name": "Tuborgfondet",
+    "logo": "/Sponsors/tuborgfondet-red.png",
+    "contribution": "Support",
+    "color": true
+  },
+  {
+    "name": "raaco",
+    "logo": "/Sponsors/raaco-color.png",
+    "contribution": "In-kind support",
+    "color": true
+  },
+  {
+    "name": "William Demant Fonden",
+    "logo": "/Sponsors/william-demant-fonden-color.png",
+    "contribution": "Support",
+    "color": true
   },
   {
     "name": "UXV",
@@ -18,6 +31,7 @@
   {
     "name": "dane-rc.dk",
     "logo": "/Sponsors/logo-white.png",
-    "contribution": "In-kind support"
+    "contribution": "In-kind support",
+    "color": true
   }
 ]

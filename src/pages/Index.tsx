@@ -108,7 +108,7 @@ const Index = () => {
           <div className="partners-grid">
             {sponsors.map((partner, index) => (
               <div key={index} className="partner-item">
-                <div className="partner-logo">
+                <div className={`partner-logo${(partner as { color?: boolean }).color ? ' partner-logo-color' : ''}`}>
                   <img src={partner.logo} alt={`${partner.name} logo`} />
                 </div>
                 <p className="partner-name">{partner.name}</p>

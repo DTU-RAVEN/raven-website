@@ -1224,13 +1224,14 @@ button:focus-visible,
 
 .partner-logo {
   filter: grayscale(1);
-  height: 80px;
+  height: 104px;
   margin: 0 auto 14px;
   transition: filter 0.25s;
-  width: 80px;
+  width: 168px;
 }
 
-.partner-logo:hover {
+.partner-logo:hover,
+.partner-logo-color {
   filter: none;
 }
 

@@ -43,6 +43,8 @@ This guide explains how to update team members and sponsors on the RAVEN website
    - `name`: Sponsor/partner name
    - `logo`: Path to their logo image (upload new logos to `public/` folder)
    - `contribution`: Type of support they provide
+   - `color` (optional): Set to `true` to always show the logo in full colour. Leave it out for
+     white/black logos, which are shown in greyscale and turn colourful on hover.
 
 3. Follow the same steps as above to add, remove, or edit sponsors.
 

@@ -1,128 +1,362 @@
 [
   {
-    "name": "Anders Skovborg",
-    "role": "President",
-    "program": "Msc. Engineering Physics",
-    "image": "/headshots-v1/anders.JPG",
-    "isBoard": true
-  },
-  {
-    "name": "Carl Borg",
-    "role": "Treasurer",
-    "program": "Bsc. AI and Data",
-    "image": "/headshots-v1/borg.JPG",
-    "isBoard": true
-  },
-  {
-    "name": "Søren Skovborg",
-    "role": "Mechanical Team Lead",
-    "program": "BSc. Earth and Space Physics and Engineering",
-    "image": "/headshots-v1/soren.JPG",
+    "name": "Mikkel Leander",
+    "department": "Electrical",
+    "role": "",
+    "program": "MSc. Electrical Engineering",
+    "image": "/placeholder.svg",
     "isBoard": true
   },
   {
     "name": "Emil Knarreborg",
-    "role": "Project Manager & Software Team Leader",
+    "department": "Operations",
+    "role": "Operations Lead",
     "program": "MSc. Autonomous Systems",
     "image": "/headshots-v1/knarre.JPG",
     "isBoard": true
   },
   {
-    "name": "Frederik Himmer",
-    "role": "Mechanical",
-    "program": "Msc. Sustainable Energy Technology",
-    "image": "/headshots-v1/himmer.JPG",
+    "name": "Alfred Holck",
+    "department": "Mechanical",
+    "role": "",
+    "program": "BSc. Mechanical Engineering",
+    "image": "/placeholder.svg",
     "isBoard": true
   },
   {
-    "name": "Frederik Ravnborg",
-    "role": "Software Team",
+    "name": "Stanislaw Piotr Kolodziejczyk",
+    "department": "Software",
+    "role": "",
+    "program": "MSc. Autonomous Systems",
+    "image": "/placeholder.svg",
+    "isBoard": true
+  },
+  {
+    "name": "Søren Skovborg",
+    "department": "Mechanical",
+    "role": "Mechanical Lead",
+    "program": "MSc. Wind Energy",
+    "image": "/headshots-v1/soren.JPG",
+    "isBoard": true
+  },
+  {
+    "name": "Anders Skovborg",
+    "department": "Electrical",
+    "role": "Chairman & Electrical Lead",
+    "program": "MSc. Engineering Physics",
+    "image": "/headshots-v1/anders.JPG",
+    "isBoard": true
+  },
+  {
+    "name": "Etienne Rasmus Gras",
+    "department": "Operations",
+    "role": "Treasurer",
+    "program": "BSc. General Engineering",
+    "image": "/placeholder.svg",
+    "isBoard": true
+  },
+  {
+    "name": "Sabina Strimbanu",
+    "department": "Software",
+    "role": "",
+    "program": "BSc. General Engineering",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Giannis Georgakis",
+    "department": "Mechanical",
+    "role": "",
+    "program": "MSc. Wind Energy",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Lea Lindelof",
+    "department": "Electrical",
+    "role": "",
+    "program": "BSc. Cyber Technology",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Jonathan Tybirk",
+    "department": "Software",
+    "role": "",
+    "program": "BSc. Artificial Intelligence and Data",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Zsombor Bognár",
+    "department": "Software",
+    "role": "Software Lead",
+    "program": "MSc. Autonomous Systems",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Henrik Bongers",
+    "department": "Software",
+    "role": "",
+    "program": "MSc. Autonomous Systems",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Adam Rustom",
+    "department": "Software",
+    "role": "",
+    "program": "MSc. Autonomous Systems",
+    "image": "/headshots-v1/adam.JPG",
+    "isBoard": false
+  },
+  {
+    "name": "Francisco Sampaio",
+    "department": "Operations",
+    "role": "",
+    "program": "MSc. Computer Science and Engineering",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Emil Daugaard",
+    "department": "Electrical",
+    "role": "",
+    "program": "BSc. Electrical Engineering",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Hamza Alomari",
+    "department": "Electrical",
+    "role": "",
+    "program": "BSc. Electrical Engineering",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Noa Paguera Contelles",
+    "department": "Electrical",
+    "role": "",
+    "program": "MSc. Autonomous Systems",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Gabriele Sepolvere",
+    "department": "Electrical",
+    "role": "",
+    "program": "MSc. Autonomous Systems",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Noah Dahl Christensen",
+    "department": "Electrical",
+    "role": "",
+    "program": "BSc. Electrical Engineering",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Jovan Gajic",
+    "department": "Mechanical",
+    "role": "",
+    "program": "MSc. Mechanical Engineering",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Almina Kocabas",
+    "department": "Mechanical",
+    "role": "",
+    "program": "BSc. General Engineering",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Fabian Rosenkrans Klarskov",
+    "department": "Mechanical",
+    "role": "",
+    "program": "BSc. Mechanical Engineering",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Frederik Emil Rasmussen",
+    "department": "Mechanical",
+    "role": "",
+    "program": "BSc. Mechanical Engineering",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Kathrine Lolle Boesen",
+    "department": "Mechanical",
+    "role": "",
+    "program": "BSc. Mechanical Engineering",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Victor Espersen",
+    "department": "Mechanical",
+    "role": "",
+    "program": "BSc. Mechanical Engineering",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Hannibal Foss",
+    "department": "Operations",
+    "role": "",
+    "program": "BSc. Engineering Physics",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Olivia Bouilloux",
+    "department": "Operations",
+    "role": "",
+    "program": "BSc. Mechanical Engineering",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Isak Fazal",
+    "department": "Operations",
+    "role": "",
+    "program": "BSc. General Engineering",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Advait Gajanan Sakhare",
+    "department": "Operations",
+    "role": "",
+    "program": "BSc. Artificial Intelligence and Data",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Ashwath Shivram",
+    "department": "Software",
+    "role": "",
+    "program": "MSc. Autonomous Systems",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Einar Benjamin Jensen",
+    "department": "Software",
+    "role": "",
+    "program": "MSc. Autonomous Systems",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Ayaan Shanoj",
+    "department": "Software",
+    "role": "",
+    "program": "MSc. Autonomous Systems",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Petra Cservenák",
+    "department": "Software",
+    "role": "",
+    "program": "BSc. General Engineering",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Emma Pinckers",
+    "department": "Software",
+    "role": "",
+    "program": "MSc. Autonomous Systems",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Morten Kaae Thorhauge",
+    "department": "Software",
+    "role": "",
+    "program": "BSc. General Engineering",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Shuyang Liu",
+    "department": "Software",
+    "role": "",
+    "program": "MSc. Autonomous Systems",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Carl Johan Waldorff",
+    "department": "Electrical",
+    "role": "",
+    "program": "BSc. Engineering Physics",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Stefanos Liakas",
+    "department": "Alumni",
+    "role": "",
+    "program": "MSc. Autonomous Systems",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
+    "name": "Jonas Mathiesen",
+    "department": "Alumni",
+    "role": "",
+    "program": "MSc. Electrical Engineering",
+    "image": "/headshots-v1/jonas.JPG",
+    "isBoard": false
+  },
+  {
+    "name": "Sander Busch",
+    "department": "Alumni",
+    "role": "",
+    "program": "MSc. Electrical Engineering",
+    "image": "/headshots-v1/sander.JPG",
+    "isBoard": false
+  },
+  {
+    "name": "Frederik Funch Ravnborg",
+    "department": "Alumni",
+    "role": "",
     "program": "MSc. Human-Centered AI",
     "image": "/headshots-v1/ravnborg.JPG",
     "isBoard": false
   },
   {
-    "name": "Carl Johan Waldorff", 
-    "role": "Electrical", 
-    "program": "BSc. Fysic and Engeneering",
-    "image": "/placeholder.svg",
-    "isBoard": false
-  },
-    {
     "name": "Markus Rytter",
-    "role": "Electrical",
+    "department": "Alumni",
+    "role": "",
     "program": "BEng. Electrical Engineering",
     "image": "/headshots-v1/rytter.JPG",
     "isBoard": false
   },
   {
-    "name": "Henrik Bongers", 
-    "role": "Software", 
-    "program": "MSc. Autonomous Systems",
-    "image": "/placeholder.svg",
-    "isBoard": false
-  }, 
-  {
-    "name": "Jonathan Tybirk", 
-    "role": "Software", 
-    "program": "Bsc. AI and Data",
-    "image": "/placeholder.svg",
-    "isBoard": false
-  }, 
-  {
-    "name": "Krystof Grygar", 
-    "role": "Mechanical",
-    "program": "MSc. Ocean Engineering",
-    "image": "/placeholder.svg",
-    "isBoard": false
-  },
-{
-    "name": "Lea Lindelof", 
-    "role": "Electrical", 
-    "program": "Bsc. Software Technology",
-    "image": "/placeholder.svg",
-    "isBoard": false
-  }, 
-  {
-    "name": "Mikkel Leander", 
-    "role": "Electrical", 
-    "program": "Bsc. Electrical Engineering",
-    "image": "/placeholder.svg",
-    "isBoard": false
-  }, 
-  {
-    "name": "Stasiek Kolodziejczyk", 
-    "role": "Software", 
-    "program": "MSc. Autonomous Systems",
-    "image": "/placeholder.svg",
+    "name": "Carl Frederik Himmer",
+    "department": "Alumni",
+    "role": "",
+    "program": "MSc. Sustainable Energy Technology",
+    "image": "/headshots-v1/himmer.JPG",
     "isBoard": false
   },
   {
-    "name": "Stefanons Liakas",
-    "role": "Software",
-    "program": "MSc. Autonomous Systems",
-    "image": "/placeholder.svg",
-    "isBoard": false
-  }, 
-  {
-    "name": "Zsombor Bognár", 
-    "role": "Software",
-    "program": "MSc. Autonomous Systems",
-    "image": "/placeholder.svg",
-    "isBoard": false
-  }, 
-  {
-    "name": "Ioannis Georgakis ",
-    "role": "Mechanical",
-    "program": "MSc Wind Energy",
-    "image": "/placeholder.svg",
-    "isBoard": false
-  },
-  {
-    "name": "Sabina Strimbanu",
-    "role": "Operations",
-    "program": "BSc. General Engineering (Cyber Systems)",
-    "image": "/placeholder.svg",
+    "name": "Carl Borg",
+    "department": "Alumni",
+    "role": "",
+    "program": "BSc. Artificial Intelligence and Data",
+    "image": "/headshots-v1/borg.JPG",
     "isBoard": false
   }
 ]

@@ -8,7 +8,10 @@ This guide explains how to update team members and sponsors on the RAVEN website
 1. Open the file `src/data/team-members.json`
 2. The file contains a list of team members, each with the following properties:
    - `name`: Team member's name
-   - `role`: Their position or role in RAVEN
+   - `department`: Which group they are shown under. Must be exactly one of:
+     `Electrical`, `Mechanical`, `Operations`, `Software`, or `Alumni`
+   - `role`: A title like "Treasurer" or "Mechanical Lead". Leave it empty (`""`) for regular members,
+     since the department heading already says which team they are on
    - `program`: Their field of study or program
    - `image`: Path to their profile image (upload new images to `public/` folder)
    - `isBoard`: Set to `true` if they are a board member, otherwise `false`
@@ -29,7 +32,8 @@ This guide explains how to update team members and sponsors on the RAVEN website
 ```json
 {
   "name": "New Person",
-  "role": "New Role",
+  "department": "Software",
+  "role": "",
   "program": "Their Program",
   "image": "/path/to/image.jpg",
   "isBoard": false

@@ -1273,6 +1273,21 @@ button:focus-visible,
 }
 
 /* ---- Team (light) ---- */
+.team-department + .team-department {
+  margin-top: 64px;
+}
+
+.team-department-title {
+  border-bottom: 1px solid var(--surface);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin: 0 0 32px;
+  padding-bottom: 12px;
+  text-transform: uppercase;
+}
+
 .team-grid-light {
   display: grid;
   gap: 32px;

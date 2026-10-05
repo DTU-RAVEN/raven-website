@@ -72,6 +72,14 @@
     "isBoard": false
   },
   {
+    "name": "Szymon Bogus",
+    "department": "Mechanical",
+    "role": "",
+    "program": "BSc. General Engineering",
+    "image": "/placeholder.svg",
+    "isBoard": false
+  },
+  {
     "name": "Lea Lindelof",
     "department": "Electrical",
     "role": "",

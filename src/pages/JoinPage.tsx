@@ -30,7 +30,7 @@ const JoinPage = () => {
                 <div className="hero-actions join-hero-actions">
                   <a
                     className="btn-primary"
-                    href="https://www.instagram.com/dtu_raven/"
+                    href="https://www.instagram.com/dturaven/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

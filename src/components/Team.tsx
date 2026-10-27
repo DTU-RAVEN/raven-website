@@ -57,7 +57,7 @@ const Team = () => {
             <span className="mono">Join us</span>
             <h2>There is a place for you on this team.</h2>
             <p>
-              We are always looking for students to join, whether you are into robotics, programming,
+              We are always looking for students to join, whether you are into autonomy, aerospace, programming,
               mechanical design, or project management. Get in touch.
             </p>
             <Link to="/join" className="apply">See open roles</Link>

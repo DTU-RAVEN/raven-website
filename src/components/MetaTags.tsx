@@ -8,7 +8,7 @@ interface MetaTagsProps {
 
 const MetaTags = ({
   title = 'RAVEN - Robotics, Autonomous Vehicle Engineering & Navigation',
-  description = 'DTU student organization dedicated to unmanned systems and autonomous technology'
+  description = 'DTU RAVEN is the autonomy and aerospace team at DTU, building unmanned aircraft and autonomous systems end to end'
 }: MetaTagsProps) => {
   return (
     <Helmet>

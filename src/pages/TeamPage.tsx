@@ -10,7 +10,7 @@ const TeamPage = () => {
     <div>
       <MetaTags
         title="Team - RAVEN DTU"
-        description="Meet the RAVEN team, DTU students working on autonomous systems and unmanned vehicles."
+        description="Meet the RAVEN team, DTU's autonomy and aerospace team building unmanned aircraft and autonomous systems."
       />
       <ScrollToTop />
       <Navbar />

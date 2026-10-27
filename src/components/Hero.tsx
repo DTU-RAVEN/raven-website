@@ -45,7 +45,7 @@ const Hero = () => {
           We build machines that fly, drive, and sail <em>themselves</em>.
         </h1>
         <p className="lede">
-          A DTU student team building autonomous vehicles end to end, competing at the highest level.
+          DTU's autonomy and aerospace team. We build autonomous vehicles end to end and compete at the highest level.
         </p>
       </div>
     </section>

@@ -16,6 +16,7 @@ const Footer = () => {
                 }}
               />
             </div>
+            <p className="footer-muted">Autonomy & Aerospace Team</p>
             <p className="footer-muted">Robotics, Autonomous Vehicle Engineering & Navigation</p>
             <p className="footer-muted mono">Technical University of Denmark - Lyngby</p>
           </div>

@@ -11,7 +11,7 @@ const NewsArticlePage = () => {
     <div>
       <MetaTags
         title="News Article - RAVEN DTU"
-        description="News from RAVEN - Robotics, Autonomous Vehicle Engineering & Navigation"
+        description="News from RAVEN, the autonomy and aerospace team at DTU"
       />
       <AccessibilityFeatures />
       <ScrollToTop />

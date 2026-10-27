@@ -10,7 +10,7 @@ const CompetitionsPage = () => {
     <div>
       <MetaTags
         title="Competitions - RAVEN DTU"
-        description="RAVEN's competition history and achievements in unmanned aerial systems competitions."
+        description="Competition history of RAVEN, DTU's autonomy and aerospace team, in unmanned aerial systems competitions."
       />
       <ScrollToTop />
       <Navbar />

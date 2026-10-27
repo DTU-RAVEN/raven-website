@@ -87,7 +87,7 @@ const Index = () => {
           <div>
             <p className="eyebrow mono">About RAVEN</p>
             <p className="big">
-              RAVEN is a student organisation at DTU dedicated to filling industry needs in unmanned systems.
+              RAVEN is DTU's autonomy and aerospace team, dedicated to filling industry needs in unmanned systems.
               We connect students and companies, and{' '}
               <strong>build autonomous technology that is built to last.</strong>
             </p>

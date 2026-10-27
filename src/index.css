@@ -4,6 +4,17 @@
 
 :root {
   --brand: #990000;
+
+  /* Crimson identity: the diagonal gradient from the brand post.
+     Bright red in the top-right corner, sinking to wine in the bottom-left. */
+  --crimson-hi: #A00000;
+  --crimson-mid: #82000E;
+  --crimson-lo: #5A0018;
+  --crimson-text: #E0283A; /* lighter tone for crimson text on black (~4.2:1 vs ~2.2:1 for --brand) */
+  --grad-crimson: linear-gradient(225deg, var(--crimson-hi) 0%, var(--crimson-mid) 50%, var(--crimson-lo) 100%);
+  /* Film grain, as on the post. Tiled SVG noise, used as an overlay. */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
   --bg: #0D0D0D;
   --surface: #1C1C1C;
   --text-muted: #999999;
@@ -1654,4 +1665,303 @@ button:focus-visible,
   height: 40px;
   justify-content: center;
   width: 40px;
+}
+
+/* ==========================================================================
+   Crimson identity
+   One big crimson gradient sits behind the whole site, fixed to the window,
+   like the brand post: red in the top-right, wine in the bottom-left, dark in
+   between. It slowly pulses between near-black and crimson.
+
+   Performance: only `opacity` is animated, which the GPU handles without
+   repainting. No blend modes, no backdrop blur and no animated shadows,
+   because those force the whole page to redraw every frame.
+   ========================================================================== */
+
+:root {
+  --text: #FFFFFF;
+  --text-muted: #B8B8B8;
+  --crimson-text: #FF3445;
+}
+
+body {
+  background: var(--bg);
+}
+
+/* The gradient. */
+body::before {
+  animation: crimson-pulse-bg 10s ease-in-out infinite;
+  background:
+    radial-gradient(ellipse 85% 75% at 100% 0%, rgba(200, 0, 0, 0.85), rgba(160, 0, 0, 0) 72%),
+    radial-gradient(ellipse 80% 70% at 0% 100%, rgba(110, 0, 28, 0.8), rgba(90, 0, 24, 0) 72%),
+    linear-gradient(225deg, rgba(170, 0, 0, 0.3) 0%, rgba(130, 0, 14, 0.08) 50%, rgba(90, 0, 24, 0.28) 100%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: fixed;
+  will-change: opacity;
+  z-index: -1;
+}
+
+/* Film grain, as on the post. Static, plain blending. */
+body::after {
+  background-image: var(--grain);
+  content: "";
+  inset: 0;
+  opacity: 0.05;
+  pointer-events: none;
+  position: fixed;
+  z-index: -1;
+}
+
+@keyframes crimson-pulse-bg {
+  0%, 100% { opacity: 0.15; }
+  50%      { opacity: 0.9; }
+}
+
+::selection {
+  background: var(--crimson-hi);
+  color: #fff;
+}
+
+html {
+  scrollbar-color: var(--crimson-mid) var(--bg);
+}
+
+/* ---- See-through sections, so the gradient runs unbroken ---- */
+.join-page,
+.work,
+.cta,
+.site-footer {
+  background: transparent;
+}
+
+.work {
+  border-color: transparent;
+}
+
+.site-footer {
+  border-top-color: transparent;
+}
+
+.footer-bottom {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+.raven-site-header {
+  backdrop-filter: none;
+  background: rgba(10, 9, 9, 0.84);
+  border-bottom-color: transparent;
+}
+
+.raven-mobile-menu {
+  background: rgba(10, 9, 9, 0.95);
+  border-top-color: transparent;
+}
+
+/* Cards and panels: dark smoked surfaces over the gradient. */
+.role,
+.news-card,
+.panel,
+.hero-video-panel,
+.comp-video-panel {
+  background: rgba(12, 10, 10, 0.78);
+  border-color: rgba(255, 255, 255, 0.07);
+}
+
+.role,
+.news-card {
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+    background-color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.role:hover,
+.news-card:hover {
+  background: rgba(22, 16, 16, 0.88);
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-4px);
+}
+
+.role.open,
+.role.open:hover {
+  background: transparent;
+  border-color: rgba(242, 242, 242, 0.4);
+}
+
+.role.open:hover {
+  border-color: rgba(242, 242, 242, 0.7);
+}
+
+/* ---- Text that pops ---- */
+h1,
+h2,
+.sec-head h1,
+.sec-head h2,
+.cta h2 {
+  color: #fff;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.45);
+}
+
+.big,
+.lede {
+  color: #fff;
+}
+
+.home-hero--video .lede {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.eyebrow {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.home-hero h1 em,
+.big strong {
+  color: var(--crimson-text);
+  text-shadow: 0 0 28px rgba(255, 40, 60, 0.35);
+}
+
+.join-hero h1 em {
+  background: linear-gradient(225deg, #FF5A5A 0%, var(--crimson-text) 45%, #C4102C 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+
+.cta h2 {
+  font-size: clamp(2rem, 4.4vw, 3.4rem);
+  line-height: 1.02;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 20ch;
+}
+
+.cta {
+  padding: 96px 0;
+}
+
+/* ---- Navigation underline: grows from the centre ---- */
+.raven-nav-list a::after {
+  background: var(--grad-crimson);
+  bottom: -2px;
+  content: "";
+  height: 2px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  transform: scaleX(0.4);
+  transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.3s ease;
+}
+
+.raven-nav-list a:hover::after,
+.raven-nav-list a.active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* ---- Buttons: gradient fill, soft light fades in on hover ---- */
+.btn-primary,
+.apply,
+.cta .apply {
+  background: var(--grad-crimson);
+  color: #fff;
+  isolation: isolate;
+  position: relative;
+  transition:
+    transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.3s ease;
+}
+
+.btn-primary::after,
+.apply::after {
+  background: linear-gradient(225deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 70%);
+  content: "";
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.btn-primary:hover,
+.apply:hover,
+.cta .apply:hover {
+  background: var(--grad-crimson);
+  box-shadow: 0 14px 34px -12px rgba(170, 0, 0, 0.85);
+  color: #fff;
+  filter: none;
+  transform: translateY(-2px);
+}
+
+.btn-primary:hover::after,
+.apply:hover::after {
+  opacity: 1;
+}
+
+/* The big Apply button sends out a ring (transform + opacity only). */
+.apply--hero::before {
+  animation: crimson-ring 2.8s ease-out infinite;
+  border: 2px solid rgba(230, 0, 20, 0.7);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+@keyframes crimson-ring {
+  0%   { opacity: 0.8; transform: scale(1); }
+  70%  { opacity: 0;   transform: scale(1.18, 1.5); }
+  100% { opacity: 0;   transform: scale(1.18, 1.5); }
+}
+
+/* ---- Badges and marks ---- */
+.eyebrow::before,
+.card-accent::before,
+.raven-brand b,
+.info-meeting-tag,
+.tag.live b,
+.open-label,
+.board-badge,
+.comp-result,
+.stat--accent,
+.numbered-item-index,
+.hero-live-dot {
+  background: var(--grad-crimson);
+}
+
+.hero-live-dot,
+.tag.live b {
+  box-shadow: 0 0 10px 2px rgba(220, 0, 0, 0.6);
+}
+
+@media (max-width: 860px) {
+  .cta {
+    padding: 72px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  .apply--hero::before {
+    animation: none;
+  }
+
+  body::before {
+    opacity: 0.6;
+  }
+
+  .role,
+  .news-card,
+  .btn-primary,
+  .apply,
+  .raven-nav-list a::after {
+    transition: none;
+  }
 }

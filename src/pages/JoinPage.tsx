@@ -51,7 +51,7 @@ const JoinPage = () => {
           <div className="wrap work-grid">
             <div>
               <p className="big">
-                DTU Raven is student-run and we strive to build everything end to end: {' '}
+                DTU Raven is a student-run autonomy and aerospace team, and we strive to build everything end to end: {' '}
                 <strong>airframe, electronics, and the entire software stack.</strong> Each member takes
                 ownership of a subsystem and works alongside people who have already been through a full
                 build cycle.

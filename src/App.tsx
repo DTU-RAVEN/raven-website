@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { lazy, Suspense } from "react";
+import DroneFlyer from "@/components/DroneFlyer";
 
 // Lazy load pages
 const Index = lazy(() => import("./pages/Index"));
@@ -40,6 +41,7 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
+          <DroneFlyer />
         </HashRouter>
       </TooltipProvider>
     </QueryClientProvider>

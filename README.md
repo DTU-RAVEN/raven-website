@@ -1,39 +1,61 @@
-## RAVEN Website
+# RAVEN Website
 
-Vite + React + TypeScript site.
+Setup guide for macOS.
 
-### Local development
+## 1. Install npm
+
+npm comes with Node.js. The easiest way to install it is with [Homebrew](https://brew.sh).
+
+Install Homebrew if you don't have it (paste into Terminal):
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Then install Node.js (includes npm):
+
+```sh
+brew install node
+```
+
+Check that it worked:
+
+```sh
+node -v
+npm -v
+```
+
+## 2. Run the site locally
+
+Get the code (first time only):
+
+```sh
+git clone git@github.com:DTU-RAVEN/raven-website.git
+cd raven-website
+```
+
+Install the dependencies (first time, and whenever `package.json` changes):
 
 ```sh
 npm i
+```
+
+Start the dev server:
+
+```sh
 npm run dev
 ```
 
-### Build
+Open http://localhost:8080 in your browser. The page reloads automatically when you save a file. Press `Ctrl + C` in Terminal to stop the server.
+
+## 3. Push your changes to main
 
 ```sh
-npm run build
+git checkout main
+git pull                      # get the latest changes first
+git add .                     # stage everything you changed
+git commit -m "Describe what you changed"
+git push origin main
 ```
 
-### Deploy with Dokploy (Git + Nixpacks)
-
-Follow Dokploy's Vite React example:
-
-1) Create an Application in Dokploy using your Git repo
-- Repository: your Git URL
-- Branch: main (or your branch)
-- Build path: `/` (repo root)
-- Publish directory: `./dist` (Nixpacks)
-
-2) Deploy
-- Click Deploy to build and publish
-
-3) Domain
-- Click Generate Domain
-- Set Port `80`
-- Open the generated URL
-
-Reference: [Dokploy Vite React guide](https://docs.dokploy.com/docs/core/vite-react)
-
-### Optional: Docker deployment
-If you prefer Docker, keep a `Dockerfile` that builds the Vite project and serves it with Nginx, then deploy the image in Dokploy.
+If `git push` is rejected because someone else pushed first, run `git pull` and then `git push origin main` again.

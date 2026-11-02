@@ -12,7 +12,13 @@
     "color": true
   },
   {
-    "name": "raaco A/S",
+    "name": "RS Components",
+    "logo": "/Sponsors/rs-components-logo.svg",
+    "contribution": "In-kind support",
+    "color": true
+  },
+  {
+    "name": "raaco",
     "logo": "/Sponsors/raaco_StackedLogo_white_Text.png",
     "contribution": "In-kind support",
     "color": true

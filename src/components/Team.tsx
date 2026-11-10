@@ -21,7 +21,7 @@ const activeCount = teamMembers.filter((member) => member.department !== 'Alumni
 
 const Team = () => {
   return (
-    <section id="team" className="index-section">
+    <section id="team" className="index-section page-top">
       <div className="wrap">
         <div className="sec-head">
           <hr className="rule" />

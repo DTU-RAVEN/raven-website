@@ -17,7 +17,7 @@ const NewsArticlePage = () => {
       <ScrollToTop />
       <Navbar />
 
-      <main className="index-section">
+      <main className="index-section page-top">
         <NewsArticle />
       </main>
       

@@ -16,7 +16,7 @@ const JoinPage = () => {
       <Navbar />
 
       <main>
-        <section className="join-hero">
+        <section className="join-hero page-top">
           <div className="wrap">
             <div className="join-hero-headline">
               <div className="join-hero-copy">

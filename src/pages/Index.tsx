@@ -61,6 +61,20 @@ const Index = () => {
             against 26 university teams from across the world and setting the course speed record at{' '}
             <strong>140 km/h</strong>.
           </p>
+          <div className="stat-row">
+            <div className="stat stat--accent">
+              <span className="stat-value">1st</span>
+              <span className="stat-label">Overall at C-UASC 2026</span>
+            </div>
+            <div className="stat">
+              <span className="stat-value">26</span>
+              <span className="stat-label">University teams in the field</span>
+            </div>
+            <div className="stat">
+              <span className="stat-value">140<small>km/h</small></span>
+              <span className="stat-label">Course speed record</span>
+            </div>
+          </div>
           <Link to="/competitions" className="apply" style={{ marginTop: '28px', display: 'inline-block' }}>
             View all competitions
           </Link>

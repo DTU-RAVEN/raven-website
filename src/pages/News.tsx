@@ -17,7 +17,7 @@ const News = () => {
       <ScrollToTop />
       <Navbar />
 
-      <main className="index-section">
+      <main className="index-section page-top">
         <div className="wrap">
           <div className="sec-head">
             <hr className="rule" />

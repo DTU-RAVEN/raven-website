@@ -23,7 +23,7 @@ const Project = () => {
   }, []);
 
   return (
-    <section id="competitions" className="index-section">
+    <section id="competitions" className="index-section page-top">
       <div className="wrap">
         <div className="sec-head">
           <hr className="rule" />
@@ -84,7 +84,7 @@ const Project = () => {
           <div className="comp-video-panel">
             <div className="comp-video-head mono">
               <span>C-UASC 2026</span>
-              <span style={{ background: 'var(--brand)', color: 'var(--text)', padding: '2px 8px' }}>140 km/h</span>
+              <span className="open-label">140 km/h</span>
             </div>
             <video
               ref={videoRef}

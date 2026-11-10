@@ -12,6 +12,24 @@
   --disp: "Satoshi", sans-serif;
   --body: "Satoshi", sans-serif;
   --mono: "Satoshi", sans-serif;
+
+  /* ---- Gradient system ----
+     The team gradient: pure black in the lower left rising to deep crimson in
+     the upper right. Everything below is cut from that one ramp so the red
+     always reads as light falling on black rather than as a second colour. */
+  --ember-deep: #3a0004;
+  --ember-mid: #270002;
+  --ember-low: #110001;
+  --brand-bright: #ad1717;
+  --hairline: rgba(242, 242, 242, 0.08);
+  --grad-ember: linear-gradient(28deg, #000 6%, var(--ember-low) 30%, var(--ember-mid) 62%, var(--ember-deep) 100%);
+  --grad-brand: linear-gradient(135deg, #760606 0%, #480000 100%);
+  --grad-text: linear-gradient(90deg, #b51a1a 0%, #921010 100%);
+  --grad-underline: linear-gradient(90deg, #940909 0%, #5e0000 100%);
+  --grad-rule: linear-gradient(90deg, #7a0000 0%, rgba(122, 0, 0, 0.3) 18%, var(--hairline) 46%);
+  /* Fine film grain. Dark gradients band visibly on 8-bit screens; a few
+     percent of noise on top hides the steps. */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.07 -0.012'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 @layer base {
@@ -138,7 +156,7 @@
   }
 
   ::selection {
-    background: rgba(153, 0, 0, 0.2);
+    background: rgba(153, 0, 0, 0.55);
     color: var(--text);
   }
 }
@@ -197,16 +215,17 @@
     padding: 11px 20px;
     text-decoration: none;
     text-transform: uppercase;
-    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    transition:
+      filter 0.3s ease,
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease;
   }
 
   .btn-primary {
-    background: var(--brand);
+    background: var(--grad-brand);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
     color: #fff;
-  }
-
-  .btn-primary:hover {
-    filter: brightness(0.85);
   }
 
   .btn-secondary {
@@ -215,7 +234,8 @@
   }
 
   .btn-secondary:hover {
-    border-color: var(--brand);
+    background-color: rgba(242, 242, 242, 0.08);
+    border-color: var(--text);
     color: var(--text);
   }
 }
@@ -240,6 +260,19 @@
   background: rgba(13, 11, 11, 0.97);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--surface);
+}
+
+/* A thread of crimson along the bottom edge of the header, brightest on the
+   right where the page glow sits. */
+.raven-site-header::after {
+  background: linear-gradient(90deg, transparent 30%, rgba(122, 0, 0, 0.6) 100%);
+  bottom: -1px;
+  content: "";
+  height: 1px;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
 }
 
 .raven-navbar {
@@ -299,14 +332,22 @@
   color: var(--text);
 }
 
-.raven-nav-list a.active::after {
-  background: var(--brand);
+.raven-nav-list a::after {
+  background: var(--grad-underline);
   bottom: -2px;
   content: "";
   height: 2px;
   left: 0;
   position: absolute;
   right: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.raven-nav-list a:hover::after,
+.raven-nav-list a.active::after {
+  transform: scaleX(1);
 }
 
 .raven-menu-button {
@@ -432,7 +473,6 @@
 }
 
 .join-hero h1 em {
-  color: var(--brand);
   font-style: normal;
 }
 
@@ -602,10 +642,8 @@
 }
 
 .work {
-  background: var(--surface);
-  border-bottom: 1px solid var(--surface);
-  border-top: 1px solid var(--surface);
-  padding: 56px 0;
+  border-top: 1px solid var(--hairline);
+  padding: 64px 0;
 }
 
 .work-grid {
@@ -622,8 +660,22 @@
 }
 
 .big strong {
-  color: var(--brand);
   font-weight: 400;
+}
+
+/* Brand crimson is only 2.2:1 against the page, too dim to read as text. The
+   emphasised phrases use a brighter cut of the same red, as a gradient. */
+.big strong,
+.home-hero h1 em,
+.join-hero h1 em,
+.grad-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: var(--grad-text);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  color: var(--brand-bright);
+  -webkit-text-fill-color: transparent;
 }
 
 .principles {
@@ -633,7 +685,8 @@
 
 .principles div {
   border-left: 3px solid var(--brand);
-  padding: 0 0 0 18px;
+  border-image: linear-gradient(180deg, #921010 0%, var(--ember-deep) 100%) 1;
+  padding: 2px 0 2px 18px;
 }
 
 .principles h3 {
@@ -656,7 +709,7 @@
 }
 
 .rule {
-  background: var(--surface);
+  background: var(--grad-rule);
   border: 0;
   height: 1px;
   margin: 0;
@@ -683,17 +736,17 @@
 }
 
 .role {
-  background: var(--surface);
-  border: 1px solid var(--surface);
+  background: linear-gradient(180deg, #171717 0%, #111 100%);
+  border: 1px solid var(--hairline);
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   padding: 26px 26px 24px;
-  transition: border-color 0.15s, transform 0.15s;
+  transition: border-color 0.2s, transform 0.2s;
 }
 
 .role:hover {
-  border-color: var(--brand);
+  border-color: rgba(153, 0, 0, 0.8);
   transform: translateY(-2px);
 }
 
@@ -765,7 +818,8 @@
 
 .apply {
   align-self: flex-start;
-  background: var(--brand);
+  background: var(--grad-brand);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
   color: #fff;
   font-family: var(--body);
   font-size: 0.74rem;
@@ -775,25 +829,29 @@
   padding: 11px 20px;
   text-decoration: none;
   text-transform: uppercase;
-  transition: background 0.15s, color 0.15s;
+  display: inline-block;
+  transition: filter 0.3s ease, background-color 0.3s ease;
 }
 
-.apply:hover {
-  filter: brightness(0.85);
+/* Button hover. A gradient background cannot be transitioned, so swapping it
+   on hover snaps. The button keeps one gradient and simply eases brighter. */
+.apply:hover,
+.btn-primary:hover {
+  filter: brightness(1.25);
+}
+
+.apply:active,
+.btn-primary:active {
+  filter: brightness(1.08);
+  transition-duration: 0.08s;
 }
 
 .apply--hero {
   border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 12px 32px -8px rgba(153, 0, 0, 0.65);
+  box-shadow: 0 12px 32px -8px rgba(153, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.06);
   font-size: 1rem;
   letter-spacing: 0.1em;
   padding: 21px 44px;
-  transition: background 0.15s, color 0.15s, box-shadow 0.2s, transform 0.2s;
-}
-
-.apply--hero:hover {
-  box-shadow: 0 14px 36px -6px rgba(153, 0, 0, 0.75);
-  transform: translateY(-2px) scale(1.03);
 }
 
 .role.open {
@@ -815,49 +873,59 @@
 }
 
 .open-label {
-  background: var(--brand);
+  background: var(--grad-brand);
   color: var(--text);
   padding: 2px 8px;
 }
 
+/* The one place the team gradient runs at full strength. */
 .cta {
-  background: var(--surface);
+  background: var(--grain), var(--grad-ember);
+  background-color: #000;
+  border-top: 1px solid rgba(122, 0, 0, 0.3);
   color: var(--text);
-  padding: 58px 0;
+  padding: 96px 0;
   text-align: center;
 }
 
 .cta h2 {
   font-family: var(--disp);
-  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
-  letter-spacing: 0;
-  margin: 0 0 14px;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  margin: 0 auto 18px;
+  max-width: 20ch;
 }
 
 .cta p {
-  color: var(--text-muted);
-  margin: 0 auto 26px;
+  color: rgba(242, 242, 242, 0.72);
+  margin: 0 auto 32px;
   max-width: 46ch;
 }
 
+/* On the crimson panel a red button disappears, so the primary action flips
+   to paper-white. */
 .cta .apply {
-  background: var(--brand);
+  background: var(--text);
+  box-shadow: none;
+  color: #0d0d0d;
 }
 
-.cta .apply:hover {
-  background: var(--text);
-  color: var(--bg);
+.cta .apply:hover,
+.cta .apply:active {
+  background: #fff;
+  filter: none;
 }
 
 .cta .mono {
-  color: var(--text-muted);
+  color: rgba(242, 242, 242, 0.6);
   display: block;
   margin-bottom: 18px;
 }
 
 .site-footer {
   background: var(--bg);
-  border-top: 1px solid var(--surface);
+  border-top: 1px solid var(--hairline);
   color: var(--text);
   padding: 34px 0;
 }
@@ -920,7 +988,7 @@
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--surface);
+  border-top: 1px solid var(--hairline);
   color: var(--text-muted);
   margin-top: 28px;
   padding-top: 20px;
@@ -1005,7 +1073,7 @@ button:focus-visible,
 
 /* ---- Photo grid ---- */
 .photo-section {
-  border-bottom: 1px solid var(--surface);
+  background: #000;
 }
 
 .photo-grid {
@@ -1080,7 +1148,6 @@ button:focus-visible,
 }
 
 .home-hero h1 em {
-  color: var(--brand);
   font-style: normal;
 }
 
@@ -1161,10 +1228,14 @@ button:focus-visible,
   z-index: 0;
 }
 
+/* Three layers: the video dissolves into the page at the bottom edge, the
+   team gradient sits in the lower-left corner behind the headline, and a
+   neutral scrim keeps the text readable over bright sky. */
 .hero-bg-scrim {
   background:
-    linear-gradient(90deg, rgba(13, 11, 11, 0.86) 0%, rgba(13, 11, 11, 0.55) 44%, rgba(13, 11, 11, 0.12) 100%),
-    linear-gradient(0deg, rgba(13, 11, 11, 0.40) 0%, rgba(13, 11, 11, 0) 42%);
+    linear-gradient(0deg, var(--bg) 0%, rgba(13, 13, 13, 0.72) 16%, rgba(13, 13, 13, 0) 46%),
+    linear-gradient(28deg, rgba(40, 0, 3, 0.6) 0%, rgba(40, 0, 3, 0.2) 34%, rgba(40, 0, 3, 0) 58%),
+    linear-gradient(90deg, rgba(13, 11, 11, 0.82) 0%, rgba(13, 11, 11, 0.5) 44%, rgba(13, 11, 11, 0.1) 100%);
   inset: 0;
   position: absolute;
   z-index: 1;
@@ -1213,12 +1284,14 @@ button:focus-visible,
 .partners-grid {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px 80px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 44px 24px;
 }
 
 .partner-item {
+  flex: 0 1 calc(25% - 18px);
+  min-width: 140px;
   text-align: center;
 }
 
@@ -1226,6 +1299,7 @@ button:focus-visible,
   filter: grayscale(1);
   height: 104px;
   margin: 0 auto 14px;
+  max-width: 100%;
   transition: filter 0.25s;
   width: 168px;
 }
@@ -1264,7 +1338,7 @@ button:focus-visible,
 
 .cta-secondary {
   color: #fff;
-  border-color: rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .cta-secondary:hover {
@@ -1278,7 +1352,8 @@ button:focus-visible,
 }
 
 .team-department-title {
-  border-bottom: 1px solid var(--surface);
+  border-bottom: 1px solid var(--hairline);
+  border-image: var(--grad-rule) 1;
   font-family: var(--mono);
   font-size: 0.8rem;
   font-weight: 400;
@@ -1305,12 +1380,18 @@ button:focus-visible,
 }
 
 .team-photo-light {
-  border: 1px solid var(--surface);
+  border: 1px solid var(--hairline);
   border-radius: 999px;
   height: 130px;
   margin: 0 auto 14px;
   overflow: hidden;
+  transition: box-shadow 0.25s, border-color 0.25s;
   width: 130px;
+}
+
+.team-card-light:hover .team-photo-light {
+  border-color: rgba(153, 0, 0, 0.9);
+  box-shadow: 0 0 0 4px rgba(153, 0, 0, 0.16), 0 14px 36px -12px rgba(153, 0, 0, 0.7);
 }
 
 .team-photo-light img {
@@ -1345,7 +1426,7 @@ button:focus-visible,
 }
 
 .board-badge {
-  background: var(--brand);
+  background: var(--grad-brand);
   color: var(--text);
   display: inline-block;
   font-family: var(--mono);
@@ -1365,12 +1446,12 @@ button:focus-visible,
 }
 
 .comp-video-panel {
-  background: var(--surface);
-  border: 1px solid var(--surface);
-  box-shadow: 0 20px 70px rgba(13, 11, 11, 0.07);
+  background: linear-gradient(200deg, rgba(58, 0, 4, 0.5) 0%, #131313 46%, #0f0f0f 100%);
+  border: 1px solid var(--hairline);
+  box-shadow: 0 30px 80px -30px rgba(58, 0, 4, 0.6);
   padding: 18px;
-  position: relative;
-  top: 0;
+  position: sticky;
+  top: 112px;
 }
 
 .comp-video-head {
@@ -1394,6 +1475,8 @@ button:focus-visible,
 
   .comp-video-panel {
     order: -1;
+    position: relative;
+    top: 0;
   }
 }
 
@@ -1403,13 +1486,13 @@ button:focus-visible,
 }
 
 .comp-block + .comp-block {
-  border-top: 1px solid var(--surface);
+  border-top: 1px solid var(--hairline);
   margin-top: 48px;
   padding-top: 48px;
 }
 
 .comp-result {
-  background: var(--brand);
+  background: var(--grad-brand);
   color: var(--text);
   display: inline-block;
   padding: 3px 9px;
@@ -1443,20 +1526,43 @@ button:focus-visible,
 }
 
 .news-card {
-  background: var(--surface);
-  border: 1px solid var(--surface);
+  background: linear-gradient(180deg, #171717 0%, #111 100%);
+  border: 1px solid var(--hairline);
   border-radius: 4px;
   color: var(--text);
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
   text-decoration: none;
-  transition: border-color 0.15s, transform 0.15s;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+/* Crimson rises from the foot of the card on hover. */
+.news-card::after {
+  background: linear-gradient(0deg, rgba(58, 0, 4, 0.55) 0%, rgba(58, 0, 4, 0) 55%);
+  content: "";
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 0.25s;
 }
 
 .news-card:hover {
-  border-color: var(--brand);
+  border-color: rgba(153, 0, 0, 0.8);
+  box-shadow: 0 24px 50px -28px rgba(153, 0, 0, 0.8);
   transform: translateY(-2px);
+}
+
+.news-card:hover::after {
+  opacity: 1;
+}
+
+.news-card-body,
+.news-card-img {
+  position: relative;
+  z-index: 1;
 }
 
 .news-card-img {
@@ -1503,8 +1609,13 @@ button:focus-visible,
   margin: 0 0 16px;
 }
 
+.news-card:hover .news-card-read {
+  color: var(--brand-bright);
+}
+
 .news-card-read {
   color: var(--text);
+  transition: color 0.2s;
   font-family: var(--mono);
   font-size: 0.68rem;
   font-weight: 700;
@@ -1591,7 +1702,7 @@ button:focus-visible,
 }
 
 .card-accent::before {
-  background: var(--brand);
+  background: var(--grad-underline);
   content: "";
   height: 4px;
   left: 0;
@@ -1623,9 +1734,8 @@ button:focus-visible,
 }
 
 .stat--accent {
-  background: var(--brand);
+  background: var(--grain), var(--grad-ember);
   color: var(--text);
-  padding: 20px 22px;
 }
 
 .stat--accent .stat-value {
@@ -1644,7 +1754,7 @@ button:focus-visible,
 
 .numbered-item-index {
   align-items: center;
-  background: var(--brand);
+  background: var(--grad-brand);
   color: var(--text);
   display: flex;
   flex-shrink: 0;
@@ -1654,4 +1764,145 @@ button:focus-visible,
   height: 40px;
   justify-content: center;
   width: 40px;
+}
+
+/* ---- Page glow ----
+   The team gradient as ambient light: crimson in the upper-right corner of
+   every inner page, falling off to black before the content starts in
+   earnest. Painted on the page (not fixed) so it scrolls away. */
+.page-top {
+  isolation: isolate;
+  position: relative;
+}
+
+.page-top::before {
+  background:
+    var(--grain),
+    radial-gradient(115% 100% at 100% 0%, rgba(58, 0, 4, 0.8) 0%, rgba(39, 0, 2, 0.5) 30%, rgba(17, 0, 1, 0.22) 55%, rgba(13, 13, 13, 0) 78%);
+  content: "";
+  height: min(640px, 100%);
+  left: 0;
+  -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+/* ---- Home: result stats ---- */
+.stat-row {
+  border: 1px solid var(--hairline);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 40px;
+}
+
+.stat-row .stat {
+  gap: 10px;
+  padding: 28px 28px 26px;
+}
+
+.stat-row .stat + .stat {
+  border-left: 1px solid var(--hairline);
+}
+
+.stat-row .stat-value {
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.stat-row .stat-value small {
+  color: var(--text-muted);
+  font-size: 0.36em;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin-left: 6px;
+}
+
+.stat-row .stat--accent .stat-label {
+  color: rgba(242, 242, 242, 0.8);
+}
+
+@media (max-width: 640px) {
+  .stat-row {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-row .stat + .stat {
+    border-left: 0;
+    border-top: 1px solid var(--hairline);
+  }
+}
+
+/* ---- About image: gradient offset frame ---- */
+.about-image {
+  overflow: visible;
+  position: relative;
+}
+
+.about-image::before {
+  background: var(--grad-ember);
+  content: "";
+  inset: 18px -18px -18px 18px;
+  position: absolute;
+  z-index: 0;
+}
+
+.about-image img {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 860px) {
+  .about-image::before {
+    inset: 12px -12px -12px 12px;
+  }
+
+  .about-image {
+    margin-right: 12px;
+  }
+}
+
+/* ---- 404 ---- */
+.notfound {
+  align-items: center;
+  display: flex;
+  min-height: calc(100vh - 81px);
+  padding: 80px 0;
+}
+
+.notfound .wrap {
+  width: 100%;
+}
+
+.notfound-code {
+  background-image: linear-gradient(28deg, var(--ember-deep) 0%, #921010 100%);
+  font-family: var(--disp);
+  font-size: clamp(6rem, 22vw, 15rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.85;
+  margin: 0 0 20px;
+}
+
+.notfound h1 {
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  margin: 0 0 12px;
+}
+
+.notfound .lede {
+  margin: 0 0 30px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .raven-nav-list a::after,
+  .news-card,
+  .news-card::after,
+  .role,
+  .team-photo-light {
+    transition: none;
+  }
 }

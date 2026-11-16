@@ -4,7 +4,7 @@
     "department": "Electrical",
     "role": "",
     "program": "MSc. Electrical Engineering",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/mikkel.jpg",
     "isBoard": true
   },
   {
@@ -12,7 +12,7 @@
     "department": "Operations",
     "role": "Operations Lead",
     "program": "MSc. Autonomous Systems",
-    "image": "/headshots-v1/knarre.JPG",
+    "image": "/headshots-web/emilknarreborg.jpg",
     "isBoard": true
   },
   {
@@ -20,7 +20,7 @@
     "department": "Mechanical",
     "role": "",
     "program": "BSc. Mechanical Engineering",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/alfred.jpg",
     "isBoard": true
   },
   {
@@ -28,7 +28,7 @@
     "department": "Software",
     "role": "",
     "program": "MSc. Autonomous Systems",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/stanislaw.jpg",
     "isBoard": true
   },
   {
@@ -36,7 +36,7 @@
     "department": "Mechanical",
     "role": "Mechanical Lead",
     "program": "MSc. Wind Energy",
-    "image": "/headshots-v1/soren.JPG",
+    "image": "/headshots-web/sorenskovborg.jpg",
     "isBoard": true
   },
   {
@@ -44,14 +44,14 @@
     "department": "Electrical",
     "role": "Chairman & Electrical Lead",
     "program": "MSc. Engineering Physics",
-    "image": "/headshots-v1/anders.JPG",
+    "image": "/headshots-web/anders.jpg",
     "isBoard": true
   },
   {
     "name": "Etienne Rasmus Gras",
     "department": "Operations",
     "role": "Treasurer",
-    "program": "BSc. General Engineering",
+    "program": "BSc. Mechanical Engineering",
     "image": "/placeholder.svg",
     "isBoard": true
   },
@@ -60,7 +60,7 @@
     "department": "Software",
     "role": "",
     "program": "BSc. General Engineering",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/sabina.jpg",
     "isBoard": false
   },
   {
@@ -76,15 +76,15 @@
     "department": "Mechanical",
     "role": "",
     "program": "BSc. General Engineering",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/szymonbogus.jpg",
     "isBoard": false
   },
   {
     "name": "Lea Lindelof",
-    "department": "Electrical",
+    "department": "Operations",
     "role": "",
     "program": "BSc. Cyber Technology",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/lea.jpg",
     "isBoard": false
   },
   {
@@ -100,7 +100,7 @@
     "department": "Software",
     "role": "Software Lead",
     "program": "MSc. Autonomous Systems",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/zsombor.jpg",
     "isBoard": false
   },
   {
@@ -108,7 +108,7 @@
     "department": "Software",
     "role": "",
     "program": "MSc. Autonomous Systems",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/henrikbongers.jpg",
     "isBoard": false
   },
   {
@@ -116,7 +116,7 @@
     "department": "Software",
     "role": "",
     "program": "MSc. Autonomous Systems",
-    "image": "/headshots-v1/adam.JPG",
+    "image": "/headshots-web/adam.jpg",
     "isBoard": false
   },
   {
@@ -124,7 +124,7 @@
     "department": "Operations",
     "role": "",
     "program": "MSc. Computer Science and Engineering",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/sampaio.jpg",
     "isBoard": false
   },
   {
@@ -140,7 +140,7 @@
     "department": "Electrical",
     "role": "",
     "program": "BSc. Electrical Engineering",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/hamza.jpg",
     "isBoard": false
   },
   {
@@ -148,7 +148,7 @@
     "department": "Electrical",
     "role": "",
     "program": "MSc. Autonomous Systems",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/noacontelles.jpg",
     "isBoard": false
   },
   {
@@ -156,7 +156,7 @@
     "department": "Electrical",
     "role": "",
     "program": "MSc. Autonomous Systems",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/gabriele.jpg",
     "isBoard": false
   },
   {
@@ -180,7 +180,7 @@
     "department": "Mechanical",
     "role": "",
     "program": "BSc. General Engineering",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/almina.jpg",
     "isBoard": false
   },
   {
@@ -188,7 +188,7 @@
     "department": "Mechanical",
     "role": "",
     "program": "BSc. Mechanical Engineering",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/fabian.jpg",
     "isBoard": false
   },
   {
@@ -204,7 +204,7 @@
     "department": "Mechanical",
     "role": "",
     "program": "BSc. Mechanical Engineering",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/kathrineboesen.jpg",
     "isBoard": false
   },
   {
@@ -228,15 +228,7 @@
     "department": "Operations",
     "role": "",
     "program": "BSc. Mechanical Engineering",
-    "image": "/placeholder.svg",
-    "isBoard": false
-  },
-  {
-    "name": "Isak Fazal",
-    "department": "Operations",
-    "role": "",
-    "program": "BSc. General Engineering",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/olivia.jpg",
     "isBoard": false
   },
   {
@@ -244,7 +236,7 @@
     "department": "Operations",
     "role": "",
     "program": "BSc. Artificial Intelligence and Data",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/advait.jpg",
     "isBoard": false
   },
   {
@@ -252,7 +244,7 @@
     "department": "Software",
     "role": "",
     "program": "MSc. Autonomous Systems",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/ashwath.jpg",
     "isBoard": false
   },
   {
@@ -284,7 +276,7 @@
     "department": "Software",
     "role": "",
     "program": "MSc. Autonomous Systems",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/emmapinckers.jpg",
     "isBoard": false
   },
   {
@@ -292,7 +284,7 @@
     "department": "Software",
     "role": "",
     "program": "BSc. General Engineering",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/mortenthorhauge.jpg",
     "isBoard": false
   },
   {

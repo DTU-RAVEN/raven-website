@@ -38,7 +38,7 @@ const Team = () => {
               {department.members.map((member) => (
                 <div key={member.name} className="team-card-light">
                   <div className="team-photo-light">
-                    <img src={member.image} alt={member.name} />
+                    <img src={member.image} alt={member.name} loading="lazy" />
                   </div>
                   <h3 className="team-name">{member.name}</h3>
                   {member.role && <p className="team-role">{member.role}</p>}

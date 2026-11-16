@@ -7,8 +7,11 @@ const SHOW_JOIN_CTA = false;
 
 const DEPARTMENTS = ['Electrical', 'Mechanical', 'Operations', 'Software', 'Alumni'];
 
-// Department lead first, then board members, otherwise keep the JSON order
-const rank = (member) => (/\bLead\b/.test(member.role) ? 0 : member.isBoard ? 1 : 2);
+// Department lead first, then board members, then everyone with a photo, then
+// those still on the placeholder. Ties keep the JSON order
+const hasPhoto = (member) => !member.image.includes('placeholder');
+const rank = (member) =>
+  /\bLead\b/.test(member.role) ? 0 : member.isBoard ? 1 : hasPhoto(member) ? 2 : 3;
 
 const departments = DEPARTMENTS.map((name) => ({
   name,

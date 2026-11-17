@@ -83,7 +83,7 @@
     "name": "Lea Lindelof",
     "department": "Operations",
     "role": "",
-    "program": "BSc. Software Technologi",
+    "program": "BSc. Software Technology",
     "image": "/headshots-web/lea.jpg",
     "isBoard": false
   },
@@ -220,14 +220,14 @@
     "department": "Operations",
     "role": "",
     "program": "BSc. Engineering Physics",
-    "image": "/placeholder.svg",
+    "image": "/headshots-web/hannibal.jpg",
     "isBoard": false
   },
   {
     "name": "Olivia Bouilloux",
     "department": "Operations",
     "role": "",
-    "program": "BSc. Mechanical Engineering",
+    "program": "BSc. General Engineering",
     "image": "/headshots-web/olivia.jpg",
     "isBoard": false
   },
@@ -235,7 +235,7 @@
     "name": "Advait Gajanan Sakhare",
     "department": "Operations",
     "role": "",
-    "program": "BSc. Artificial Intelligence and Data",
+    "program": "BSc. General Engineering",
     "image": "/headshots-web/advait.jpg",
     "isBoard": false
   },
@@ -283,7 +283,7 @@
     "name": "Morten Kaae Thorhauge",
     "department": "Software",
     "role": "",
-    "program": "BSc. General Engineering",
+    "program": "BSc. Engineering Physics",
     "image": "/headshots-web/mortenthorhauge.jpg",
     "isBoard": false
   },
